@@ -1,0 +1,3 @@
+{
+  "alibabacloud:Import:*": "./libraries"
+}

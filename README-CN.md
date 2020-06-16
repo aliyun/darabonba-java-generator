@@ -1,19 +1,19 @@
-English | [简体中文](/README-CN.md)
+[English](/README.md) | 简体中文
 
-# Darabonba Code Generator for Java
+# Darabonba Java 生成器
 
-## Installation
+## 安装
 
-> Darabonba Code Generator was designed to work in Node.js.
-> The preferred way to install the Generator is to use the [NPM](https://www.npmjs.com/) package manager.
-> Simply type the following into a terminal window:
+> Darabonba 生成器只能在 Node.js 环境下运行。
+> 建议使用 [NPM](https://www.npmjs.com/) 包管理工具安装
+> 在终端输入以下命令进行安装:
 ```shell
 npm install @darabonba/java-generator
 ```
 
-## Usage
+## 使用示例
 
-> Generate Java Code
+> 生成 Java 代码
 ```javascript
 'use strict';
 const path = require('path');
@@ -29,7 +29,7 @@ let mainFile = path.join(sourceDir, packageMeta.main);
 let ast = parser.parse(fs.readFileSync(mainFile, 'utf8'), mainFile);
 // initialize generator
 let generatorConfig = {
-      ...packageMeta,
+      ...darabonbaPackageMeta,
       pkgDir: sourceDir,
       outputDir
     };
@@ -39,15 +39,15 @@ generator.visit(ast);
 // The execution result will be output in the 'outputDir'
 ```
 
-## Issues
+## 问题反馈
 
-[Opening an Issue](https://github.com/aliyun/darabonba-java-generator/issues/new/choose), Issues not conforming to the guidelines may be closed immediately.
+[提出问题](https://github.com/aliyun/darabonba-java-generator/issues/new/choose), 不符合指南的问题可能会立即关闭。
 
-## Changelog
+## 发布日志
 
-Detailed changes for each release are documented in the [release notes](/CHANGELOG.md).
+发布详情会更新在 [release notes](/CHANGELOG.md) 文件中
 
-## License
+## 许可证
 
 [Apache-2.0](/LICENSE)
 Copyright (c) 2009-present, Alibaba Cloud All rights reserved.

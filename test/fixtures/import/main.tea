@@ -1,0 +1,10 @@
+import Source;
+
+static function Sample(client: Source): void {
+    var runtime = new Source.RuntimeObject{};
+    var request = new Source.Request{
+        accesskey = "accesskey",
+        region = "region",
+    };
+    client.print(runtime);
+}
