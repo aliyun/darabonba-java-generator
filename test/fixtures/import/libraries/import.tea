@@ -1,0 +1,11 @@
+model Config = {}
+model RuntimeObject = {}
+init(config: Config);
+function print(runtime: RuntimeObject): void {
+  return;
+}
+
+model Request = {
+  accesskey?: string(name='accesskey', description='accesskey'),
+  region?: string(name='region', description='region'),
+}

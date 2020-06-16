@@ -1,0 +1,13 @@
+model RuntimeObject = {}
+init(config: Config);
+model Config = {}
+function print(runtime: object, str: string): void {
+  return;
+}
+
+model Request = {
+  accesskey?: string(name='accesskey', description='accesskey'),
+  region?: string(name='region', description='region'),
+}
+
+static function array(request: object, str: string): [ any ];

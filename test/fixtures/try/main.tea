@@ -1,0 +1,17 @@
+static async function printNull(): void {
+  try {
+    var str = 'test';
+  } catch(err) {
+	  var test = err.message;
+  } finally {
+    var final = 'ok';
+  }
+}
+
+static async function testTry(): void {
+  try {
+    var str = 'test';
+  } finally {
+    var final = 'ok';
+  }
+}
