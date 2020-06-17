@@ -21,17 +21,14 @@
 
 ## 安装
 
-> Darabonba 生成器只能在 Node.js 环境下运行。
-> 建议使用 [NPM](https://www.npmjs.com/) 包管理工具安装
-> 在终端输入以下命令进行安装:
+Darabonba 生成器只能在 Node.js 环境下运行。建议使用 [NPM](https://www.npmjs.com/) 包管理工具安装。在终端输入以下命令进行安装:
 ```shell
 npm install @darabonba/java-generator
 ```
 
 ## 使用示例
 
-> 生成 Java 代码
-```javascript
+```js
 'use strict';
 const path = require('path');
 const fs = require('fs');
@@ -46,10 +43,10 @@ let mainFile = path.join(sourceDir, packageMeta.main);
 let ast = parser.parse(fs.readFileSync(mainFile, 'utf8'), mainFile);
 // initialize generator
 let generatorConfig = {
-      ...darabonbaPackageMeta,
-      pkgDir: sourceDir,
-      outputDir
-    };
+  ...darabonbaPackageMeta,
+  pkgDir: sourceDir,
+  outputDir
+};
 let generator = new javaGenerator(generatorConfig);
 // generate Java code by generator
 generator.visit(ast);
