@@ -30,24 +30,30 @@ npm install @darabonba/java-generator
 
 ```js
 'use strict';
+
 const path = require('path');
 const fs = require('fs');
+
 const parser = require('@darabonba/parser');
-const javaGenerator = require('@darabonba/java-generator');
+const JavaGenerator = require('@darabonba/java-generator');
+
 const sourceDir = "<Darabonda package directory>";
 const outputDir = "<Generate output directory>";
+
 // generate AST data by parser
 let packageMetaFilePath = path.join(sourceDir, 'Teafile');
 let packageMeta = JSON.parse(fs.readFileSync(packageMetaFilePath, 'utf8'));
 let mainFile = path.join(sourceDir, packageMeta.main);
 let ast = parser.parse(fs.readFileSync(mainFile, 'utf8'), mainFile);
+
 // initialize generator
 let generatorConfig = {
   ...packageMeta,
   pkgDir: sourceDir,
   outputDir
 };
-let generator = new javaGenerator(generatorConfig);
+let generator = new JavaGenerator(generatorConfig);
+
 // generate Java code by generator
 generator.visit(ast);
 // The execution result will be output in the 'outputDir'
