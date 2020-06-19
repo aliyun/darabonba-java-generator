@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.1 - 2020-06-19
+
+> Improve Darabonba Java generator to be compatible with darafile.
+
 ## 1.0.0 - 2020-06-17
 
 > Initialization release of the `Darabonba Code Generator for Java` Version 1.0.0 on NPM.
