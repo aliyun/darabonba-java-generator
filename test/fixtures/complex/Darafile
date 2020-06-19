@@ -2,11 +2,13 @@
     "scope": "darabonba",
     "name": "main",
     "version": "0.0.1",
-    "main": "./main.tea",
+    "main": "./main.dara",
     "libraries": {
         "Source": "alibabacloud:Import:*"
     },
-    "java":{
-        "package": "com.aliyun.testsss"
+    "java": {
+        "package": "com.aliyun"
+    },
+    "releases": {
     }
 }

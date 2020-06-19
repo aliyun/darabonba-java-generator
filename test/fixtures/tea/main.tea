@@ -1,0 +1,19 @@
+import Source;
+import LocalSource;
+
+type @id = [ string ];
+type @str = string;
+
+init(id: [ string ], str: string) {
+    @id = id;
+    @str = str;
+}
+
+static function Sample(client: Source): void {
+    var runtime = new Source.RuntimeObject{};
+    var request = new LocalSource.Request{
+        accesskey = "accesskey",
+        region = "region",
+    };
+    client.print(runtime);
+}
