@@ -46,6 +46,7 @@ public class Client {
                 TeaResponse response_ = Tea.doAction(request_, runtime_);
 
                 if (true && true) {
+                    throw new TeaRetryableException();
                     return null;
                 } else if (true || false) {
                     return new com.importa.models.RuntimeObject();
@@ -114,6 +115,10 @@ public class Client {
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
         ), new ComplexRequest());
+    }
+
+    public void testSubModel(ComplexRequest.part part) throws Exception {
+        return ;
     }
 
     public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) throws Exception {

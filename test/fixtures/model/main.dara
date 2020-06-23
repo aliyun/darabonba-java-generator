@@ -1,8 +1,11 @@
 model MyModel = {
   stringfield: string,
+  longtest: long,
+  double: double,
+  bytesTest: bytes,
   stringarrayfield: [ string ],
   mapfield: map[string]string,
-  name: string(name='realName'),
+  name: string(name='realName', maxLength=50, minLength=40, pattern='[a-z0-9]{1,50}', deprecated = true),
   submodel: {
     stringfield: string,
   },

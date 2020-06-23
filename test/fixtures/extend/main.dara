@@ -1,0 +1,29 @@
+import Source;
+extends Source;
+init(config: Source.Config, a: string){
+   super(config, a);
+}
+
+function print(): void {
+  var mapAccess = {
+    test = 'ok',
+  }; 
+  mapAccess['test'] = 'null'; 
+  mapAccess['test'];
+  var tmp : map[string]any = null; 
+  if (!true){
+  }
+  return;
+}
+
+api _request(): object {
+    try {
+        var in = 'try';
+    } catch (e){
+        var tmp = 'catch';
+    }
+} returns {
+    retry;
+} runtime {
+
+}

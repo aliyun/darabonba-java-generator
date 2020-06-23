@@ -8,6 +8,18 @@ public class MyModel extends TeaModel {
     @Validation(required = true)
     public String stringfield;
 
+    @NameInMap("longtest")
+    @Validation(required = true)
+    public Long longtest;
+
+    @NameInMap("_double")
+    @Validation(required = true)
+    public Double _double;
+
+    @NameInMap("bytesTest")
+    @Validation(required = true)
+    public byte[] bytesTest;
+
     @NameInMap("stringarrayfield")
     @Validation(required = true)
     public java.util.List<String> stringarrayfield;
@@ -17,7 +29,8 @@ public class MyModel extends TeaModel {
     public java.util.Map<String, String> mapfield;
 
     @NameInMap("realName")
-    @Validation(required = true)
+    @Deprecated
+    @Validation(required = true, pattern = "[a-z0-9]{1,50}", maxLength = 50, minLength = 40)
     public String name;
 
     @NameInMap("submodel")

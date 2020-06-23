@@ -10,7 +10,7 @@ public class Client {
     /**
       Init Func
     */
-    public Client() throws Exception {
+    public Client(String a, String b) throws Exception {
         // string declate comment
         String str = "sss";
         // new model instance comment
