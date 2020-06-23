@@ -26,6 +26,15 @@ model ComplexRequest = {
   ](description='Part', name='Part'),
 }
 
+model Response {
+  part: ComplexRequest.part,
+  req: Source.Request,
+}
+
+function testSubModel(part: ComplexRequest.part): void {
+ return;
+}
+
 async function hello(request: object, strs: [ string ]): [ string ] {
   return array1();
 }
@@ -44,6 +53,7 @@ api Complex1(request: ComplexRequest, client: Source): Source.RuntimeObject {
   };
 } returns {
   if (true && true){
+    retry;
     return null;
   } else if(true || false){
     return new Source.RuntimeObject{};

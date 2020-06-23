@@ -30,7 +30,7 @@ model Test3{
   Init Func
 */
 // comment between init and annotation
-init(){
+init(a:string, b:string){
   // string declate comment
   var str = 'sss';
   // new model instance comment

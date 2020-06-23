@@ -113,4 +113,15 @@ describe('new Generator', function () {
       ...pkg
     });
   });
+
+  it('extend should ok', function () {
+    const outputDir = path.join(__dirname, 'output/extend');
+    const mainFilePath = path.join(__dirname, 'fixtures/extend/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/extend/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/extend/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/extend'),
+      ...pkg
+    });
+  });
 });
