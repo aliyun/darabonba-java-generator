@@ -4,6 +4,7 @@ static function hello(): void {
 
 static function helloMap(): map[string]string {
   var m: map[string]string = {};
+  m.test = "test";
   return {
     key = 'value',
     key-1 = 'value-1',

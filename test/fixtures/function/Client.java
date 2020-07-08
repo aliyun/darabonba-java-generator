@@ -12,6 +12,7 @@ public class Client {
 
     public static java.util.Map<String, String> helloMap() throws Exception {
         java.util.Map<String, String> m = new java.util.HashMap<>();
+        m.put("test", "test");
         return TeaConverter.merge(String.class,
             TeaConverter.buildMap(
                 new TeaPair("key", "value"),
