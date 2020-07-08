@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.3 - 2020-07-08
+
+> Improve visitAssign.
+
 ## 1.0.2 - 2020-07-02
 
 > Improve shouldChange method.
