@@ -8,6 +8,10 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public String accessKey;
 
+    @NameInMap("complexList")
+    @Validation(required = true)
+    public java.util.List<java.util.List<java.util.Map<String, String>>> complexList;
+
     @NameInMap("Body")
     @Validation(required = true)
     public java.io.InputStream body;

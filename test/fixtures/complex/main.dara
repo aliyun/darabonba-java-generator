@@ -5,6 +5,7 @@ model Config {
 }
 type @protocol = string
 type @pathname = string
+type @compleList = [[string]]
 
 init(config: Config){
   @protocol = config.protocol;
@@ -12,6 +13,7 @@ init(config: Config){
 
 model ComplexRequest = {
   accessKey: string,
+  complexList: [[map[string]string]],
   body: readable(name='Body', example='Body', description='Body'),
   strs: [ string ](name='Strs', example='Strs', description='Strs'),
   header: {
@@ -31,7 +33,7 @@ model Response {
   req: Source.Request,
 }
 
-function testSubModel(part: ComplexRequest.part): void {
+function testSubModel(part: ComplexRequest.part, complexList: [[string]]): void {
  return;
 }
 
