@@ -8,6 +8,7 @@ public class Client {
 
     public String _protocol;
     public String _pathname;
+    public java.util.List<java.util.List<String>> _compleList;
     public Client(Config config) throws Exception {
         this._protocol = config.protocol;
     }
@@ -117,7 +118,7 @@ public class Client {
         ), new ComplexRequest());
     }
 
-    public void testSubModel(ComplexRequest.part part) throws Exception {
+    public void testSubModel(ComplexRequest.part part, java.util.List<java.util.List<String>> complexList) throws Exception {
         return ;
     }
 
