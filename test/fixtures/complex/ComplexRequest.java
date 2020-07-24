@@ -12,14 +12,17 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public java.util.List<java.util.List<java.util.Map<String, String>>> complexList;
 
+    // Body
     @NameInMap("Body")
     @Validation(required = true)
     public java.io.InputStream body;
 
+    // Strs
     @NameInMap("Strs")
     @Validation(required = true)
     public java.util.List<String> strs;
 
+    // header
     @NameInMap("header")
     @Validation(required = true)
     public ComplexRequestHeader header;
@@ -32,6 +35,7 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public com.importa.Client client;
 
+    // Part
     @NameInMap("Part")
     public java.util.List<ComplexRequestPart> part;
 
@@ -41,6 +45,7 @@ public class ComplexRequest extends TeaModel {
     }
 
     public static class ComplexRequestHeader extends TeaModel {
+        // Body
         @NameInMap("Content")
         @Validation(required = true)
         public String content;
@@ -53,6 +58,7 @@ public class ComplexRequest extends TeaModel {
     }
 
     public static class ComplexRequestPart extends TeaModel {
+        // PartNumber
         @NameInMap("PartNumber")
         public String partNumber;
 
