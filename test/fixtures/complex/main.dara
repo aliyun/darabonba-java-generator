@@ -6,9 +6,11 @@ model Config {
 type @protocol = string
 type @pathname = string
 type @compleList = [[string]]
+type @configs = [ Config ];
 
 init(config: Config){
   @protocol = config.protocol;
+  @configs[0] = config;
 }
 
 model ComplexRequest = {
@@ -21,6 +23,11 @@ model ComplexRequest = {
   }(description='header', name='header'),
   num: number,
   client: Source,
+  configs: {
+    key: string,
+    value: [ string ],
+    extra: map[string] string
+  },
   part?: [
     {
       partNumber?: string(description='PartNumber', name='PartNumber')
@@ -31,6 +38,66 @@ model ComplexRequest = {
 model Response {
   part: ComplexRequest.part,
   req: Source.Request,
+}
+
+static function arrayAssign3(request: ComplexRequest, config: string): void {
+  request.configs.value[0] = config;
+}
+
+static function mapAccess(request: ComplexRequest): string {
+   var configInfo = request.configs.extra['name'];
+  return configInfo;
+}
+
+static function mapAccess2(request: Source.Request): string {
+   var configInfo = request.configs.extra['name'];
+  return configInfo;
+}
+
+static function mapAccess3(): string {
+  var data = {
+    configs  = {
+      value = 'string'
+    } 
+  };
+  return data.configs['value'];
+}
+
+static function mapAssign(request: ComplexRequest, name: string): void {
+  request.configs.extra['name'] = name;
+}
+
+static function arrayAssign2(config: string): [ string ] {
+  var data = {
+    configs = ['a', 'b', 'c']
+  };
+  data.configs[3] = config;
+  return data.configs;
+}
+
+static function arrayAssign(config: string): [ string ] {
+  var configs = ['a', 'b', 'c'];
+  configs[3] = config;
+  return configs;
+}
+
+static function arrayAccess3(request: ComplexRequest): string {
+  var configVal = request.configs.value[0];
+  return configVal;
+}
+
+static function arrayAccess2(): string {
+  var data = {
+    configs = ['a', 'b', 'c']
+  };
+  var config = data.configs[0];
+  return config;
+}
+
+static function arrayAccess(): string {
+  var configs = ['a', 'b', 'c'];
+  var config = configs[0];
+  return config;
 }
 
 function testSubModel(part: ComplexRequest.part, complexList: [[string]]): void {

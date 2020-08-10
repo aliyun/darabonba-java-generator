@@ -9,8 +9,10 @@ public class Client {
     public String _protocol;
     public String _pathname;
     public java.util.List<java.util.List<String>> _compleList;
+    public java.util.List<Config> _configs;
     public Client(Config config) throws Exception {
         this._protocol = config.protocol;
+        _configs.set(0, config);
     }
 
     public com.importa.models.RuntimeObject Complex1(ComplexRequest request, com.importa.Client client) throws Exception {
@@ -116,6 +118,82 @@ public class Client {
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
         ), new ComplexRequest());
+    }
+
+    public static void arrayAssign3(ComplexRequest request, String config) throws Exception {
+        request.configs.value.set(0, config);
+    }
+
+    public static String mapAccess(ComplexRequest request) throws Exception {
+        String configInfo = request.configs.extra.get("name");
+        return configInfo;
+    }
+
+    public static String mapAccess2(com.importa.models.Request request) throws Exception {
+        String configInfo = request.configs.extra.get("name");
+        return configInfo;
+    }
+
+    public static String mapAccess3() throws Exception {
+        java.util.Map<String, java.util.Map<String, String>> data = TeaConverter.buildMap(
+            new TeaPair("configs", TeaConverter.buildMap(
+                new TeaPair("value", "string")
+            ))
+        );
+        return data.get("configs").get("value");
+    }
+
+    public static void mapAssign(ComplexRequest request, String name) throws Exception {
+        request.configs.extra.put("name", name);
+    }
+
+    public static java.util.List<String> arrayAssign2(String config) throws Exception {
+        java.util.Map<String, java.util.List<String>> data = TeaConverter.buildMap(
+            new TeaPair("configs", java.util.Arrays.asList(
+                "a",
+                "b",
+                "c"
+            ))
+        );
+        data.get("configs").set(3, config);
+        return data.get("configs");
+    }
+
+    public static java.util.List<String> arrayAssign(String config) throws Exception {
+        java.util.List<String> configs = java.util.Arrays.asList(
+            "a",
+            "b",
+            "c"
+        );
+        configs.set(3, config);
+        return configs;
+    }
+
+    public static String arrayAccess3(ComplexRequest request) throws Exception {
+        String configVal = request.configs.value.get(0);
+        return configVal;
+    }
+
+    public static String arrayAccess2() throws Exception {
+        java.util.Map<String, java.util.List<String>> data = TeaConverter.buildMap(
+            new TeaPair("configs", java.util.Arrays.asList(
+                "a",
+                "b",
+                "c"
+            ))
+        );
+        String config = data.get("configs").get(0);
+        return config;
+    }
+
+    public static String arrayAccess() throws Exception {
+        java.util.List<String> configs = java.util.Arrays.asList(
+            "a",
+            "b",
+            "c"
+        );
+        String config = configs.get(0);
+        return config;
     }
 
     public void testSubModel(ComplexRequest.part part, java.util.List<java.util.List<String>> complexList) throws Exception {

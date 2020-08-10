@@ -8,6 +8,11 @@ function print(runtime: object, str: string): void {
 model Request = {
   accesskey?: string(name='accesskey', description='accesskey'),
   region?: string(name='region', description='region'),
+  configs: {
+    key: string,
+    value: [ string ],
+    extra: map[string] string
+  },
 }
 
 static function array(request: object, str: string): [ any ];
