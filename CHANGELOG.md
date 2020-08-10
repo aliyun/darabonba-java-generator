@@ -1,9 +1,8 @@
 # ChangeLog
 
-## 1.0.4 - 2020-07-24
+## 1.0.4 - 2020-07-22
 
 > Support nested list.
-> Support describtion.
 
 ## 1.0.3 - 2020-07-08
 

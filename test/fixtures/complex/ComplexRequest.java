@@ -35,6 +35,10 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public com.importa.Client client;
 
+    @NameInMap("configs")
+    @Validation(required = true)
+    public ComplexRequestConfigs configs;
+
     // Part
     @NameInMap("Part")
     public java.util.List<ComplexRequestPart> part;
@@ -52,6 +56,26 @@ public class ComplexRequest extends TeaModel {
 
         public static ComplexRequestHeader build(java.util.Map<String, ?> map) throws Exception {
             ComplexRequestHeader self = new ComplexRequestHeader();
+            return TeaModel.build(map, self);
+        }
+
+    }
+
+    public static class ComplexRequestConfigs extends TeaModel {
+        @NameInMap("key")
+        @Validation(required = true)
+        public String key;
+
+        @NameInMap("value")
+        @Validation(required = true)
+        public java.util.List<String> value;
+
+        @NameInMap("extra")
+        @Validation(required = true)
+        public java.util.Map<String, String> extra;
+
+        public static ComplexRequestConfigs build(java.util.Map<String, ?> map) throws Exception {
+            ComplexRequestConfigs self = new ComplexRequestConfigs();
             return TeaModel.build(map, self);
         }
 
