@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.5 - 2020-08-10
+
+> add array access
+
 ## 1.0.4 - 2020-07-24
 
 > Support nested list.
