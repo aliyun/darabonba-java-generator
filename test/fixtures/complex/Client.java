@@ -212,6 +212,9 @@ public class Client {
     }
 
     public static java.util.List<?> array0(java.util.Map<String, ?> req) throws Exception {
+        Long longTest = 1L;
+        Double doubleTest = 1D;
+        Float floatTest = 1F;
         return new java.util.ArrayList<>();
     }
 
