@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.6 - 2020-08-11
+
+> add emitNumber
+
 ## 1.0.5 - 2020-08-10
 
 > add array access
