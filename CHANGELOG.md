@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.7 - 2020-08-13
+
+> add createGetSetMethod
+
 ## 1.0.6 - 2020-08-11
 
 > add emitNumber
