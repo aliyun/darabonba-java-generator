@@ -58,6 +58,102 @@ public class MyModel extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public MyModel setStringfield(String stringfield) {
+        this.stringfield = stringfield;
+        return this;
+    }
+    public String getStringfield() {
+        return this.stringfield;
+    }
+
+    public MyModel setLongtest(Long longtest) {
+        this.longtest = longtest;
+        return this;
+    }
+    public Long getLongtest() {
+        return this.longtest;
+    }
+
+    public MyModel set_double(Double _double) {
+        this._double = _double;
+        return this;
+    }
+    public Double get_double() {
+        return this._double;
+    }
+
+    public MyModel setBytesTest(byte[] bytesTest) {
+        this.bytesTest = bytesTest;
+        return this;
+    }
+    public byte[] getBytesTest() {
+        return this.bytesTest;
+    }
+
+    public MyModel setStringarrayfield(java.util.List<String> stringarrayfield) {
+        this.stringarrayfield = stringarrayfield;
+        return this;
+    }
+    public java.util.List<String> getStringarrayfield() {
+        return this.stringarrayfield;
+    }
+
+    public MyModel setMapfield(java.util.Map<String, String> mapfield) {
+        this.mapfield = mapfield;
+        return this;
+    }
+    public java.util.Map<String, String> getMapfield() {
+        return this.mapfield;
+    }
+
+    public MyModel setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public MyModel setSubmodel(MyModelSubmodel submodel) {
+        this.submodel = submodel;
+        return this;
+    }
+    public MyModelSubmodel getSubmodel() {
+        return this.submodel;
+    }
+
+    public MyModel setObject(java.util.Map<String, ?> object) {
+        this.object = object;
+        return this;
+    }
+    public java.util.Map<String, ?> getObject() {
+        return this.object;
+    }
+
+    public MyModel setNumberfield(Integer numberfield) {
+        this.numberfield = numberfield;
+        return this;
+    }
+    public Integer getNumberfield() {
+        return this.numberfield;
+    }
+
+    public MyModel setReadable(java.io.InputStream readable) {
+        this.readable = readable;
+        return this;
+    }
+    public java.io.InputStream getReadable() {
+        return this.readable;
+    }
+
+    public MyModel setRequest(TeaRequest request) {
+        this.request = request;
+        return this;
+    }
+    public TeaRequest getRequest() {
+        return this.request;
+    }
+
     public static class MyModelSubmodel extends TeaModel {
         @NameInMap("stringfield")
         @Validation(required = true)
@@ -66,6 +162,14 @@ public class MyModel extends TeaModel {
         public static MyModelSubmodel build(java.util.Map<String, ?> map) throws Exception {
             MyModelSubmodel self = new MyModelSubmodel();
             return TeaModel.build(map, self);
+        }
+
+        public MyModelSubmodel setStringfield(String stringfield) {
+            this.stringfield = stringfield;
+            return this;
+        }
+        public String getStringfield() {
+            return this.stringfield;
         }
 
     }

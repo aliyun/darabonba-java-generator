@@ -48,6 +48,78 @@ public class ComplexRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public ComplexRequest setAccessKey(String accessKey) {
+        this.accessKey = accessKey;
+        return this;
+    }
+    public String getAccessKey() {
+        return this.accessKey;
+    }
+
+    public ComplexRequest setComplexList(java.util.List<java.util.List<java.util.Map<String, String>>> complexList) {
+        this.complexList = complexList;
+        return this;
+    }
+    public java.util.List<java.util.List<java.util.Map<String, String>>> getComplexList() {
+        return this.complexList;
+    }
+
+    public ComplexRequest setBody(java.io.InputStream body) {
+        this.body = body;
+        return this;
+    }
+    public java.io.InputStream getBody() {
+        return this.body;
+    }
+
+    public ComplexRequest setStrs(java.util.List<String> strs) {
+        this.strs = strs;
+        return this;
+    }
+    public java.util.List<String> getStrs() {
+        return this.strs;
+    }
+
+    public ComplexRequest setHeader(ComplexRequestHeader header) {
+        this.header = header;
+        return this;
+    }
+    public ComplexRequestHeader getHeader() {
+        return this.header;
+    }
+
+    public ComplexRequest setNum(Integer num) {
+        this.num = num;
+        return this;
+    }
+    public Integer getNum() {
+        return this.num;
+    }
+
+    public ComplexRequest setClient(com.importa.Client client) {
+        this.client = client;
+        return this;
+    }
+    public com.importa.Client getClient() {
+        return this.client;
+    }
+
+    public ComplexRequest setConfigs(ComplexRequestConfigs configs) {
+        this.configs = configs;
+        return this;
+    }
+    public ComplexRequestConfigs getConfigs() {
+        return this.configs;
+    }
+
+    public ComplexRequest setPart(java.util.List<ComplexRequestPart> part) {
+        this.part = part;
+        return this;
+    }
+    public java.util.List<ComplexRequestPart> getPart() {
+        return this.part;
+    }
+
     public static class ComplexRequestHeader extends TeaModel {
         // Body
         @NameInMap("Content")
@@ -57,6 +129,14 @@ public class ComplexRequest extends TeaModel {
         public static ComplexRequestHeader build(java.util.Map<String, ?> map) throws Exception {
             ComplexRequestHeader self = new ComplexRequestHeader();
             return TeaModel.build(map, self);
+        }
+
+        public ComplexRequestHeader setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
         }
 
     }
@@ -79,6 +159,30 @@ public class ComplexRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public ComplexRequestConfigs setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public ComplexRequestConfigs setValue(java.util.List<String> value) {
+            this.value = value;
+            return this;
+        }
+        public java.util.List<String> getValue() {
+            return this.value;
+        }
+
+        public ComplexRequestConfigs setExtra(java.util.Map<String, String> extra) {
+            this.extra = extra;
+            return this;
+        }
+        public java.util.Map<String, String> getExtra() {
+            return this.extra;
+        }
+
     }
 
     public static class ComplexRequestPart extends TeaModel {
@@ -89,6 +193,14 @@ public class ComplexRequest extends TeaModel {
         public static ComplexRequestPart build(java.util.Map<String, ?> map) throws Exception {
             ComplexRequestPart self = new ComplexRequestPart();
             return TeaModel.build(map, self);
+        }
+
+        public ComplexRequestPart setPartNumber(String partNumber) {
+            this.partNumber = partNumber;
+            return this;
+        }
+        public String getPartNumber() {
+            return this.partNumber;
         }
 
     }
