@@ -2,20 +2,20 @@
 
 ## 1.0.7 - 2020-08-13
 
-> add createGetSetMethod
+> Support for creating set/get methods
 
 ## 1.0.6 - 2020-08-11
 
-> add emitNumber
+> Add emitNumber
 
 ## 1.0.5 - 2020-08-10
 
-> add array access
+> Add array access
 
 ## 1.0.4 - 2020-07-24
 
-> Support nested list.
-> Support describtion.
+> Support for nested list.
+> Support for describtion.
 
 ## 1.0.3 - 2020-07-08
 
