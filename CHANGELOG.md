@@ -1,8 +1,9 @@
 # ChangeLog
 
-## 1.0.7 - 2020-08-13
+## 1.0.7 - 2020-08-14
 
 > Support for creating set/get methods
+> Support for nested collection of field
 
 ## 1.0.6 - 2020-08-11
 
