@@ -17,6 +17,9 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public java.io.InputStream body;
 
+    @NameInMap("UserPsssrivileges")
+    public java.util.Map<String, java.util.List<java.util.Map<String, String>>> userTest;
+
     // Strs
     @NameInMap("Strs")
     @Validation(required = true)
@@ -70,6 +73,14 @@ public class ComplexRequest extends TeaModel {
     }
     public java.io.InputStream getBody() {
         return this.body;
+    }
+
+    public ComplexRequest setUserTest(java.util.Map<String, java.util.List<java.util.Map<String, String>>> userTest) {
+        this.userTest = userTest;
+        return this;
+    }
+    public java.util.Map<String, java.util.List<java.util.Map<String, String>>> getUserTest() {
+        return this.userTest;
     }
 
     public ComplexRequest setStrs(java.util.List<String> strs) {
