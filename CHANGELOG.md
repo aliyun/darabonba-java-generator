@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.8 - 2020-08-14
+
+> Improve description
+
 ## 1.0.7 - 2020-08-14
 
 > Support for creating set/get methods
