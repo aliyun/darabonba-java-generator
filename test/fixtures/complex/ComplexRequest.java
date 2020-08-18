@@ -13,6 +13,7 @@ public class ComplexRequest extends TeaModel {
     public java.util.List<java.util.List<java.util.Map<String, String>>> complexList;
 
     // Body
+    // body
     @NameInMap("Body")
     @Validation(required = true)
     public java.io.InputStream body;
