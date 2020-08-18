@@ -16,7 +16,7 @@ init(config: Config){
 model ComplexRequest = {
   accessKey: string,
   complexList: [[map[string]string]],
-  body: readable(name='Body', example='Body', description='Body'),
+  body: readable(name='Body', example='Body', description='Body\nbody'),
   userTest?: map[string][ map[string]string ](name='UserPsssrivileges'),
   strs: [ string ](name='Strs', example='Strs', description='Strs'),
   header: {
