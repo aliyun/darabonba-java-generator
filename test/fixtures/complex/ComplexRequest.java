@@ -8,6 +8,14 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public String accessKey;
 
+    @NameInMap("moduleModelMap")
+    @Validation(required = true)
+    public java.util.Map<String, com.importa.models.Request> moduleModelMap;
+
+    @NameInMap("subModelMap")
+    @Validation(required = true)
+    public java.util.Map<String, Config.ConfigSubM> subModelMap;
+
     @NameInMap("complexList")
     @Validation(required = true)
     public java.util.List<java.util.List<java.util.Map<String, String>>> complexList;
@@ -58,6 +66,22 @@ public class ComplexRequest extends TeaModel {
     }
     public String getAccessKey() {
         return this.accessKey;
+    }
+
+    public ComplexRequest setModuleModelMap(java.util.Map<String, com.importa.models.Request> moduleModelMap) {
+        this.moduleModelMap = moduleModelMap;
+        return this;
+    }
+    public java.util.Map<String, com.importa.models.Request> getModuleModelMap() {
+        return this.moduleModelMap;
+    }
+
+    public ComplexRequest setSubModelMap(java.util.Map<String, Config.ConfigSubM> subModelMap) {
+        this.subModelMap = subModelMap;
+        return this;
+    }
+    public java.util.Map<String, Config.ConfigSubM> getSubModelMap() {
+        return this.subModelMap;
     }
 
     public ComplexRequest setComplexList(java.util.List<java.util.List<java.util.Map<String, String>>> complexList) {

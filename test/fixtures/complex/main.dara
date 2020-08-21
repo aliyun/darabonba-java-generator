@@ -1,6 +1,7 @@
 import Source;
 
 model Config {
+  subM: {},
   protocol: string,
 }
 type @protocol = string
@@ -15,6 +16,8 @@ init(config: Config){
 
 model ComplexRequest = {
   accessKey: string,
+  moduleModelMap: map[string]Source.Request,
+  subModelMap: map[string]Config.subM,
   complexList: [[map[string]string]],
   body: readable(name='Body', example='Body', description='Body\nbody'),
   userTest?: map[string][ map[string]string ](name='UserPsssrivileges'),
