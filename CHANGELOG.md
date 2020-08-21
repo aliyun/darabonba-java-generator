@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.9 - 2020-08-21
+
+> support for creation subModel and moduleModel
+
 ## 1.0.8 - 2020-08-14
 
 > Improve description
