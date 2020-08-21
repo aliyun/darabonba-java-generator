@@ -196,7 +196,7 @@ public class Client {
         return config;
     }
 
-    public void testSubModel(ComplexRequest.part part, java.util.List<java.util.List<String>> complexList) throws Exception {
+    public void testSubModel(ComplexRequest.ComplexRequestPart part, java.util.List<java.util.List<String>> complexList) throws Exception {
         return ;
     }
 
