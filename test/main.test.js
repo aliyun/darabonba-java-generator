@@ -80,6 +80,10 @@ describe('new Generator', function() {
             pkgDir: path.join(__dirname, 'fixtures/complex'),
             ...pkg
         });
+        check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/ImplementsTest.java'), 'src/main/java/com/aliyun/test/ImplementsTest.java', {
+            pkgDir: path.join(__dirname, 'fixtures/complex'),
+            ...pkg
+        });
     });
 
     it('import should ok', function() {

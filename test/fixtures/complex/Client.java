@@ -4,13 +4,13 @@ package com.aliyun.test;
 import com.aliyun.tea.*;
 import com.aliyun.test.models.*;
 
-public class Client {
+public class NameTest implements ImplementsTest {
 
     public String _protocol;
     public String _pathname;
     public java.util.List<java.util.List<String>> _compleList;
     public java.util.List<Config> _configs;
-    public Client(Config config) throws Exception {
+    public NameTest(Config config) throws Exception {
         this._protocol = config.protocol;
         _configs.set(0, config);
     }
@@ -67,7 +67,7 @@ public class Client {
                 if (Tea.isRetryable(e)) {
                     continue;
                 }
-                throw e;
+                throw new RuntimeException(e);
             }
         }
 
