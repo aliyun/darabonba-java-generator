@@ -7,7 +7,9 @@
         "Source": "alibabacloud:Import:*"
     },
     "java": {
-        "package": "com.aliyun"
+        "package": "com.aliyun",
+        "implements": "ImplementsTest",
+        "className": "NameTest"
     },
     "releases": {
     }

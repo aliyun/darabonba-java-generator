@@ -5,6 +5,7 @@ import com.aliyun.tea.*;
 
 
 public class Client extends undefined.Client {
+
     public Client(undefined.models.Config config, String a) throws Exception {
         super(config, a);
     }
@@ -38,7 +39,7 @@ public class Client extends undefined.Client {
                 if (Tea.isRetryable(e)) {
                     continue;
                 }
-                throw e;
+                throw new RuntimeException(e);
             }
         }
 
