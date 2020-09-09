@@ -72,7 +72,7 @@ describe('new Generator', function () {
     const mainFilePath = path.join(__dirname, 'fixtures/complex/main.dara');
     const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/complex/Darafile'), 'utf8');
     const pkg = JSON.parse(pkgContent);
-    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/NameTest.java'), 'src/main/java/com/aliyun/test/NameTest.java', {
       pkgDir: path.join(__dirname, 'fixtures/complex'),
       ...pkg
     });
