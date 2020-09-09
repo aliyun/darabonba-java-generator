@@ -1,5 +1,7 @@
 package com.aliyun.test;
 
+import com.aliyun.test.models.*;
+
 public interface ImplementsTest {
 
     com.importa.models.RuntimeObject Complex1(ComplexRequest request, com.importa.Client client);
