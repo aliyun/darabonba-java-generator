@@ -6,7 +6,7 @@ import com.aliyun.tea.*;
 
 public class Client {
 
-    public static void printNull() throws Exception {
+    public static void printNull() {
         try {
             String str = "test";
         } catch (Exception err){
@@ -16,7 +16,7 @@ public class Client {
         }        
     }
 
-    public static void testTry() throws Exception {
+    public static void testTry() {
         try {
             String str = "test";
         } finally {

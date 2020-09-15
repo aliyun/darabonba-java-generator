@@ -10,7 +10,7 @@ public class Client {
     /**
       Init Func
     */
-    public Client(String a, String b) throws Exception {
+    public Client(String a, String b) {
         // string declate comment
         String str = "sss";
         // new model instance comment
@@ -27,7 +27,7 @@ public class Client {
         );
     }
 
-    public void testAPI() throws Exception {
+    public void testAPI() {
         java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
 
         TeaRequest _lastRequest = null;
@@ -72,7 +72,7 @@ public class Client {
         throw new TeaUnretryableException(_lastRequest);
     }
 
-    public void testAPI2() throws Exception {
+    public void testAPI2() {
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             // runtime retry comment
             new TeaPair("retry", true)
@@ -117,14 +117,14 @@ public class Client {
         throw new TeaUnretryableException(_lastRequest);
     }
 
-    public static void staticFunc() throws Exception {
+    public static void staticFunc() {
         java.util.List<Object> a = new java.util.ArrayList<>();
     }
 
     /**
       testFunc
     */
-    public static void testFunc() throws Exception {
+    public static void testFunc() {
         // empty comment1
         // empty comment2
     }

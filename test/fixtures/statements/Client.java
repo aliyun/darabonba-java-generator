@@ -6,10 +6,10 @@ import com.aliyun.test.models.*;
 
 public class Client {
 
-    public Client(Config config) throws Exception {
+    public Client(Config config) {
     }
 
-    public void hello() throws Exception {
+    public void hello() {
         TeaRequest request_ = new TeaRequest();
         request_.method = "GET";
         request_.pathname = "/";
@@ -26,7 +26,7 @@ public class Client {
         return ;
     }
 
-    public static void helloIf() throws Exception {
+    public static void helloIf() {
         if (true) {
         }
 
@@ -37,11 +37,11 @@ public class Client {
 
     }
 
-    public static void helloThrow() throws Exception {
+    public static void helloThrow() {
         throw new TeaException(new java.util.HashMap<>());
     }
 
-    public static void helloForBreak() throws Exception {
+    public static void helloForBreak() {
 
         for (String item : java.util.Arrays.asList(
                 "1",
@@ -51,14 +51,14 @@ public class Client {
         }
     }
 
-    public static void helloWhile() throws Exception {
+    public static void helloWhile() {
 
         while (true) {
             break;
         }
     }
 
-    public static void helloDeclare() throws Exception {
+    public static void helloDeclare() {
         String hello = "world";
         String helloNull = null;
         hello = "hehe";

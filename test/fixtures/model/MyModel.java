@@ -53,7 +53,7 @@ public class MyModel extends TeaModel {
     @Validation(required = true)
     public TeaRequest request;
 
-    public static MyModel build(java.util.Map<String, ?> map) throws Exception {
+    public static MyModel build(java.util.Map<String, ?> map) {
         MyModel self = new MyModel();
         return TeaModel.build(map, self);
     }
@@ -159,7 +159,7 @@ public class MyModel extends TeaModel {
         @Validation(required = true)
         public String stringfield;
 
-        public static MyModelSubmodel build(java.util.Map<String, ?> map) throws Exception {
+        public static MyModelSubmodel build(java.util.Map<String, ?> map) {
             MyModelSubmodel self = new MyModelSubmodel();
             return TeaModel.build(map, self);
         }

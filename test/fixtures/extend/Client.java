@@ -6,11 +6,11 @@ import com.aliyun.tea.*;
 
 public class Client extends undefined.Client {
 
-    public Client(undefined.models.Config config, String a) throws Exception {
+    public Client(undefined.models.Config config, String a) {
         super(config, a);
     }
 
-    public java.util.Map<String, ?> _request() throws Exception {
+    public java.util.Map<String, ?> _request() {
         java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
 
         TeaRequest _lastRequest = null;
@@ -46,7 +46,7 @@ public class Client extends undefined.Client {
         throw new TeaUnretryableException(_lastRequest);
     }
 
-    public void print() throws Exception {
+    public void print() {
         java.util.Map<String, String> mapAccess = TeaConverter.buildMap(
             new TeaPair("test", "ok")
         );

@@ -10,12 +10,12 @@ public class NameTest implements ImplementsTest {
     public String _pathname;
     public java.util.List<java.util.List<String>> _compleList;
     public java.util.List<Config> _configs;
-    public NameTest(Config config) throws Exception {
+    public NameTest(Config config) {
         this._protocol = config.protocol;
         _configs.set(0, config);
     }
 
-    public com.importa.models.RuntimeObject Complex1(ComplexRequest request, com.importa.Client client) throws Exception {
+    public com.importa.models.RuntimeObject Complex1(ComplexRequest request, com.importa.Client client) {
         TeaModel.validateParams(request, "request");
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             new TeaPair("timeouted", "retry")
@@ -74,7 +74,7 @@ public class NameTest implements ImplementsTest {
         throw new TeaUnretryableException(_lastRequest);
     }
 
-    public java.util.Map<String, ?> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) throws Exception {
+    public java.util.Map<String, ?> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
@@ -91,7 +91,7 @@ public class NameTest implements ImplementsTest {
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
     }
 
-    public ComplexRequest Complex3(ComplexRequest request) throws Exception {
+    public ComplexRequest Complex3(ComplexRequest request) {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
@@ -120,21 +120,21 @@ public class NameTest implements ImplementsTest {
         ), new ComplexRequest());
     }
 
-    public static void arrayAssign3(ComplexRequest request, String config) throws Exception {
+    public static void arrayAssign3(ComplexRequest request, String config) {
         request.configs.value.set(0, config);
     }
 
-    public static String mapAccess(ComplexRequest request) throws Exception {
+    public static String mapAccess(ComplexRequest request) {
         String configInfo = request.configs.extra.get("name");
         return configInfo;
     }
 
-    public static String mapAccess2(com.importa.models.Request request) throws Exception {
+    public static String mapAccess2(com.importa.models.Request request) {
         String configInfo = request.configs.extra.get("name");
         return configInfo;
     }
 
-    public static String mapAccess3() throws Exception {
+    public static String mapAccess3() {
         java.util.Map<String, java.util.Map<String, String>> data = TeaConverter.buildMap(
             new TeaPair("configs", TeaConverter.buildMap(
                 new TeaPair("value", "string")
@@ -143,11 +143,11 @@ public class NameTest implements ImplementsTest {
         return data.get("configs").get("value");
     }
 
-    public static void mapAssign(ComplexRequest request, String name) throws Exception {
+    public static void mapAssign(ComplexRequest request, String name) {
         request.configs.extra.put("name", name);
     }
 
-    public static java.util.List<String> arrayAssign2(String config) throws Exception {
+    public static java.util.List<String> arrayAssign2(String config) {
         java.util.Map<String, java.util.List<String>> data = TeaConverter.buildMap(
             new TeaPair("configs", java.util.Arrays.asList(
                 "a",
@@ -159,7 +159,7 @@ public class NameTest implements ImplementsTest {
         return data.get("configs");
     }
 
-    public static java.util.List<String> arrayAssign(String config) throws Exception {
+    public static java.util.List<String> arrayAssign(String config) {
         java.util.List<String> configs = java.util.Arrays.asList(
             "a",
             "b",
@@ -169,12 +169,12 @@ public class NameTest implements ImplementsTest {
         return configs;
     }
 
-    public static String arrayAccess3(ComplexRequest request) throws Exception {
+    public static String arrayAccess3(ComplexRequest request) {
         String configVal = request.configs.value.get(0);
         return configVal;
     }
 
-    public static String arrayAccess2() throws Exception {
+    public static String arrayAccess2() {
         java.util.Map<String, java.util.List<String>> data = TeaConverter.buildMap(
             new TeaPair("configs", java.util.Arrays.asList(
                 "a",
@@ -186,7 +186,7 @@ public class NameTest implements ImplementsTest {
         return config;
     }
 
-    public static String arrayAccess() throws Exception {
+    public static String arrayAccess() {
         java.util.List<String> configs = java.util.Arrays.asList(
             "a",
             "b",
@@ -196,35 +196,35 @@ public class NameTest implements ImplementsTest {
         return config;
     }
 
-    public void testSubModel(ComplexRequest.ComplexRequestPart part, java.util.List<java.util.List<String>> complexList) throws Exception {
+    public void testSubModel(ComplexRequest.ComplexRequestPart part, java.util.List<java.util.List<String>> complexList) {
         return ;
     }
 
-    public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) throws Exception {
+    public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) {
         return Client.array1();
     }
 
-    public static com.importa.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) throws Exception {
+    public static com.importa.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
     }
 
-    public static void printNull() throws Exception {
+    public static void printNull() {
         String str = this.templateString();
     }
 
-    public static java.util.List<?> array0(java.util.Map<String, ?> req) throws Exception {
+    public static java.util.List<?> array0(java.util.Map<String, ?> req) {
         Long longTest = 1L;
         Double doubleTest = 1D;
         Float floatTest = 1F;
         return new java.util.ArrayList<>();
     }
 
-    public static java.util.List<String> array1() throws Exception {
+    public static java.util.List<String> array1() {
         return java.util.Arrays.asList(
             "1"
         );
     }
 
-    public String templateString() throws Exception {
+    public String templateString() {
         return "/" + _protocol + "";
     }
 }

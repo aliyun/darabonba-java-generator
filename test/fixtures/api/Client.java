@@ -6,10 +6,10 @@ import com.aliyun.test.models.*;
 
 public class Client {
 
-    public Client(Config config) throws Exception {
+    public Client(Config config) {
     }
 
-    public void hello() throws Exception {
+    public void hello() {
         TeaRequest request_ = new TeaRequest();
         request_.method = "GET";
         request_.pathname = "/";
@@ -21,7 +21,7 @@ public class Client {
         return ;
     }
 
-    public void helloRuntime() throws Exception {
+    public void helloRuntime() {
         java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
 
         TeaRequest _lastRequest = null;
@@ -57,7 +57,7 @@ public class Client {
         throw new TeaUnretryableException(_lastRequest);
     }
 
-    public void helloVirtualCall(M m) throws Exception {
+    public void helloVirtualCall(M m) {
         TeaModel.validateParams(m, "m");
         TeaRequest request_ = new TeaRequest();
         request_.method = "GET";
