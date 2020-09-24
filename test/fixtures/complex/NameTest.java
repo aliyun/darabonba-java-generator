@@ -61,8 +61,8 @@ public class NameTest implements ImplementsTest {
                     "2"
                 ));
                 this.hello(null, null);
-                return TeaModel.toModel(new java.util.HashMap<>(), new com.importa.models.RuntimeObject());
                 this.Complex3(null);
+                return TeaModel.toModel(new java.util.HashMap<>(), new com.importa.models.RuntimeObject());
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     continue;
@@ -196,15 +196,18 @@ public class NameTest implements ImplementsTest {
         return config;
     }
 
+    @Override
     public void testSubModel(ComplexRequest.ComplexRequestPart part, java.util.List<java.util.List<String>> complexList) throws Exception {
         return ;
     }
 
+    @Override
     public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) throws Exception {
         return Client.array1();
     }
 
     public static com.importa.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) throws Exception {
+        return null;
     }
 
     public static void printNull() throws Exception {
@@ -224,6 +227,7 @@ public class NameTest implements ImplementsTest {
         );
     }
 
+    @Override
     public String templateString() throws Exception {
         return "/" + _protocol + "";
     }

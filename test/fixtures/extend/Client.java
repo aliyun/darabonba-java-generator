@@ -35,6 +35,7 @@ public class Client extends undefined.Client {
                 TeaResponse response_ = Tea.doAction(request_, runtime_);
 
                 throw new TeaRetryableException();
+                return null;
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     continue;
