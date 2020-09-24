@@ -1,8 +1,12 @@
 # ChangeLog
 
+## 1.1.0 - 2020-09-24
+
+> Improve exception and interface
+
 ## 1.0.9 - 2020-08-21
 
-> support for creation subModel and moduleModel
+> Support for creation subModel and moduleModel
 
 ## 1.0.8 - 2020-08-14
 
