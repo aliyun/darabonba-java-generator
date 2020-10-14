@@ -28,7 +28,10 @@ public class Client extends undefined.Client {
                 TeaRequest request_ = new TeaRequest();
                 try {
                     String in = "try";
-                } catch (Exception e){
+                } catch (TeaException e) {
+                    String tmp = "catch";
+                } catch (Exception _e) {
+                    TeaException e = new TeaException(_e.getMessage(), _e);
                     String tmp = "catch";
                 }                
                 _lastRequest = request_;
