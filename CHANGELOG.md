@@ -1,5 +1,10 @@
 # ChangeLog
 
+## 1.1.1 - 2020-10-14
+
+> Improve visitTry
+> Fixed incorrect name of returned object
+
 ## 1.1.0 - 2020-09-24
 
 > Improve exception and interface
