@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.2 - 2020-11-18
+
+> Supported generator exec
+
 ## 1.1.1 - 2020-10-14
 
 > Improve visitTry
