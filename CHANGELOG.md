@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.3 - 2020-11-25
+
+> Add visitSetMethod
+
 ## 1.1.2 - 2020-11-18
 
 > Supported generator exec
