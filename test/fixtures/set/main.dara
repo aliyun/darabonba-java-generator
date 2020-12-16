@@ -1,0 +1,15 @@
+model Test = {
+  field1: string,
+  field2: string,
+  field3: string,
+  field4: string,
+};
+
+static async function testSet(): void {
+  var m : Test = new Test{
+    field1 = "test1",
+    field2 = "test2",
+    field3 = "test3",
+    field4 = "test4",
+  };
+}
