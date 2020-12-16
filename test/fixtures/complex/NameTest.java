@@ -110,10 +110,10 @@ public class NameTest implements ImplementsTest {
             new TeaPair("accesskey", request.accessKey),
             new TeaPair("region", resp.statusMessage)
         ));
-        Client.array0(TeaModel.buildMap(request));
+        NameTest.array0(TeaModel.buildMap(request));
         req.accesskey = "accesskey";
         req.accesskey = request.accessKey;
-        Client.printNull();
+        NameTest.printNull();
         com.importa.Client.array(TeaModel.buildMap(request), "1");
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
@@ -203,7 +203,7 @@ public class NameTest implements ImplementsTest {
 
     @Override
     public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) throws Exception {
-        return Client.array1();
+        return NameTest.array1();
     }
 
     public static com.importa.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) throws Exception {

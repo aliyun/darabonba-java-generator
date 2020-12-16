@@ -129,4 +129,16 @@ describe('new Generator', function () {
       ...pkg
     });
   });
+
+  it('set should ok', function () {
+    const outputDir = path.join(__dirname, 'output/set');
+    const mainFilePath = path.join(__dirname, 'fixtures/set/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/set/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/set/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/set'),
+      exec: true,
+      ...pkg
+    });
+  });
 });
