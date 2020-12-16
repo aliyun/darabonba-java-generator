@@ -1,5 +1,10 @@
 # ChangeLog
 
+## 1.1.4 - 2020-12-16
+
+> Fix className
+> Optimize visitSetMethod
+
 ## 1.1.3 - 2020-11-25
 
 > Add visitSetMethod
