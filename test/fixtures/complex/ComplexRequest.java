@@ -10,7 +10,7 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("moduleModelMap")
     @Validation(required = true)
-    public java.util.Map<String, com.importa.models.Request> moduleModelMap;
+    public java.util.Map<String, Request> moduleModelMap;
 
     @NameInMap("subModelMap")
     @Validation(required = true)
@@ -45,7 +45,7 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("client")
     @Validation(required = true)
-    public com.importa.Client client;
+    public com.import.Client client;
 
     @NameInMap("configs")
     @Validation(required = true)
@@ -68,11 +68,11 @@ public class ComplexRequest extends TeaModel {
         return this.accessKey;
     }
 
-    public ComplexRequest setModuleModelMap(java.util.Map<String, com.importa.models.Request> moduleModelMap) {
+    public ComplexRequest setModuleModelMap(java.util.Map<String, Request> moduleModelMap) {
         this.moduleModelMap = moduleModelMap;
         return this;
     }
-    public java.util.Map<String, com.importa.models.Request> getModuleModelMap() {
+    public java.util.Map<String, Request> getModuleModelMap() {
         return this.moduleModelMap;
     }
 
@@ -132,11 +132,11 @@ public class ComplexRequest extends TeaModel {
         return this.num;
     }
 
-    public ComplexRequest setClient(com.importa.Client client) {
+    public ComplexRequest setClient(com.import.Client client) {
         this.client = client;
         return this;
     }
-    public com.importa.Client getClient() {
+    public com.import.Client getClient() {
         return this.client;
     }
 

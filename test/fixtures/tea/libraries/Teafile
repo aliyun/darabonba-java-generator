@@ -7,6 +7,6 @@
     "go": "github.com/aliyun/darabonba-go-generator"
   },
   "java":{
-
+    "package": "com.import"
   }
 }

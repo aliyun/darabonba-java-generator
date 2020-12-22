@@ -1,6 +1,10 @@
 model RuntimeObject = {}
 init(config: Config);
-model Config = {}
+
+model Config {
+ protocol: string
+}
+
 function print(runtime: object, str: string): void {
   return;
 }
