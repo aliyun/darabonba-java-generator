@@ -3,7 +3,6 @@ package com.aliyun.test;
 
 import com.aliyun.tea.*;
 
-
 public class Client {
 
     public static void hello() throws Exception {

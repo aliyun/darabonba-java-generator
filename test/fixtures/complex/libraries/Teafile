@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "main": "./import.tea",
     "java": {
-        "package": "com.importa"
+        "package": "com.import"
     },
 	"releases": {
 	}

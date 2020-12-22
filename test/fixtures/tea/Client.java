@@ -2,7 +2,10 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-
+import com.import;
+import com.import.models.*;
+import undefined;
+import undefined.models.*;
 
 public class Client {
 
@@ -14,9 +17,9 @@ public class Client {
     }
 
 
-    public static void Sample(undefined.Client client) throws Exception {
-        undefined.models.RuntimeObject runtime = new undefined.models.RuntimeObject();
-        undefined.models.Request request = undefined.models.Request.build(TeaConverter.buildMap(
+    public static void Sample(com.import.Client client) throws Exception {
+        RuntimeObject runtime = new RuntimeObject();
+        Request request = Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", "accesskey"),
             new TeaPair("region", "region")
         ));

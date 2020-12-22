@@ -3,6 +3,8 @@ package com.aliyun.test;
 
 import com.aliyun.tea.*;
 import com.aliyun.test.models.*;
+import com.import;
+import com.import.models.*;
 
 public class NameTest implements ImplementsTest {
 
@@ -15,7 +17,7 @@ public class NameTest implements ImplementsTest {
         _configs.set(0, config);
     }
 
-    public com.importa.models.RuntimeObject Complex1(ComplexRequest request, com.importa.Client client) throws Exception {
+    public RuntimeObject Complex1(ComplexRequest request, com.import.Client client) throws Exception {
         TeaModel.validateParams(request, "request");
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             new TeaPair("timeouted", "retry")
@@ -52,7 +54,7 @@ public class NameTest implements ImplementsTest {
                     throw new TeaRetryableException();
                     return null;
                 } else if (true || false) {
-                    return new com.importa.models.RuntimeObject();
+                    return new RuntimeObject();
                 }
 
                 client.print(request, "1");
@@ -62,7 +64,7 @@ public class NameTest implements ImplementsTest {
                 ));
                 this.hello(null, null);
                 this.Complex3(null);
-                return TeaModel.toModel(new java.util.HashMap<>(), new com.importa.models.RuntimeObject());
+                return TeaModel.toModel(new java.util.HashMap<>(), new RuntimeObject());
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     continue;
@@ -78,8 +80,8 @@ public class NameTest implements ImplementsTest {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
-        com.importa.models.Config config = new com.importa.models.Config();
-        com.importa.Client client = new com.importa.Client(config);
+        com.import.models.Config config = new com.import.models.Config();
+        com.import.Client client = new com.import.Client(config);
         request_.protocol = "HTTP";
         request_.port = 80;
         request_.method = "GET";
@@ -106,7 +108,7 @@ public class NameTest implements ImplementsTest {
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
 
         TeaResponse resp = response_;
-        com.importa.models.Request req = com.importa.models.Request.build(TeaConverter.buildMap(
+        Request req = Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", request.accessKey),
             new TeaPair("region", resp.statusMessage)
         ));
@@ -114,7 +116,7 @@ public class NameTest implements ImplementsTest {
         req.accesskey = "accesskey";
         req.accesskey = request.accessKey;
         NameTest.printNull();
-        com.importa.Client.array(TeaModel.buildMap(request), "1");
+        com.import.Client.array(TeaModel.buildMap(request), "1");
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
         ), new ComplexRequest());
@@ -129,7 +131,7 @@ public class NameTest implements ImplementsTest {
         return configInfo;
     }
 
-    public static String mapAccess2(com.importa.models.Request request) throws Exception {
+    public static String mapAccess2(Request request) throws Exception {
         String configInfo = request.configs.extra.get("name");
         return configInfo;
     }
@@ -206,7 +208,7 @@ public class NameTest implements ImplementsTest {
         return NameTest.array1();
     }
 
-    public static com.importa.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) throws Exception {
+    public static Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) throws Exception {
         return null;
     }
 
