@@ -1,0 +1,19 @@
+static async function arrayData(): [string] {
+  var configs = ['a', 'b', 'c'];
+  return configs;
+}
+
+static async function arrayAccess(): string {
+  var configs = arrayData();
+  var config = configs[0];
+  return config;
+}
+
+static async function hello(): string {
+  return arrayAccess();
+}
+
+static async function main(args: [string]): string {
+    hello();
+    return args[1];
+}

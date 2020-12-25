@@ -13,7 +13,7 @@
 
     <licenses>
         <license>
-            <name>${licenseNmae}</name>
+            <name>${licenseName}</name>
             <url>${licenseUrl}</url>
         </license>
     </licenses>
