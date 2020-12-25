@@ -5,3 +5,4 @@ test/figures/
 test/output/
 *.tgz
 .vscode
+.DS_Store

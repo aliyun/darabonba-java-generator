@@ -2,7 +2,7 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import undefined;
+import undefined.*;
 import undefined.models.*;
 
 public class Client extends undefined.Client {

@@ -2,9 +2,9 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import com.import;
+import com.import.*;
 import com.import.models.*;
-import undefined;
+import undefined.*;
 import undefined.models.*;
 
 public class Client {

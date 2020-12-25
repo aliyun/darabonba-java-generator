@@ -4,11 +4,22 @@
     "version": "0.0.1",
     "main": "./main.dara",
     "java": {
-        "package": "com.aliyun"
+        "package": "com.aliyun",
+        "packageInfo": {
+            "description": "Alibaba Cloud SDK for Java",
+            "url": "https://github.com/aliyun/alibabacloud-sdk",
+            "licenseNmae": "The Apache License, Version 2.0",
+            "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+            "developerId": "aliyunproducts",
+            "developerName": "Aliyun SDK",
+            "developerEmail": "aliyunsdk@aliyun.com",
+            "groupId": "com.aliyun",
+            "artifactId": "sample",
+            "version": "1.0.0"
+        }
     },
     "libraries": {
         "Source": "alibabacloud:Import:*"
     },
-    "releases": {
-    }
+    "releases": {}
 }

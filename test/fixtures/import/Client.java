@@ -2,7 +2,7 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import com.import;
+import com.import.*;
 import com.import.models.*;
 
 public class Client {

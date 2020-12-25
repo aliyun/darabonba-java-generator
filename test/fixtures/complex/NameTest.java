@@ -3,7 +3,7 @@ package com.aliyun.test;
 
 import com.aliyun.tea.*;
 import com.aliyun.test.models.*;
-import com.import;
+import com.import.*;
 import com.import.models.*;
 
 public class NameTest implements ImplementsTest {
