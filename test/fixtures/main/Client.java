@@ -24,8 +24,8 @@ public class Client {
         return Client.arrayAccess();
     }
 
-    public static String main(String[] undefined_) throws Exception {
-        java.util.List<String> undefined = java.util.Arrays.asList(undefined_);
+    public static String main(String[] args_) throws Exception {
+        java.util.List<String> args = java.util.Arrays.asList(args_);
         Client.hello();
         return args.get(1);
     }
