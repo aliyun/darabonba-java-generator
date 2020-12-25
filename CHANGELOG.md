@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.6 - 2020-12-25
+
+> Fix import.
+
 ## 1.1.5 - 2020-12-21
 
 > Optimize model name by calling.

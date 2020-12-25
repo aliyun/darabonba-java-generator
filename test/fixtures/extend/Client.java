@@ -2,10 +2,10 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import undefined.*;
-import undefined.models.*;
+import com.import.*;
+import com.import.models.*;
 
-public class Client extends undefined.Client {
+public class Client extends com.import.Client {
 
     public Client(Config config, String a) throws Exception {
         super(config, a);
