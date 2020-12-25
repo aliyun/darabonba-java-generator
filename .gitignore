@@ -4,3 +4,4 @@ test/figures/
 .nyc_output/
 test/output/
 *.tgz
+.vscode

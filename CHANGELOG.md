@@ -1,47 +1,52 @@
 # ChangeLog
 
+## 1.1.5 - 2020-12-21
+
+> Optimize model name by calling.
+> Fix Main args.
+
 ## 1.1.4 - 2020-12-16
 
-> Fix className
-> Optimize visitSetMethod
+> Fix className.
+> Optimize visitSetMethod.
 
 ## 1.1.3 - 2020-11-25
 
-> Add visitSetMethod
+> Add visitSetMethod.
 
 ## 1.1.2 - 2020-11-18
 
-> Supported generator exec
+> Supported generator exec.
 
 ## 1.1.1 - 2020-10-14
 
-> Improve visitTry
-> Fixed incorrect name of returned object
+> Improve visitTry.
+> Fixed incorrect name of returned object.
 
 ## 1.1.0 - 2020-09-24
 
-> Improve exception and interface
+> Improve exception and interface.
 
 ## 1.0.9 - 2020-08-21
 
-> Support for creation subModel and moduleModel
+> Support for creation subModel and moduleModel.
 
 ## 1.0.8 - 2020-08-14
 
-> Improve description
+> Improve description.
 
 ## 1.0.7 - 2020-08-14
 
-> Support for creating set/get methods
-> Support for nested collection of field
+> Support for creating set/get methods.
+> Support for nested collection of field.
 
 ## 1.0.6 - 2020-08-11
 
-> Add emitNumber
+> Add emitNumber.
 
 ## 1.0.5 - 2020-08-10
 
-> Add array access
+> Add array access.
 
 ## 1.0.4 - 2020-07-24
 
