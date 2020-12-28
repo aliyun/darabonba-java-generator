@@ -151,4 +151,14 @@ describe('new Generator', function () {
       ...pkg
     });
   });
+  it('for should ok', function () {
+    const outputDir = path.join(__dirname, 'output/for');
+    const mainFilePath = path.join(__dirname, 'fixtures/for/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/for/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/for/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/for'),
+      ...pkg
+    });
+  });
 });

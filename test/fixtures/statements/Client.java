@@ -42,7 +42,6 @@ public class Client {
     }
 
     public static void helloForBreak() throws Exception {
-
         for (String item : java.util.Arrays.asList(
                 "1",
                 "2"

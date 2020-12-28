@@ -1,0 +1,19 @@
+import Source;
+
+static async function describeClusterResources (client: Source, id: string)throws : Source.Response{
+    return client.describeResources(id);
+}
+
+static async function main(args: [string]): void {
+    var client = new Source();
+    var response = describeClusterResources(client, args[0]);
+    var resources = response.body;
+    for(var resource : resources) {
+        resource.resourceType;
+    }
+    var numberArray = [1,2];
+    var sum = 0;
+    for(var a : numberArray) {
+        sum = a;
+    }
+}
