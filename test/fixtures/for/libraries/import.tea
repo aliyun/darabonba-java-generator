@@ -1,0 +1,27 @@
+model Config = {}
+model RuntimeObject = {}
+init();
+function print(runtime: RuntimeObject): void {
+  return;
+}
+
+model Request = {
+  accesskey?: string(name='accesskey', description='accesskey'),
+  region?: string(name='region', description='region'),
+}
+
+model Response = {
+  headers: map[string]string(name='headers'),
+  body: [ 
+    {
+      id?: string(name='id', description='ID。'),
+      created?: string(name='created', description='资源创建时间。'),
+      resourceType?: string(name='resource_type', description='资源类型。'),
+      state?: string(name='state', description='资源状态。'),
+    }
+  ](name='body'),
+}
+
+async function describeResources(id: string): Response {
+  return new Response{};
+}
