@@ -11,8 +11,8 @@ public class NameTest implements ImplementsTest {
     public String _protocol;
     public String _pathname;
     public java.util.List<java.util.List<String>> _compleList;
-    public java.util.List<Config> _configs;
-    public NameTest(Config config) throws Exception {
+    public java.util.List<com.aliyun.test.models.Config> _configs;
+    public NameTest(com.aliyun.test.models.Config config) throws Exception {
         this._protocol = config.protocol;
         _configs.set(0, config);
     }
