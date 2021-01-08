@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.8 - 2020-01-0
+
+> Fix import.
+
 ## 1.1.7 - 2020-12-28
 
 > Fix data type in for statement.
