@@ -20,6 +20,14 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public java.util.List<java.util.List<java.util.Map<String, String>>> complexList;
 
+    @NameInMap("complexList2")
+    @Validation(required = true)
+    public java.util.List<ComplexRequestComplexList1> complexList1;
+
+    @NameInMap("complexList2")
+    @Validation(required = true)
+    public java.util.List<java.util.List<java.util.List<ComplexRequestComplexList2>>> complexList2;
+
     // Body
     // body
     @NameInMap("Body")
@@ -92,6 +100,22 @@ public class ComplexRequest extends TeaModel {
         return this.complexList;
     }
 
+    public ComplexRequest setComplexList1(java.util.List<ComplexRequestComplexList1> complexList1) {
+        this.complexList1 = complexList1;
+        return this;
+    }
+    public java.util.List<ComplexRequestComplexList1> getComplexList1() {
+        return this.complexList1;
+    }
+
+    public ComplexRequest setComplexList2(java.util.List<java.util.List<java.util.List<ComplexRequestComplexList2>>> complexList2) {
+        this.complexList2 = complexList2;
+        return this;
+    }
+    public java.util.List<java.util.List<java.util.List<ComplexRequestComplexList2>>> getComplexList2() {
+        return this.complexList2;
+    }
+
     public ComplexRequest setBody(java.io.InputStream body) {
         this.body = body;
         return this;
@@ -154,6 +178,66 @@ public class ComplexRequest extends TeaModel {
     }
     public java.util.List<ComplexRequestPart> getPart() {
         return this.part;
+    }
+
+    public static class ComplexRequestComplexList1 extends TeaModel {
+        @NameInMap("Name")
+        public String name;
+
+        @NameInMap("Code")
+        public Integer code;
+
+        public static ComplexRequestComplexList1 build(java.util.Map<String, ?> map) throws Exception {
+            ComplexRequestComplexList1 self = new ComplexRequestComplexList1();
+            return TeaModel.build(map, self);
+        }
+
+        public ComplexRequestComplexList1 setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ComplexRequestComplexList1 setCode(Integer code) {
+            this.code = code;
+            return this;
+        }
+        public Integer getCode() {
+            return this.code;
+        }
+
+    }
+
+    public static class ComplexRequestComplexList2 extends TeaModel {
+        @NameInMap("Name")
+        public String name;
+
+        @NameInMap("Code")
+        public Integer code;
+
+        public static ComplexRequestComplexList2 build(java.util.Map<String, ?> map) throws Exception {
+            ComplexRequestComplexList2 self = new ComplexRequestComplexList2();
+            return TeaModel.build(map, self);
+        }
+
+        public ComplexRequestComplexList2 setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ComplexRequestComplexList2 setCode(Integer code) {
+            this.code = code;
+            return this;
+        }
+        public Integer getCode() {
+            return this.code;
+        }
+
     }
 
     public static class ComplexRequestHeader extends TeaModel {
