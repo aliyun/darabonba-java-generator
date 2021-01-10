@@ -19,6 +19,18 @@ model ComplexRequest = {
   moduleModelMap: map[string]Source.Request,
   subModelMap: map[string]Config.subM,
   complexList: [[map[string]string]],
+  complexList1: [ 
+    {
+      name?: string(name='Name'),
+      code?: int32(name='Code'),
+    }
+  ](name='complexList2'),
+  complexList2: [[[ 
+    {
+      name?: string(name='Name'),
+      code?: int32(name='Code'),
+    }
+  ]]](name='complexList2'),
   body: readable(name='Body', example='Body', description='Body\nbody'),
   userTest?: map[string][ map[string]string ](name='UserPsssrivileges'),
   strs: [ string ](name='Strs', example='Strs', description='Strs'),
