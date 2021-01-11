@@ -1,6 +1,10 @@
 # ChangeLog
 
-## 1.1.8 - 2020-01-0
+## 1.1.9 - 2020-01-10
+
+> Support sub model in list of list.
+
+## 1.1.8 - 2020-01-08
 
 > Fix import.
 
