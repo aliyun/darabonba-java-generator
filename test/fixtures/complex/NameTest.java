@@ -131,8 +131,8 @@ public class NameTest implements ImplementsTest {
         return configInfo;
     }
 
-    public static String mapAccess2(Request request) throws Exception {
-        String configInfo = request.configs.extra.get("name");
+    public static String mapAccess2(Request.RequestConfigs configs) throws Exception {
+        String configInfo = configs.extra.get("name");
         return configInfo;
     }
 
@@ -214,6 +214,10 @@ public class NameTest implements ImplementsTest {
 
     public static void printNull() throws Exception {
         String str = this.templateString();
+    }
+
+    public static void conflict(com.import.models.Config sconf, com.aliyun.test.models.Config conf) throws Exception {
+        sconf.protocol = conf.protocol;
     }
 
     public static java.util.List<?> array0(java.util.Map<String, ?> req) throws Exception {
