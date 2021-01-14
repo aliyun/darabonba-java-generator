@@ -65,8 +65,8 @@ static function mapAccess(request: ComplexRequest): string {
   return configInfo;
 }
 
-static function mapAccess2(request: Source.Request): string {
-   var configInfo = request.configs.extra['name'];
+static function mapAccess2(configs: Source.Request.configs): string {
+   var configInfo = configs.extra['name'];
   return configInfo;
 }
 
@@ -194,6 +194,10 @@ api Complex3(request: ComplexRequest): ComplexRequest {
 
 static async function printNull(): void {
   var str = templateString();
+}
+
+static async function conflict(sconf: Source.Config, conf:Config): void {
+  sconf.protocol = conf.protocol;
 }
 
 static function array0(req: object): [ any ] {
