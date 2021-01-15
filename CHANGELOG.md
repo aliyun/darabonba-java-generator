@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.10 - 2020-01-15
+
+> Fix Module sub model generate bug.
+
 ## 1.1.9 - 2020-01-10
 
 > Support sub model in list of list.
