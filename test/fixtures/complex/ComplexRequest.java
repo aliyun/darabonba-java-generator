@@ -49,7 +49,7 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("num")
     @Validation(required = true)
-    public Integer num;
+    public Number num;
 
     @NameInMap("client")
     @Validation(required = true)
@@ -148,11 +148,11 @@ public class ComplexRequest extends TeaModel {
         return this.header;
     }
 
-    public ComplexRequest setNum(Integer num) {
+    public ComplexRequest setNum(Number num) {
         this.num = num;
         return this;
     }
-    public Integer getNum() {
+    public Number getNum() {
         return this.num;
     }
 

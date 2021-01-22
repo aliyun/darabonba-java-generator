@@ -43,7 +43,11 @@ public class MyModel extends TeaModel {
 
     @NameInMap("numberfield")
     @Validation(required = true)
-    public Integer numberfield;
+    public Number numberfield;
+
+    @NameInMap("intfield")
+    @Validation(required = true)
+    public Integer intfield;
 
     @NameInMap("readable")
     @Validation(required = true)
@@ -130,12 +134,20 @@ public class MyModel extends TeaModel {
         return this.object;
     }
 
-    public MyModel setNumberfield(Integer numberfield) {
+    public MyModel setNumberfield(Number numberfield) {
         this.numberfield = numberfield;
         return this;
     }
-    public Integer getNumberfield() {
+    public Number getNumberfield() {
         return this.numberfield;
+    }
+
+    public MyModel setIntfield(Integer intfield) {
+        this.intfield = intfield;
+        return this;
+    }
+    public Integer getIntfield() {
+        return this.intfield;
     }
 
     public MyModel setReadable(java.io.InputStream readable) {

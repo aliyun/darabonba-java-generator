@@ -10,7 +10,8 @@ model MyModel = {
     stringfield: string,
   },
   object: object,
-  numberfield: integer,
+  numberfield: number,
+  intfield: integer,
   readable: readable,
   request: $Request
 };
