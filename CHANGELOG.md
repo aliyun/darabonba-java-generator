@@ -1,5 +1,8 @@
 # ChangeLog
 
+## 1.1.11 - 2020-01-22
+
+> Add Number type in model.
 ## 1.1.10 - 2020-01-15
 
 > Fix Module sub model generate bug.
