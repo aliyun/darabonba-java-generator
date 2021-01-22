@@ -42,7 +42,7 @@ public class MyModel extends TeaModel {
     public java.util.Map<String, ?> object;
 
     @NameInMap("numberfield")
-    @Validation(required = true)
+    @Validation(required = true, maximum = 100, minimum = 50)
     public Number numberfield;
 
     @NameInMap("intfield")
