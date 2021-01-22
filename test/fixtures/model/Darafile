@@ -1,0 +1,24 @@
+{
+    "scope": "darabonba",
+    "name": "model",
+    "version": "0.0.1",
+    "main": "./main.dara",
+    "maintainers": [
+        {
+            "name": "Alibaba Cloud SDK",
+            "email": "sdk-team@alibabacloud.com"
+        }
+    ],
+    "java": {
+        "package": "com.aliyun.test",
+        "packageInfo":{
+            "description": "Alibaba Cloud viapisdk SDK for Java",
+             "url": "https://github.com/aliyun/alibabacloud-sdk",
+             "licenseNmae": "The Apache License, Version 2.0",
+             "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+             "developerId": "aliyunproducts",
+             "developerName": "Aliyun SDK",
+             "developerEmail": "aliyunsdk@aliyun.com"
+        }
+    }
+}
