@@ -10,7 +10,7 @@ model MyModel = {
     stringfield: string,
   },
   object: object,
-  numberfield: number,
+  numberfield: number(name='numberfield', minimum=50, maximum=100),
   intfield: integer,
   readable: readable,
   request: $Request
