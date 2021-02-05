@@ -3,13 +3,17 @@ model Test = {
   field2: string,
   field3: string,
   field4: string,
+  field5: [ string ],
 };
 
 static async function testSet(): void {
   var m : Test = new Test{
     field1 = "test1",
+    // test filed2
     field2 = "test2",
     field3 = "test3",
+    // test filed4
     field4 = "test4",
+    field5 = ["test5"],
   };
 }
