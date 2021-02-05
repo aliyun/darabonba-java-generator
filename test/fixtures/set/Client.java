@@ -9,8 +9,13 @@ public class Client {
     public static void testSet() throws Exception {
         Test m = new Test()
                 .setField1("test1")
+                // test filed2
                 .setField2("test2")
                 .setField3("test3")
-                .setField4("test4");
+                // test filed4
+                .setField4("test4")
+                .setField5(java.util.Arrays.asList(
+                    "test5"
+                ));
     }
 }
