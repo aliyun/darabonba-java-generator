@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.13 - 2020-02-05
+
+> Fix the comment front the setMethod.
+
 ## 1.1.12 - 2020-01-22
 
 > Add maximum and minimum in model.
