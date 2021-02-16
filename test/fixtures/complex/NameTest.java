@@ -24,6 +24,7 @@ public class NameTest implements ImplementsTest {
         );
 
         TeaRequest _lastRequest = null;
+        Exception _lastException = null;
         long _now = System.currentTimeMillis();
         int _retryTimes = 0;
         while (Tea.allowRetry((java.util.Map<String, Object>) runtime_.get("retry"), _retryTimes, _now)) {
@@ -67,13 +68,14 @@ public class NameTest implements ImplementsTest {
                 return TeaModel.toModel(new java.util.HashMap<>(), new RuntimeObject());
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
+                    _lastException = e;
                     continue;
                 }
                 throw new RuntimeException(e);
             }
         }
 
-        throw new TeaUnretryableException(_lastRequest);
+        throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
     public java.util.Map<String, ?> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) throws Exception {
