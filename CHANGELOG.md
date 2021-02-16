@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.14 - 2020-02-16
+
+> Add _lastException for TeaUnretryableException.
+
 ## 1.1.13 - 2020-02-05
 
 > Fix the comment front the setMethod.

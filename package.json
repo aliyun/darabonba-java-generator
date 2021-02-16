@@ -1,6 +1,6 @@
 {
   "name": "@darabonba/java-generator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "The darabonba generator for Java",
   "main": "lib/generator",
   "directories": {
