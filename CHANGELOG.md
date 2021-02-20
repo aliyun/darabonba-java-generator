@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.15 - 2020-02-20
+
+> Remove RuntimeException.
+
 ## 1.1.14 - 2020-02-16
 
 > Add _lastException for TeaUnretryableException.
