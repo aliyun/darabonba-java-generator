@@ -67,7 +67,7 @@ public class Client {
                     _lastException = e;
                     continue;
                 }
-                throw new RuntimeException(e);
+                throw e;
             }
         }
 
@@ -114,7 +114,7 @@ public class Client {
                     _lastException = e;
                     continue;
                 }
-                throw new RuntimeException(e);
+                throw e;
             }
         }
 

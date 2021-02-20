@@ -46,7 +46,7 @@ public class Client extends com.import.Client {
                     _lastException = e;
                     continue;
                 }
-                throw new RuntimeException(e);
+                throw e;
             }
         }
 
