@@ -9,7 +9,8 @@
     "java": {
         "package": "com.aliyun",
         "implements": "ImplementsTest",
-        "className": "NameTest"
+        "className": "NameTest",
+        "NoException": true
     },
     "releases": {
     }

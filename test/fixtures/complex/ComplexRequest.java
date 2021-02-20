@@ -63,7 +63,7 @@ public class ComplexRequest extends TeaModel {
     @NameInMap("Part")
     public java.util.List<ComplexRequestPart> part;
 
-    public static ComplexRequest build(java.util.Map<String, ?> map) throws Exception {
+    public static ComplexRequest build(java.util.Map<String, ?> map) {
         ComplexRequest self = new ComplexRequest();
         return TeaModel.build(map, self);
     }
@@ -187,7 +187,7 @@ public class ComplexRequest extends TeaModel {
         @NameInMap("Code")
         public Integer code;
 
-        public static ComplexRequestComplexList1 build(java.util.Map<String, ?> map) throws Exception {
+        public static ComplexRequestComplexList1 build(java.util.Map<String, ?> map) {
             ComplexRequestComplexList1 self = new ComplexRequestComplexList1();
             return TeaModel.build(map, self);
         }
@@ -217,7 +217,7 @@ public class ComplexRequest extends TeaModel {
         @NameInMap("Code")
         public Integer code;
 
-        public static ComplexRequestComplexList2 build(java.util.Map<String, ?> map) throws Exception {
+        public static ComplexRequestComplexList2 build(java.util.Map<String, ?> map) {
             ComplexRequestComplexList2 self = new ComplexRequestComplexList2();
             return TeaModel.build(map, self);
         }
@@ -246,7 +246,7 @@ public class ComplexRequest extends TeaModel {
         @Validation(required = true)
         public String content;
 
-        public static ComplexRequestHeader build(java.util.Map<String, ?> map) throws Exception {
+        public static ComplexRequestHeader build(java.util.Map<String, ?> map) {
             ComplexRequestHeader self = new ComplexRequestHeader();
             return TeaModel.build(map, self);
         }
@@ -274,7 +274,7 @@ public class ComplexRequest extends TeaModel {
         @Validation(required = true)
         public java.util.Map<String, String> extra;
 
-        public static ComplexRequestConfigs build(java.util.Map<String, ?> map) throws Exception {
+        public static ComplexRequestConfigs build(java.util.Map<String, ?> map) {
             ComplexRequestConfigs self = new ComplexRequestConfigs();
             return TeaModel.build(map, self);
         }
@@ -310,7 +310,7 @@ public class ComplexRequest extends TeaModel {
         @NameInMap("PartNumber")
         public String partNumber;
 
-        public static ComplexRequestPart build(java.util.Map<String, ?> map) throws Exception {
+        public static ComplexRequestPart build(java.util.Map<String, ?> map) {
             ComplexRequestPart self = new ComplexRequestPart();
             return TeaModel.build(map, self);
         }
