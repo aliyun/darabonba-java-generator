@@ -5,12 +5,12 @@ model MyModel = {
   bytesTest: bytes,
   stringarrayfield: [ string ],
   mapfield: map[string]string,
-  name: string(name='realName', maxLength=50, minLength=40, pattern='[a-z0-9]{1,50}', deprecated = true),
+  name: string(name='realName', maxLength=2147483647, minLength=40, pattern='[a-z0-9]{1,50}', deprecated = true),
   submodel: {
     stringfield: string,
   },
   object: object,
-  numberfield: number(name='numberfield', minimum=50, maximum=100),
+  numberfield: number(name='numberfield', minimum=50, maximum=9007199254740991),
   intfield: integer,
   readable: readable,
   request: $Request

@@ -30,7 +30,7 @@ public class MyModel extends TeaModel {
 
     @NameInMap("realName")
     @Deprecated
-    @Validation(required = true, pattern = "[a-z0-9]{1,50}", maxLength = 50, minLength = 40)
+    @Validation(required = true, pattern = "[a-z0-9]{1,50}", maxLength = 2147483647, minLength = 40)
     public String name;
 
     @NameInMap("submodel")
@@ -42,7 +42,7 @@ public class MyModel extends TeaModel {
     public java.util.Map<String, ?> object;
 
     @NameInMap("numberfield")
-    @Validation(required = true, maximum = 100, minimum = 50)
+    @Validation(required = true, maximum = 9007199254740991D, minimum = 50)
     public Number numberfield;
 
     @NameInMap("intfield")
