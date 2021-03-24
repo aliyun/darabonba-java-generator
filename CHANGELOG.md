@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.16 - 2020-03-24
+
+> Add minLength and maximum limit.
+
 ## 1.1.15 - 2020-02-20
 
 > Remove RuntimeException.
