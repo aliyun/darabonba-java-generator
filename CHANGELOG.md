@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.17 - 2020-03-30
+
+> Fit JDK1.8 to JDK 1.7.
+
 ## 1.1.16 - 2020-03-24
 
 > Add minLength and maximum limit.
