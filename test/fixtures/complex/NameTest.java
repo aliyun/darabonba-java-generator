@@ -95,7 +95,7 @@ public class NameTest implements ImplementsTest {
             new TeaPair("date", "2019"),
             new TeaPair("protocol", request_.protocol)
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
     }
 
     public ComplexRequest Complex3(ComplexRequest request) {
@@ -110,7 +110,7 @@ public class NameTest implements ImplementsTest {
         request_.query = TeaConverter.buildMap(
             new TeaPair("date", "2019")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
 
         TeaResponse resp = response_;
         Request req = Request.build(TeaConverter.buildMap(
