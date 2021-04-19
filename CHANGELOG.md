@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.1.18 - 2020-04-19
+
+> Fix RuntimeOptions.
+
 ## 1.1.17 - 2020-03-30
 
 > Fit JDK1.8 to JDK 1.7.
