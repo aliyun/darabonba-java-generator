@@ -16,7 +16,7 @@ public class Client {
         request_.headers = TeaConverter.buildMap(
             new TeaPair("host", "www.test.com")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
 
         return ;
     }
@@ -67,7 +67,7 @@ public class Client {
         request_.headers = TeaConverter.buildMap(
             new TeaPair("key", "")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
 
         return ;
     }

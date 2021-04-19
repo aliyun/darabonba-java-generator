@@ -20,7 +20,7 @@ public class Client {
             request_.headers.put("host", "www.test2.com");
         }
 
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
 
         Client.helloIf();
         return ;
