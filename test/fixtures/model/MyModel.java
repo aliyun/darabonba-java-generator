@@ -37,6 +37,10 @@ public class MyModel extends TeaModel {
     @Validation(required = true)
     public MyModelSubmodel submodel;
 
+    @NameInMap("longSubmodelTest")
+    @Validation(required = true)
+    public MyModelLongSubmodelTest longSubmodelTest;
+
     @NameInMap("object")
     @Validation(required = true)
     public java.util.Map<String, ?> object;
@@ -126,6 +130,14 @@ public class MyModel extends TeaModel {
         return this.submodel;
     }
 
+    public MyModel setLongSubmodelTest(MyModelLongSubmodelTest longSubmodelTest) {
+        this.longSubmodelTest = longSubmodelTest;
+        return this;
+    }
+    public MyModelLongSubmodelTest getLongSubmodelTest() {
+        return this.longSubmodelTest;
+    }
+
     public MyModel setObject(java.util.Map<String, ?> object) {
         this.object = object;
         return this;
@@ -182,6 +194,262 @@ public class MyModel extends TeaModel {
         }
         public String getStringfield() {
             return this.stringfield;
+        }
+
+    }
+
+    public static class Copy extends TeaModel {
+        @NameInMap("stringfield")
+        @Validation(required = true)
+        public String stringfield;
+
+        public static Copy build(java.util.Map<String, ?> map) throws Exception {
+            Copy self = new Copy();
+            return TeaModel.build(map, self);
+        }
+
+        public Copy setStringfield(String stringfield) {
+            this.stringfield = stringfield;
+            return this;
+        }
+        public String getStringfield() {
+            return this.stringfield;
+        }
+
+    }
+
+    public static class LongSubmodelTest5 extends TeaModel {
+        @NameInMap("stringfield")
+        @Validation(required = true)
+        public String stringfield;
+
+        @NameInMap("copy")
+        @Validation(required = true)
+        public Copy copy;
+
+        public static LongSubmodelTest5 build(java.util.Map<String, ?> map) throws Exception {
+            LongSubmodelTest5 self = new LongSubmodelTest5();
+            return TeaModel.build(map, self);
+        }
+
+        public LongSubmodelTest5 setStringfield(String stringfield) {
+            this.stringfield = stringfield;
+            return this;
+        }
+        public String getStringfield() {
+            return this.stringfield;
+        }
+
+        public LongSubmodelTest5 setCopy(Copy copy) {
+            this.copy = copy;
+            return this;
+        }
+        public Copy getCopy() {
+            return this.copy;
+        }
+
+    }
+
+    public static class LongSubmodelTest6Copy extends TeaModel {
+        @NameInMap("stringfield")
+        @Validation(required = true)
+        public String stringfield;
+
+        public static LongSubmodelTest6Copy build(java.util.Map<String, ?> map) throws Exception {
+            LongSubmodelTest6Copy self = new LongSubmodelTest6Copy();
+            return TeaModel.build(map, self);
+        }
+
+        public LongSubmodelTest6Copy setStringfield(String stringfield) {
+            this.stringfield = stringfield;
+            return this;
+        }
+        public String getStringfield() {
+            return this.stringfield;
+        }
+
+    }
+
+    public static class LongSubmodelTest6 extends TeaModel {
+        @NameInMap("stringfield")
+        @Validation(required = true)
+        public String stringfield;
+
+        @NameInMap("copy")
+        @Validation(required = true)
+        public LongSubmodelTest6Copy copy;
+
+        public static LongSubmodelTest6 build(java.util.Map<String, ?> map) throws Exception {
+            LongSubmodelTest6 self = new LongSubmodelTest6();
+            return TeaModel.build(map, self);
+        }
+
+        public LongSubmodelTest6 setStringfield(String stringfield) {
+            this.stringfield = stringfield;
+            return this;
+        }
+        public String getStringfield() {
+            return this.stringfield;
+        }
+
+        public LongSubmodelTest6 setCopy(LongSubmodelTest6Copy copy) {
+            this.copy = copy;
+            return this;
+        }
+        public LongSubmodelTest6Copy getCopy() {
+            return this.copy;
+        }
+
+    }
+
+    public static class LongSubmodelTest5LongSubmodelTest5 extends TeaModel {
+        @NameInMap("longSubmodelTest5")
+        @Validation(required = true)
+        public LongSubmodelTest5 longSubmodelTest5;
+
+        @NameInMap("longSubmodelTest6")
+        @Validation(required = true)
+        public LongSubmodelTest6 longSubmodelTest6;
+
+        public static LongSubmodelTest5LongSubmodelTest5 build(java.util.Map<String, ?> map) throws Exception {
+            LongSubmodelTest5LongSubmodelTest5 self = new LongSubmodelTest5LongSubmodelTest5();
+            return TeaModel.build(map, self);
+        }
+
+        public LongSubmodelTest5LongSubmodelTest5 setLongSubmodelTest5(LongSubmodelTest5 longSubmodelTest5) {
+            this.longSubmodelTest5 = longSubmodelTest5;
+            return this;
+        }
+        public LongSubmodelTest5 getLongSubmodelTest5() {
+            return this.longSubmodelTest5;
+        }
+
+        public LongSubmodelTest5LongSubmodelTest5 setLongSubmodelTest6(LongSubmodelTest6 longSubmodelTest6) {
+            this.longSubmodelTest6 = longSubmodelTest6;
+            return this;
+        }
+        public LongSubmodelTest6 getLongSubmodelTest6() {
+            return this.longSubmodelTest6;
+        }
+
+    }
+
+    public static class LongSubmodelTest4LongSubmodelTest5 extends TeaModel {
+        @NameInMap("longSubmodelTest5")
+        @Validation(required = true)
+        public LongSubmodelTest5LongSubmodelTest5 longSubmodelTest5;
+
+        public static LongSubmodelTest4LongSubmodelTest5 build(java.util.Map<String, ?> map) throws Exception {
+            LongSubmodelTest4LongSubmodelTest5 self = new LongSubmodelTest4LongSubmodelTest5();
+            return TeaModel.build(map, self);
+        }
+
+        public LongSubmodelTest4LongSubmodelTest5 setLongSubmodelTest5(LongSubmodelTest5LongSubmodelTest5 longSubmodelTest5) {
+            this.longSubmodelTest5 = longSubmodelTest5;
+            return this;
+        }
+        public LongSubmodelTest5LongSubmodelTest5 getLongSubmodelTest5() {
+            return this.longSubmodelTest5;
+        }
+
+    }
+
+    public static class MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 extends TeaModel {
+        @NameInMap("longSubmodelTest5")
+        @Validation(required = true)
+        public LongSubmodelTest4LongSubmodelTest5 longSubmodelTest5;
+
+        public static MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 build(java.util.Map<String, ?> map) throws Exception {
+            MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 self = new MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4();
+            return TeaModel.build(map, self);
+        }
+
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 setLongSubmodelTest5(LongSubmodelTest4LongSubmodelTest5 longSubmodelTest5) {
+            this.longSubmodelTest5 = longSubmodelTest5;
+            return this;
+        }
+        public LongSubmodelTest4LongSubmodelTest5 getLongSubmodelTest5() {
+            return this.longSubmodelTest5;
+        }
+
+    }
+
+    public static class MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 extends TeaModel {
+        @NameInMap("longSubmodelTest4")
+        @Validation(required = true)
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 longSubmodelTest4;
+
+        public static MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 build(java.util.Map<String, ?> map) throws Exception {
+            MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 self = new MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3();
+            return TeaModel.build(map, self);
+        }
+
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 setLongSubmodelTest4(MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 longSubmodelTest4) {
+            this.longSubmodelTest4 = longSubmodelTest4;
+            return this;
+        }
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3LongSubmodelTest4 getLongSubmodelTest4() {
+            return this.longSubmodelTest4;
+        }
+
+    }
+
+    public static class MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 extends TeaModel {
+        @NameInMap("longSubmodelTest3")
+        @Validation(required = true)
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 longSubmodelTest3;
+
+        public static MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 build(java.util.Map<String, ?> map) throws Exception {
+            MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 self = new MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2();
+            return TeaModel.build(map, self);
+        }
+
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 setLongSubmodelTest3(MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 longSubmodelTest3) {
+            this.longSubmodelTest3 = longSubmodelTest3;
+            return this;
+        }
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2LongSubmodelTest3 getLongSubmodelTest3() {
+            return this.longSubmodelTest3;
+        }
+
+    }
+
+    public static class MyModelLongSubmodelTestLongSubmodelTest1 extends TeaModel {
+        @NameInMap("longSubmodelTest2")
+        @Validation(required = true)
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 longSubmodelTest2;
+
+        public static MyModelLongSubmodelTestLongSubmodelTest1 build(java.util.Map<String, ?> map) throws Exception {
+            MyModelLongSubmodelTestLongSubmodelTest1 self = new MyModelLongSubmodelTestLongSubmodelTest1();
+            return TeaModel.build(map, self);
+        }
+
+        public MyModelLongSubmodelTestLongSubmodelTest1 setLongSubmodelTest2(MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 longSubmodelTest2) {
+            this.longSubmodelTest2 = longSubmodelTest2;
+            return this;
+        }
+        public MyModelLongSubmodelTestLongSubmodelTest1LongSubmodelTest2 getLongSubmodelTest2() {
+            return this.longSubmodelTest2;
+        }
+
+    }
+
+    public static class MyModelLongSubmodelTest extends TeaModel {
+        @NameInMap("longSubmodelTest1")
+        @Validation(required = true)
+        public MyModelLongSubmodelTestLongSubmodelTest1 longSubmodelTest1;
+
+        public static MyModelLongSubmodelTest build(java.util.Map<String, ?> map) throws Exception {
+            MyModelLongSubmodelTest self = new MyModelLongSubmodelTest();
+            return TeaModel.build(map, self);
+        }
+
+        public MyModelLongSubmodelTest setLongSubmodelTest1(MyModelLongSubmodelTestLongSubmodelTest1 longSubmodelTest1) {
+            this.longSubmodelTest1 = longSubmodelTest1;
+            return this;
+        }
+        public MyModelLongSubmodelTestLongSubmodelTest1 getLongSubmodelTest1() {
+            return this.longSubmodelTest1;
         }
 
     }
