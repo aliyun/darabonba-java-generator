@@ -9,6 +9,32 @@ model MyModel = {
   submodel: {
     stringfield: string,
   },
+  longSubmodelTest: {
+    longSubmodelTest1: {
+      longSubmodelTest2: {
+        longSubmodelTest3: {
+          longSubmodelTest4: {
+            longSubmodelTest5: {
+              longSubmodelTest5: {
+                longSubmodelTest5: {
+                  stringfield: string,
+                  copy: {
+                    stringfield: string,
+                  }
+                },
+                longSubmodelTest6: {
+                  stringfield: string,
+                  copy: {
+                    stringfield: string,
+                  }
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   object: object,
   numberfield: number(name='numberfield', minimum=50, maximum=9007199254740991),
   intfield: integer,
