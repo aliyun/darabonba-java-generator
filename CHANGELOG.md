@@ -1,46 +1,50 @@
 # ChangeLog
 
-## 1.1.18 - 2020-04-19
+## 1.1.19 - 2021-05-18
+
+> Migrate to new host of sonatype.
+
+## 1.1.18 - 2021-04-19
 
 > Fix RuntimeOptions.
 
-## 1.1.17 - 2020-03-30
+## 1.1.17 - 2021-03-30
 
 > Fit JDK1.8 to JDK 1.7.
 
-## 1.1.16 - 2020-03-24
+## 1.1.16 - 2021-03-24
 
 > Add minLength and maximum limit.
 
-## 1.1.15 - 2020-02-20
+## 1.1.15 - 2021-02-20
 
 > Remove RuntimeException.
 
-## 1.1.14 - 2020-02-16
+## 1.1.14 - 2021-02-16
 
 > Add _lastException for TeaUnretryableException.
 
-## 1.1.13 - 2020-02-05
+## 1.1.13 - 2021-02-05
 
 > Fix the comment front the setMethod.
 
-## 1.1.12 - 2020-01-22
+## 1.1.12 - 2021-01-22
 
 > Add maximum and minimum in model.
 
-## 1.1.11 - 2020-01-22
+## 1.1.11 - 2021-01-22
 
 > Add Number type in model.
 
-## 1.1.10 - 2020-01-15
+## 1.1.10 - 2021-01-15
 
 > Fix Module sub model generate bug.
 
-## 1.1.9 - 2020-01-10
+## 1.1.9 - 2021-01-10
 
 > Support sub model in list of list.
 
-## 1.1.8 - 2020-01-08
+## 1.1.8 - 2021-01-08
 
 > Fix import.
 
