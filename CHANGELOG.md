@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 1.1.19 - 2021-05-18
+## 1.2.0 - 2021-05-18
 
 > Migrate to new host of sonatype.
 
