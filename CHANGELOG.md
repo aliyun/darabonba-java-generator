@@ -1,4 +1,7 @@
 # ChangeLog
+## 1.2.1 - 2021-08-12
+
+> Update tea versions limit.
 
 ## 1.2.0 - 2021-05-18
 
