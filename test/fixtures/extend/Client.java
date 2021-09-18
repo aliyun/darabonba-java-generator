@@ -2,10 +2,13 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
+import com.aliyun.tea.interceptor.*;
 import com.import.*;
 import com.import.models.*;
 
 public class Client extends com.import.Client {
+
+    private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public Client(Config config, String a) throws Exception {
         super(config, a);
@@ -37,7 +40,7 @@ public class Client extends com.import.Client {
                     String tmp = "catch";
                 }                
                 _lastRequest = request_;
-                TeaResponse response_ = Tea.doAction(request_, runtime_);
+                TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 throw new TeaRetryableException();
                 return null;
@@ -49,8 +52,19 @@ public class Client extends com.import.Client {
                 throw e;
             }
         }
-
         throw new TeaUnretryableException(_lastRequest, _lastException);
+    }
+
+    public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
+        interceptorChain.addRuntimeOptionsInterceptor(interceptor);
+    }
+
+    public void addRequestInterceptor(RequestInterceptor interceptor) {
+        interceptorChain.addRequestInterceptor(interceptor);
+    }
+
+    public void addResponseInterceptor(ResponseInterceptor interceptor) {
+        interceptorChain.addResponseInterceptor(interceptor);
     }
 
     public void print() throws Exception {
