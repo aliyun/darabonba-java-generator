@@ -2,9 +2,12 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
+import com.aliyun.tea.interceptor.*;
 import com.aliyun.test.models.*;
 
 public class Client {
+
+    private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public java.util.List<String> _a;
     /**
@@ -56,7 +59,7 @@ public class Client {
                 // static function call comment
                 Client.staticFunc();
                 _lastRequest = request_;
-                TeaResponse response_ = Tea.doAction(request_, runtime_);
+                TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 // static async function call
                 Client.testFunc();
@@ -70,7 +73,6 @@ public class Client {
                 throw e;
             }
         }
-
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
@@ -106,7 +108,7 @@ public class Client {
                 // api function call comment
                 this.testAPI();
                 _lastRequest = request_;
-                TeaResponse response_ = Tea.doAction(request_, runtime_);
+                TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 // empty return comment
             } catch (Exception e) {
@@ -117,8 +119,19 @@ public class Client {
                 throw e;
             }
         }
-
         throw new TeaUnretryableException(_lastRequest, _lastException);
+    }
+
+    public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
+        interceptorChain.addRuntimeOptionsInterceptor(interceptor);
+    }
+
+    public void addRequestInterceptor(RequestInterceptor interceptor) {
+        interceptorChain.addRequestInterceptor(interceptor);
+    }
+
+    public void addResponseInterceptor(ResponseInterceptor interceptor) {
+        interceptorChain.addResponseInterceptor(interceptor);
     }
 
     public static void staticFunc() throws Exception {

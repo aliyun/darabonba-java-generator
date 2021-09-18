@@ -2,9 +2,12 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
+import com.aliyun.tea.interceptor.*;
 import com.aliyun.test.models.*;
 
 public class Client {
+
+    private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public Client(Config config) throws Exception {
     }
@@ -16,7 +19,7 @@ public class Client {
         request_.headers = TeaConverter.buildMap(
             new TeaPair("host", "www.test.com")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         return ;
     }
@@ -44,7 +47,7 @@ public class Client {
                     new TeaPair("host", "www.test.com")
                 );
                 _lastRequest = request_;
-                TeaResponse response_ = Tea.doAction(request_, runtime_);
+                TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 return ;
             } catch (Exception e) {
@@ -55,7 +58,6 @@ public class Client {
                 throw e;
             }
         }
-
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
@@ -67,9 +69,21 @@ public class Client {
         request_.headers = TeaConverter.buildMap(
             new TeaPair("key", "")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         return ;
+    }
+
+    public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
+        interceptorChain.addRuntimeOptionsInterceptor(interceptor);
+    }
+
+    public void addRequestInterceptor(RequestInterceptor interceptor) {
+        interceptorChain.addRequestInterceptor(interceptor);
+    }
+
+    public void addResponseInterceptor(ResponseInterceptor interceptor) {
+        interceptorChain.addResponseInterceptor(interceptor);
     }
 
 }

@@ -2,9 +2,12 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
+import com.aliyun.tea.interceptor.*;
 import com.aliyun.test.models.*;
 
 public class Client {
+
+    private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public Client(Config config) throws Exception {
     }
@@ -20,10 +23,22 @@ public class Client {
             request_.headers.put("host", "www.test2.com");
         }
 
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         Client.helloIf();
         return ;
+    }
+
+    public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
+        interceptorChain.addRuntimeOptionsInterceptor(interceptor);
+    }
+
+    public void addRequestInterceptor(RequestInterceptor interceptor) {
+        interceptorChain.addRequestInterceptor(interceptor);
+    }
+
+    public void addResponseInterceptor(ResponseInterceptor interceptor) {
+        interceptorChain.addResponseInterceptor(interceptor);
     }
 
     public static void helloIf() throws Exception {

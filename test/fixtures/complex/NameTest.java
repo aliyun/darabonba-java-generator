@@ -2,11 +2,14 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
+import com.aliyun.tea.interceptor.*;
 import com.aliyun.test.models.*;
 import com.import.*;
 import com.import.models.*;
 
 public class NameTest implements ImplementsTest {
+
+    private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public String _protocol;
     public String _pathname;
@@ -49,7 +52,7 @@ public class NameTest implements ImplementsTest {
                     new TeaPair("date", "2019")
                 );
                 _lastRequest = request_;
-                TeaResponse response_ = Tea.doAction(request_, runtime_);
+                TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 if (true && true) {
                     throw new TeaRetryableException();
@@ -77,7 +80,6 @@ public class NameTest implements ImplementsTest {
                 throw new TeaException(e.getMessage(), e);
             }
         }
-
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
@@ -95,7 +97,7 @@ public class NameTest implements ImplementsTest {
             new TeaPair("date", "2019"),
             new TeaPair("protocol", request_.protocol)
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
     }
 
     public ComplexRequest Complex3(ComplexRequest request) {
@@ -110,7 +112,7 @@ public class NameTest implements ImplementsTest {
         request_.query = TeaConverter.buildMap(
             new TeaPair("date", "2019")
         );
-        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>());
+        TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         TeaResponse resp = response_;
         Request req = Request.build(TeaConverter.buildMap(
@@ -125,6 +127,18 @@ public class NameTest implements ImplementsTest {
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
         ), new ComplexRequest());
+    }
+
+    public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
+        interceptorChain.addRuntimeOptionsInterceptor(interceptor);
+    }
+
+    public void addRequestInterceptor(RequestInterceptor interceptor) {
+        interceptorChain.addRequestInterceptor(interceptor);
+    }
+
+    public void addResponseInterceptor(ResponseInterceptor interceptor) {
+        interceptorChain.addResponseInterceptor(interceptor);
     }
 
     public static void arrayAssign3(ComplexRequest request, String config) {
