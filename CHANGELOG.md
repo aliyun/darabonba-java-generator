@@ -1,4 +1,8 @@
 # ChangeLog
+## 1.2.2 - 2021-09-23
+
+> Add interceptor for api request.
+
 ## 1.2.1 - 2021-08-12
 
 > Update tea versions limit.
