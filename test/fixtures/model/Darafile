@@ -11,6 +11,7 @@
     ],
     "java": {
         "package": "com.aliyun.test",
+        "enableMinimizeModelName": true,
         "packageInfo":{
             "description": "Alibaba Cloud viapisdk SDK for Java",
              "url": "https://github.com/aliyun/alibabacloud-sdk",

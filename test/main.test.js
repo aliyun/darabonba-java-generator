@@ -51,6 +51,23 @@ describe('new Generator', function () {
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/MyModel.java'), 'src/main/java/com/aliyun/test/models/MyModel.java');
   });
 
+  it('enableMinimizeModelName should ok', function () {
+    const outputDir = path.join(__dirname, 'output/model');
+    const mainFilePath = path.join(__dirname, 'fixtures/model/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/model/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/Client.java'));
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/MinimizeModel.java'), 'src/main/java/com/aliyun/test/models/MyModel.java', {
+      pkgDir: path.join(__dirname, 'fixtures/model'),
+      enableMinimizeModelName: true,
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/MinimizeModel.java'), 'src/main/java/com/aliyun/test/models/MyModel.java', {
+      pkgDir: path.join(__dirname, 'fixtures/model'),
+      ...pkg
+    });
+  });
+
   it('one api should ok', function () {
     const outputDir = path.join(__dirname, 'output/api');
     const mainFilePath = path.join(__dirname, 'fixtures/api/main.dara');
