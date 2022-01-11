@@ -16,7 +16,7 @@ model MyModel = {
           longSubmodelTest4: {
             longSubmodelTest5: {
               longSubmodelTest5: {
-                longSubmodelTest5: {
+                longxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxSubmodelTest5: {
                   stringfield: string,
                   copy: {
                     stringfield: string,
