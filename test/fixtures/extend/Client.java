@@ -2,7 +2,10 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import com.aliyun.tea.interceptor.*;
+import com.aliyun.tea.interceptor.InterceptorChain;
+import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
+import com.aliyun.tea.interceptor.RequestInterceptor;
+import com.aliyun.tea.interceptor.ResponseInterceptor;
 import com.import.*;
 import com.import.models.*;
 
