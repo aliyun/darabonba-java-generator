@@ -1,4 +1,10 @@
 # ChangeLog
+## 1.2.3 - 2022-01-12
+
+> Fix oversize class name.
+> Support minimize model name option.
+> Fix conflic class name amang tea and other module
+
 ## 1.2.2 - 2021-09-23
 
 > Add interceptor for api request.
