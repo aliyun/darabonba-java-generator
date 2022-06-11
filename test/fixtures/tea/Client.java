@@ -3,9 +3,9 @@ package com.aliyun.test;
 
 import com.aliyun.tea.*;
 import com.import.*;
-import com.import.models.*;
+import com.import.models.RuntimeObject;
 import com.import2.*;
-import com.import2.models.*;
+import com.import2.models.Request;
 
 public class Client {
 

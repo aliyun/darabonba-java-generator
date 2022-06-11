@@ -7,7 +7,7 @@ import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
 import com.aliyun.tea.interceptor.RequestInterceptor;
 import com.aliyun.tea.interceptor.ResponseInterceptor;
 import com.import.*;
-import com.import.models.*;
+import com.import.models.Config;
 
 public class Client extends com.import.Client {
 

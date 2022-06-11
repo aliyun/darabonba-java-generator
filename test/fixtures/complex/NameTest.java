@@ -8,7 +8,10 @@ import com.aliyun.tea.interceptor.RequestInterceptor;
 import com.aliyun.tea.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
 import com.import.*;
-import com.import.models.*;
+import com.import.models.Request;
+import com.import.models.RuntimeObject;
+import com.import.models.Config;
+import com.import.models.Request.configs;
 
 public class NameTest implements ImplementsTest {
 
