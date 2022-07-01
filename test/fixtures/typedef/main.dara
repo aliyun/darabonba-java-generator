@@ -1,0 +1,42 @@
+import OSS
+
+typedef HttpResponse;
+typedef HttpHeader;
+typedef HttpURL;
+// useless
+typedef TimeSecond;
+
+type @vid=OSS.HttpRequest;
+type @url=HttpURL;
+
+init(request: OSS.HttpRequest, url: HttpURL){
+  @vid = request;
+  @url = url;
+}
+
+model M {
+    a?: OSS.HttpRequest,
+    b?: HttpURL
+}
+
+async function test(test1: OSS.HttpRequest, test2: HttpURL) : void {
+    var oss = new OSS(test1);
+    var m = new M {
+        a = test1,
+        b = test2
+    };
+    @vid = test1;
+    @url = test2;
+}
+
+async function testHttpRequest(req: OSS.HttpRequest): HttpResponse {
+    return testHttpRequestWith("test", req);
+}
+
+static function testHttpRequestWith(method: string, req: OSS.HttpRequest): HttpResponse
+
+static function testHttpHeader(method: string, headers: HttpHeader): OSS.HttpRequest
+
+async function testHttpHeaderWith(headers: HttpHeader): OSS.HttpRequest {
+    return testHttpHeader("test", headers);
+}

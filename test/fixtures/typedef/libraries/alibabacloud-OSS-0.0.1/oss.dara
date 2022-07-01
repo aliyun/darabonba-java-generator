@@ -1,0 +1,8 @@
+typedef HttpRequest;
+typedef HttpResponse;
+
+type @vid=HttpRequest
+
+init(test: HttpRequest){
+  @vid = test;
+}

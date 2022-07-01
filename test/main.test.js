@@ -10,7 +10,7 @@ async function msleep(n) {
       resolve();
     }, n);
   });
-};
+}
 
 const DSL = require('@darabonba/parser');
 
@@ -183,6 +183,20 @@ describe('new Generator', function () {
     const pkg = JSON.parse(pkgContent);
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/for/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
       pkgDir: path.join(__dirname, 'fixtures/for'),
+      ...pkg
+    });
+  });
+  it('typedef should ok', function () {
+    const outputDir = path.join(__dirname, 'output/typedef');
+    const mainFilePath = path.join(__dirname, 'fixtures/typedef/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/typedef/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/typedef/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/typedef'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/typedef/M.java'), 'src/main/java/com/aliyun/test/models/M.java', {
+      pkgDir: path.join(__dirname, 'fixtures/typedef'),
       ...pkg
     });
   });
