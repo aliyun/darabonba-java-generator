@@ -1,0 +1,24 @@
+{
+  "name": "OSS",
+  "main": "./oss.dara",
+  "libraries": {},
+  "releases": {
+    "java": "com.aliyun:oss:0.0.1"
+  },
+  "java": {
+    "package": "com.aliyun.demo",
+    "className": "Client",
+    "typedef": {
+      "HttpRequest": {
+        "import": "okhttp3.Request",
+        "type": null,
+        "package": "com.squareup.okhttp3:okhttp:3.12.13"
+      },
+      "HttpResponse": {
+        "import": "okhttp3.Response",
+        "type": null,
+        "package": "com.squareup.okhttp3:okhttp:3.12.13"
+      }
+    }
+  }
+}

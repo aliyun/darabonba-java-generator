@@ -1,0 +1,35 @@
+{
+  "scope": "darabonba",
+  "name": "main",
+  "version": "0.0.1",
+  "main": "./main.dara",
+  "libraries": {
+    "OSS": "alibabacloud:OSS:*"
+  },
+  "java": {
+    "package": "com.aliyun.test",
+    "className": "Client",
+    "typedef": {
+      "HttpResponse": {
+        "import": "okhttp3.Response",
+        "type": null,
+        "package": "com.squareup.okhttp3:okhttp:3.12.13"
+      },
+      "HttpHeader": {
+        "import": "okhttp3.Headers",
+        "type": null,
+        "package": "com.squareup.okhttp3:okhttp:3.12.13"
+      },
+      "HttpURL": {
+        "import": "okhttp3.URL",
+        "type": null,
+        "package": "com.squareup.okhttp3:okhttp:3.12.13"
+      },
+      "TimeSecond": {
+        "import": "for.test",
+        "type": "time",
+        "package": "com.test:test:1.0.0"
+      }
+    }
+  }
+}
