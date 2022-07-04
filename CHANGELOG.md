@@ -1,4 +1,8 @@
 # ChangeLog
+## 1.3.0 - 2022-07-04
+
+> Support typedef.
+
 ## 1.2.3 - 2022-01-12
 
 > Fix oversize class name.
