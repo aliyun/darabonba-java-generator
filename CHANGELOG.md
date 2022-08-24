@@ -1,4 +1,8 @@
 # ChangeLog
+## 1.3.1 - 2022-08-24
+
+> Fix: resolve conflict models name(This will cause the classes of referenced package to display the full path).
+
 ## 1.3.0 - 2022-07-04
 
 > Support typedef.
