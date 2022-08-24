@@ -7,8 +7,6 @@ import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
 import com.aliyun.tea.interceptor.RequestInterceptor;
 import com.aliyun.tea.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
-import com.import.*;
-import com.import.models.*;
 
 public class NameTest implements ImplementsTest {
 
@@ -23,7 +21,7 @@ public class NameTest implements ImplementsTest {
         _configs.set(0, config);
     }
 
-    public RuntimeObject Complex1(ComplexRequest request, com.import.Client client) {
+    public com.import.models.RuntimeObject Complex1(ComplexRequest request, com.import.Client client) {
         TeaModel.validateParams(request, "request");
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             new TeaPair("timeouted", "retry")
@@ -61,7 +59,7 @@ public class NameTest implements ImplementsTest {
                     throw new TeaRetryableException();
                     return null;
                 } else if (true || false) {
-                    return new RuntimeObject();
+                    return new com.import.models.RuntimeObject();
                 }
 
                 client.print(request, "1");
@@ -71,7 +69,7 @@ public class NameTest implements ImplementsTest {
                 ));
                 this.hello(null, null);
                 this.Complex3(null);
-                return TeaModel.toModel(new java.util.HashMap<>(), new RuntimeObject());
+                return TeaModel.toModel(new java.util.HashMap<>(), new com.import.models.RuntimeObject());
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     _lastException = e;
@@ -118,7 +116,7 @@ public class NameTest implements ImplementsTest {
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         TeaResponse resp = response_;
-        Request req = Request.build(TeaConverter.buildMap(
+        com.import.models.Request req = com.import.models.Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", request.accessKey),
             new TeaPair("region", resp.statusMessage)
         ));
@@ -153,7 +151,7 @@ public class NameTest implements ImplementsTest {
         return configInfo;
     }
 
-    public static String mapAccess2(Request.RequestConfigs configs) {
+    public static String mapAccess2(com.import.models.Request.RequestConfigs configs) {
         String configInfo = configs.extra.get("name");
         return configInfo;
     }
@@ -230,7 +228,7 @@ public class NameTest implements ImplementsTest {
         return NameTest.array1();
     }
 
-    public static Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
+    public static com.import.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
         return null;
     }
 

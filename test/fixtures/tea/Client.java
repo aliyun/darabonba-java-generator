@@ -2,10 +2,6 @@
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
-import com.import.*;
-import com.import.models.*;
-import com.import2.*;
-import com.import2.models.*;
 
 public class Client {
 
@@ -18,8 +14,8 @@ public class Client {
 
 
     public static void Sample(com.import.Client client) throws Exception {
-        RuntimeObject runtime = new RuntimeObject();
-        Request request = Request.build(TeaConverter.buildMap(
+        com.import.models.RuntimeObject runtime = new com.import.models.RuntimeObject();
+        com.import2.models.Request request = com.import2.models.Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", "accesskey"),
             new TeaPair("region", "region")
         ));

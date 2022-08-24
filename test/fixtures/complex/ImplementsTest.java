@@ -4,7 +4,7 @@ import com.aliyun.test.models.*;
 
 public interface ImplementsTest {
 
-    RuntimeObject Complex1(ComplexRequest request, com.import.Client client);
+    com.import.models.RuntimeObject Complex1(ComplexRequest request, com.import.Client client);
 
     java.util.Map<String, ?> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val);
 

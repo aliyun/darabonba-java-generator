@@ -10,7 +10,7 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("moduleModelMap")
     @Validation(required = true)
-    public java.util.Map<String, Request> moduleModelMap;
+    public java.util.Map<String, com.import.models.Request> moduleModelMap;
 
     @NameInMap("subModelMap")
     @Validation(required = true)
@@ -76,11 +76,11 @@ public class ComplexRequest extends TeaModel {
         return this.accessKey;
     }
 
-    public ComplexRequest setModuleModelMap(java.util.Map<String, Request> moduleModelMap) {
+    public ComplexRequest setModuleModelMap(java.util.Map<String, com.import.models.Request> moduleModelMap) {
         this.moduleModelMap = moduleModelMap;
         return this;
     }
-    public java.util.Map<String, Request> getModuleModelMap() {
+    public java.util.Map<String, com.import.models.Request> getModuleModelMap() {
         return this.moduleModelMap;
     }
 
