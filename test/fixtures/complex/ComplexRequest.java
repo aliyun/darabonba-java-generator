@@ -28,6 +28,10 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public java.util.List<java.util.List<java.util.List<ComplexRequestComplexList2>>> complexList2;
 
+    @NameInMap("complexList3")
+    @Validation(required = true)
+    public java.util.List<java.util.List<java.util.List<Config>>> complexList3;
+
     // Body
     // body
     @NameInMap("Body")
@@ -114,6 +118,14 @@ public class ComplexRequest extends TeaModel {
     }
     public java.util.List<java.util.List<java.util.List<ComplexRequestComplexList2>>> getComplexList2() {
         return this.complexList2;
+    }
+
+    public ComplexRequest setComplexList3(java.util.List<java.util.List<java.util.List<Config>>> complexList3) {
+        this.complexList3 = complexList3;
+        return this;
+    }
+    public java.util.List<java.util.List<java.util.List<Config>>> getComplexList3() {
+        return this.complexList3;
     }
 
     public ComplexRequest setBody(java.io.InputStream body) {
