@@ -1,4 +1,9 @@
 # ChangeLog
+
+## 1.3.2 - 2022-09-05
+
+> Support subModel in complex array.
+
 ## 1.3.1 - 2022-08-24
 
 > Fix: resolve conflict models name(This will cause the classes of referenced package to display the full path).
