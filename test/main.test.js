@@ -90,6 +90,14 @@ describe('new Generator', function () {
     const outputDir = path.join(__dirname, 'output/comment');
     const mainFilePath = path.join(__dirname, 'fixtures/comment/main.dara');
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/comment/Client.java'));
+    assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test1.java'), 'utf8'),
+      fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test1.java'), 'utf8'));
+    assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test2.java'), 'utf8'),
+      fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test2.java'), 'utf8'));
+    assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test3.java'), 'utf8'),
+      fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test3.java'), 'utf8'));
+    assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test4.java'), 'utf8'),
+      fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test4.java'), 'utf8'));
   });
 
   it('complex should ok', function () {

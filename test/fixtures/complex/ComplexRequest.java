@@ -32,8 +32,10 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public java.util.List<java.util.List<java.util.List<Config>>> complexList3;
 
-    // Body
-    // body
+    /**
+     * <p>Body</p>
+     * <p>body</p>
+     */
     @NameInMap("Body")
     @Validation(required = true)
     public java.io.InputStream body;
@@ -41,12 +43,16 @@ public class ComplexRequest extends TeaModel {
     @NameInMap("UserPsssrivileges")
     public java.util.Map<String, java.util.List<java.util.Map<String, String>>> userTest;
 
-    // Strs
+    /**
+     * <p>Strs</p>
+     */
     @NameInMap("Strs")
     @Validation(required = true)
     public java.util.List<String> strs;
 
-    // header
+    /**
+     * <p>header</p>
+     */
     @NameInMap("header")
     @Validation(required = true)
     public ComplexRequestHeader header;
@@ -63,7 +69,9 @@ public class ComplexRequest extends TeaModel {
     @Validation(required = true)
     public ComplexRequestConfigs configs;
 
-    // Part
+    /**
+     * <p>Part</p>
+     */
     @NameInMap("Part")
     public java.util.List<ComplexRequestPart> part;
 
@@ -253,7 +261,9 @@ public class ComplexRequest extends TeaModel {
     }
 
     public static class ComplexRequestHeader extends TeaModel {
-        // Body
+        /**
+         * <p>Body</p>
+         */
         @NameInMap("Content")
         @Validation(required = true)
         public String content;
@@ -318,7 +328,9 @@ public class ComplexRequest extends TeaModel {
     }
 
     public static class ComplexRequestPart extends TeaModel {
-        // PartNumber
+        /**
+         * <p>PartNumber</p>
+         */
         @NameInMap("PartNumber")
         public String partNumber;
 

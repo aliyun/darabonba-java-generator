@@ -16,6 +16,7 @@ public class Client {
     /**
       Init Func
     */
+    // comment between init and annotation
     public Client(String a, String b) throws Exception {
         // string declate comment
         String str = "sss";
@@ -33,6 +34,11 @@ public class Client {
         );
     }
 
+    /**
+      testAPI
+    */
+    //testAPI comment one
+    //testAPI comment two
     public void testAPI() throws Exception {
         java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
 
@@ -79,6 +85,7 @@ public class Client {
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
+    // testAPI2 comment
     public void testAPI2() throws Exception {
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             // runtime retry comment
@@ -137,6 +144,10 @@ public class Client {
         interceptorChain.addResponseInterceptor(interceptor);
     }
 
+    /**
+      staticFunc
+    */
+    // staticFunc comment
     public static void staticFunc() throws Exception {
         java.util.List<Object> a = new java.util.ArrayList<>();
     }
@@ -144,7 +155,21 @@ public class Client {
     /**
       testFunc
     */
+    // testFunc comment
     public static void testFunc() throws Exception {
+        // empty comment1
+        // empty comment2
+    }
+
+    // Deprecated
+    /**
+      * @deprecated : deprecatedFunc is deprecated.
+      *
+      * @param test string
+      * @return void
+     */
+    // Deprecated
+    public static void deprecatedFunc(String test) throws Exception {
         // empty comment1
         // empty comment2
     }

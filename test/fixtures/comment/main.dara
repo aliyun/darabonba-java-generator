@@ -27,6 +27,26 @@ model Test3{
 }
 
 /**
+  * @deprecated : Test4 is deprecated.
+ */
+// Deprecated
+model Test4{
+  test: string(description='The ID of the destination security group to be referenced in security group rule N.
+
+*   At least one of `DestGroupId`, `DestCidrIp`, `Ipv6DestCidrIp`, and `DestPrefixListId` must be specified.
+*   If `DestGroupId` is specified but `DestCidrIp` is not specified, the `NicType` parameter must be set to intranet.
+*   If both `DestGroupId` and `DestCidrIp` are specified, `DestCidrIp` takes precedence.
+
+Valid values of N: 1 to 100.
+
+Take note of the following items:
+
+*   For advanced security groups, security groups cannot be used as authorization objects.
+*   For each basic security group, a maximum of 20 security groups can be used as authorization objects.', name='test', deprecated='true'),
+  test2: string(description='test2 desc', name='test2', deprecated='true'),
+}
+
+/**
   Init Func
 */
 // comment between init and annotation
@@ -100,6 +120,10 @@ api testAPI2(): void {
   // runtime back comment two
 }
 
+/**
+  staticFunc
+*/
+// staticFunc comment
 static function staticFunc(): void{
   var a = [
     // empty annotation comment
@@ -109,7 +133,21 @@ static function staticFunc(): void{
 /**
   testFunc
 */
+// testFunc comment
 static async function testFunc(): void {
+    // empty comment1
+    // empty comment2
+}
+
+// Deprecated
+/**
+  * @deprecated : deprecatedFunc is deprecated.
+  *
+  * @param test string
+  * @return void
+ */
+// Deprecated
+static async function deprecatedFunc(test: string): void {
     // empty comment1
     // empty comment2
 }
