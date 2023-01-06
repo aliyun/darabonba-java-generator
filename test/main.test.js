@@ -49,6 +49,7 @@ describe('new Generator', function () {
     const mainFilePath = path.join(__dirname, 'fixtures/model/main.dara');
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/Client.java'));
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/MyModel.java'), 'src/main/java/com/aliyun/test/models/MyModel.java');
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/model/NewMyModel.java'), 'src/main/java/com/aliyun/test/models/NewMyModel.java');
   });
 
   it('enableMinimizeModelName should ok', function () {
