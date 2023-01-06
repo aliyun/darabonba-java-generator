@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.3.3 - 2023-01-06
+
+> Fix subModel in wrong class.
+
 ## 1.3.2 - 2022-09-05
 
 > Support subModel in complex array.
