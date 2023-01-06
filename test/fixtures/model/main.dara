@@ -41,3 +41,10 @@ model MyModel = {
   readable: readable,
   request: $Request
 };
+
+model NewMyModel = {
+  object: {
+    name: string(name='Name'),
+    num?: integer(name='Num'),
+  },
+}
