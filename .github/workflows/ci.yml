@@ -1,6 +1,10 @@
 name: Node.js CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -8,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x, 18.x]
+        node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -18,5 +22,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run ci
-      - name: CodeCov
-        run: bash <(curl -s https://codecov.io/bash)
+      - uses: codecov/codecov-action@v3
