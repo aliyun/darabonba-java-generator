@@ -23,6 +23,10 @@
       "artifactId": "test",
       "version": "1.0.0"
     },
+    "packageManager": {
+      "com.aliyun:tea": "1.2.7",
+      "com.aliyun:something-need-to-add": "[0.0.1, 1.0.0)"
+    },
     "typedef": {
       "HttpResponse": {
         "import": "okhttp3.Response",
