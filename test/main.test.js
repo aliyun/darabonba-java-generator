@@ -232,4 +232,15 @@ describe('new Generator', function () {
     await msleep(500);
     assert.deepStrictEqual(fs.readFileSync(clientPath, 'utf8'), expected);
   });
+
+  it('iterator should ok', function () {
+    const outputDir = path.join(__dirname, 'output/iterator');
+    const mainFilePath = path.join(__dirname, 'fixtures/iterator/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/iterator/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/iterator/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/iterator'),
+      ...pkg
+    });
+  });
 });
