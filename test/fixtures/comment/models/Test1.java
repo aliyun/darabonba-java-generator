@@ -1,14 +1,23 @@
-// This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test.models;
 
 import com.aliyun.tea.*;
 
 /**
-  TestModel
-*/
+ * <b>description</b> :
+ * <p>TestModel</p>
+ */
 public class Test1 extends TeaModel {
     /**
      * <p>test desc</p>
+     * 
+     * <strong>check if is blank:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if sensitive:</strong>
+     * <p>false</p>
      */
     @NameInMap("test")
     @Validation(required = true)
@@ -17,8 +26,18 @@ public class Test1 extends TeaModel {
     //model的test back comment
     /**
      * <p>test2 desc</p>
+     * 
+     * <strong>check if is blank:</strong>
+     * <p>true</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     * 
+     * <strong>if sensitive:</strong>
+     * <p>true</p>
      */
     @NameInMap("test2")
+    @Deprecated
     @Validation(required = true)
     public String test2;
 

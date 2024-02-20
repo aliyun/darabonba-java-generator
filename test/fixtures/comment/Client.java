@@ -1,4 +1,3 @@
-// This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
 import com.aliyun.tea.*;
@@ -14,8 +13,9 @@ public class Client {
 
     public java.util.List<String> _a;
     /**
-      Init Func
-    */
+     * <b>description</b> :
+     * <p>Init Func</p>
+     */
     // comment between init and annotation
     public Client(String a, String b) throws Exception {
         // string declate comment
@@ -35,8 +35,9 @@ public class Client {
     }
 
     /**
-      testAPI
-    */
+     * <b>description</b> :
+     * <p>testAPI</p>
+     */
     //testAPI comment one
     //testAPI comment two
     public void testAPI() throws Exception {
@@ -145,16 +146,18 @@ public class Client {
     }
 
     /**
-      staticFunc
-    */
+     * <b>description</b> :
+     * <p>staticFunc</p>
+     */
     // staticFunc comment
     public static void staticFunc() throws Exception {
         java.util.List<Object> a = new java.util.ArrayList<>();
     }
 
     /**
-      testFunc
-    */
+     * <b>description</b> :
+     * <p>testFunc</p>
+     */
     // testFunc comment
     public static void testFunc() throws Exception {
         // empty comment1
@@ -163,13 +166,41 @@ public class Client {
 
     // Deprecated
     /**
-      * @deprecated : deprecatedFunc is deprecated.
-      *
-      * @param test string
-      * @return void
+     * <b>description</b> :
+     * <p>Queries available Alibaba Cloud regions. The natural language that is used to filter responses. For more information, visit <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>. Valid values:</p>
+     * <ul>
+     * <li>zh-CN: Chinese</li>
+     * <li>en-US: English</li>
+     * <li>ja: Japanese</li>
+     * </ul>
+     * <p>Default value: zh-CN.</p>
+     * <blockquote>
+     * <p>这是Note的内容</p>
+     * </blockquote>
+     * <blockquote>
+     * <p>Notice: 这是注意的内容</p>
+     * </blockquote>
+     * 
+     * <b>summary</b> : 
+     * <p>Queries available Alibaba Cloud regions. The natural language that is used to filter responses. For more information, visit <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>. Valid values:</p>
+     * <ul>
+     * <li>zh-CN: Chinese</li>
+     * <li>en-US: English</li>
+     * <li>ja: Japanese</li>
+     * </ul>
+     * 
+     * @deprecated deprecatedFunc is deprecated.
+     * 
+     * @param test string
+     * @param _test string
+     * @return void
+     * 
+     * @throws InternalError Server error. 500 服务器端出现未知异常。
+     * @throws StackNotFound The Stack (%(stack_name)s) could not be found.  404 资源栈不存在。
      */
+    @Deprecated
     // Deprecated
-    public static void deprecatedFunc(String test) throws Exception {
+    public static void deprecatedFunc(String test, String _test) throws Exception {
         // empty comment1
         // empty comment2
     }

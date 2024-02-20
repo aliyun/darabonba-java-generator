@@ -4,6 +4,10 @@ const path = require('path');
 const fs = require('fs');
 const assert = require('assert');
 
+const DSL = require('@darabonba/parser');
+
+let Generator = require('../lib/generator');
+
 async function msleep(n) {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -11,10 +15,6 @@ async function msleep(n) {
     }, n);
   });
 }
-
-const DSL = require('@darabonba/parser');
-
-let Generator = require('../lib/generator');
 
 function check(mainFilePath, outputDir, expectedPath, testPath = 'src/main/java/com/aliyun/test/Client.java', options = {}) {
   const generator = new Generator({
@@ -90,7 +90,7 @@ describe('new Generator', function () {
   it('comment should ok', function () {
     const outputDir = path.join(__dirname, 'output/comment');
     const mainFilePath = path.join(__dirname, 'fixtures/comment/main.dara');
-    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/comment/Client.java'));
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/comment/Client.java'), 'src/main/java/com/aliyun/test/Client.java', { editable: true });
     assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test1.java'), 'utf8'),
       fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test1.java'), 'utf8'));
     assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test2.java'), 'utf8'),
@@ -108,11 +108,13 @@ describe('new Generator', function () {
     const pkg = JSON.parse(pkgContent);
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/NameTest.java'), 'src/main/java/com/aliyun/test/NameTest.java', {
       pkgDir: path.join(__dirname, 'fixtures/complex'),
-      ...pkg
+      ...pkg,
+      editable: 1
     });
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/ComplexRequest.java'), 'src/main/java/com/aliyun/test/models/ComplexRequest.java', {
       pkgDir: path.join(__dirname, 'fixtures/complex'),
-      ...pkg
+      ...pkg,
+      editable: 0
     });
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/complex/ImplementsTest.java'), 'src/main/java/com/aliyun/test/ImplementsTest.java', {
       pkgDir: path.join(__dirname, 'fixtures/complex'),
@@ -127,7 +129,8 @@ describe('new Generator', function () {
     const pkg = JSON.parse(pkgContent);
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/import/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
       pkgDir: path.join(__dirname, 'fixtures/import'),
-      ...pkg
+      ...pkg,
+      editable: 'test-other'
     });
   });
 
@@ -138,7 +141,8 @@ describe('new Generator', function () {
     const pkg = JSON.parse(pkgContent);
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/try/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
       pkgDir: path.join(__dirname, 'fixtures/try'),
-      ...pkg
+      ...pkg,
+      editable: false
     });
   });
 
@@ -149,7 +153,8 @@ describe('new Generator', function () {
     const pkg = JSON.parse(pkgContent);
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/tea/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
       pkgDir: path.join(__dirname, 'fixtures/tea'),
-      ...pkg
+      ...pkg,
+      editable: 'true'
     });
   });
 
