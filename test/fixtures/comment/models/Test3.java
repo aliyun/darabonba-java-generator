@@ -1,11 +1,11 @@
-// This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test.models;
 
 import com.aliyun.tea.*;
 
 /**
-  TestModel3
-*/
+ * <b>description</b> :
+ * <p>TestModel3</p>
+ */
 public class Test3 extends TeaModel {
     // empty comment1
     // empy comment2
