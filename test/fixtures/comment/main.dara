@@ -4,8 +4,8 @@ type @a = [ string  ]
   TestModel
 */
 model Test1{
-  test: string(description='test desc', name='test'), //model的test back comment
-  test2: string(description='test2 desc', name='test2'), //model的test2 back comment
+  test: string(description='test desc', name='test', deprecated=false, nullable=false, checkBlank=false, sensitive=false), //model的test back comment
+  test2: string(description='test2 desc', name='test2', deprecated=true, nullable=true, checkBlank=true, sensitive=true), //model的test2 back comment
 }
 
 /**
@@ -27,23 +27,18 @@ model Test3{
 }
 
 /**
-  * @deprecated : Test4 is deprecated.
+  * @deprecated Test4 is deprecated, use Test3 instead.
  */
 // Deprecated
 model Test4{
-  test: string(description='The ID of the destination security group to be referenced in security group rule N.
+  test: string(description='The natural language that is used to filter responses. For more information, visit [RFC 7231](https://tools.ietf.org/html/rfc7231). Valid values:
 
-*   At least one of `DestGroupId`, `DestCidrIp`, `Ipv6DestCidrIp`, and `DestPrefixListId` must be specified.
-*   If `DestGroupId` is specified but `DestCidrIp` is not specified, the `NicType` parameter must be set to intranet.
-*   If both `DestGroupId` and `DestCidrIp` are specified, `DestCidrIp` takes precedence.
+*   zh-CN: Chinese
+*   en-US: English
+*   ja: Japanese
 
-Valid values of N: 1 to 100.
-
-Take note of the following items:
-
-*   For advanced security groups, security groups cannot be used as authorization objects.
-*   For each basic security group, a maximum of 20 security groups can be used as authorization objects.', name='test', deprecated='true'),
-  test2: string(description='test2 desc', name='test2', deprecated='true'),
+Default value: zh-CN.', name='test', deprecated=true),
+  test2: string(description='test2 desc', name='test2', deprecated=false),
 }
 
 /**
@@ -141,13 +136,33 @@ static async function testFunc(): void {
 
 // Deprecated
 /**
-  * @deprecated : deprecatedFunc is deprecated.
-  *
-  * @param test string
-  * @return void
+ * @summary Queries available Alibaba Cloud regions. The natural language that is used to filter responses. For more information, visit [RFC 7231](https://tools.ietf.org/html/rfc7231). Valid values:
+ * *   zh-CN: Chinese
+ * *   en-US: English
+ * *   ja: Japanese
+ *
+ * @description Queries available Alibaba Cloud regions. The natural language that is used to filter responses. For more information, visit [RFC 7231](https://tools.ietf.org/html/rfc7231). Valid values:
+ * *   zh-CN: Chinese
+ * *   en-US: English
+ * *   ja: Japanese
+ * 
+ * Default value: zh-CN.
+ * 
+ * 
+ * > 这是Note的内容
+ *
+ * > Notice: 这是注意的内容
+ *
+ * @deprecated deprecatedFunc is deprecated.
+ *
+ * @param test string
+ * @param _test string
+ * @return void
+ * @throws InternalError Server error. 500 服务器端出现未知异常。
+ * @throws StackNotFound The Stack (%(stack_name)s) could not be found.  404 资源栈不存在。
  */
 // Deprecated
-static async function deprecatedFunc(test: string): void {
+static async function deprecatedFunc(test: string, _test: string): void {
     // empty comment1
     // empty comment2
 }

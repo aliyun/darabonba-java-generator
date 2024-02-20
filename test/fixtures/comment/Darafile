@@ -3,6 +3,7 @@
     "name": "main",
     "version": "0.0.1",
     "main": "./main.dara",
+    "editable":true,
     "libraries": {
         "Source": "alibabacloud:Import:*"
     },

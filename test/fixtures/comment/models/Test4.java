@@ -1,25 +1,20 @@
-// This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test.models;
 
 import com.aliyun.tea.*;
 
 /**
-  * @deprecated : Test4 is deprecated.
+ * @deprecated Test4 is deprecated, use Test3 instead.
  */
+@Deprecated
 public class Test4 extends TeaModel {
     /**
-     * <p>The ID of the destination security group to be referenced in security group rule N.</p>
-     * <br>
-     * <p>*   At least one of `DestGroupId`, `DestCidrIp`, `Ipv6DestCidrIp`, and `DestPrefixListId` must be specified.</p>
-     * <p>*   If `DestGroupId` is specified but `DestCidrIp` is not specified, the `NicType` parameter must be set to intranet.</p>
-     * <p>*   If both `DestGroupId` and `DestCidrIp` are specified, `DestCidrIp` takes precedence.</p>
-     * <br>
-     * <p>Valid values of N: 1 to 100.</p>
-     * <br>
-     * <p>Take note of the following items:</p>
-     * <br>
-     * <p>*   For advanced security groups, security groups cannot be used as authorization objects.</p>
-     * <p>*   For each basic security group, a maximum of 20 security groups can be used as authorization objects.</p>
+     * <p>The natural language that is used to filter responses. For more information, visit <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>. Valid values:</p>
+     * <ul>
+     * <li>zh-CN: Chinese</li>
+     * <li>en-US: English</li>
+     * <li>ja: Japanese</li>
+     * </ul>
+     * <p>Default value: zh-CN.</p>
      */
     @NameInMap("test")
     @Deprecated
@@ -30,7 +25,6 @@ public class Test4 extends TeaModel {
      * <p>test2 desc</p>
      */
     @NameInMap("test2")
-    @Deprecated
     @Validation(required = true)
     public String test2;
 
