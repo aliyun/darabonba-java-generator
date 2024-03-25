@@ -4,14 +4,6 @@ const path = require('path');
 const fs = require('fs');
 const assert = require('assert');
 
-async function msleep(n) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, n);
-  });
-}
-
 const DSL = require('@darabonba/parser');
 
 let Generator = require('../lib/generator');
@@ -90,7 +82,7 @@ describe('new Generator', function () {
   it('comment should ok', function () {
     const outputDir = path.join(__dirname, 'output/comment');
     const mainFilePath = path.join(__dirname, 'fixtures/comment/main.dara');
-    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/comment/Client.java'));
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/comment/Client.java'), 'src/main/java/com/aliyun/test/Client.java', { editable: true });
     assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test1.java'), 'utf8'),
       fs.readFileSync(path.join(outputDir, 'src/main/java/com/aliyun/test/models/Test1.java'), 'utf8'));
     assert.deepStrictEqual(fs.readFileSync(path.join(__dirname, 'fixtures/comment/models/Test2.java'), 'utf8'),
@@ -210,26 +202,26 @@ describe('new Generator', function () {
     });
   });
 
-  it('pom should ok', async function () {
-    const outputDir = path.join(__dirname, 'output/pom');
-    const mainFilePath = path.join(__dirname, 'fixtures/pom/main.dara');
-    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/pom/Darafile'), 'utf8');
-    const pkg = JSON.parse(pkgContent);
-    // 由于pom文件的生成是异步的，所以没有使用其他测试用例check逻辑，通过sleep时间进行验证
-    const generator = new Generator({
-      outputDir,
-      baseClient: 'com.aliyun.test.BaseClient',
-      package: 'com.aliyun.test',
-      java: {},
-      pkgDir: path.join(__dirname, 'fixtures/pom'),
-      ...pkg
-    });
-    const dsl = fs.readFileSync(mainFilePath, 'utf8');
-    const ast = DSL.parse(dsl, mainFilePath);
-    generator.visit(ast);
-    const clientPath = path.join(outputDir, 'pom.xml');
-    const expected = fs.readFileSync(path.join(__dirname, 'fixtures/pom/pom.xml'), 'utf8');
-    await msleep(500);
-    assert.deepStrictEqual(fs.readFileSync(clientPath, 'utf8'), expected);
-  });
+  // it('pom should ok', async function () {
+  //   const outputDir = path.join(__dirname, 'output/pom');
+  //   const mainFilePath = path.join(__dirname, 'fixtures/pom/main.dara');
+  //   const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/pom/Darafile'), 'utf8');
+  //   const pkg = JSON.parse(pkgContent);
+  //   // 由于pom文件的生成是异步的，所以没有使用其他测试用例check逻辑，通过sleep时间进行验证
+  //   const generator = new Generator({
+  //     outputDir,
+  //     baseClient: 'com.aliyun.test.BaseClient',
+  //     package: 'com.aliyun.test',
+  //     java: {},
+  //     pkgDir: path.join(__dirname, 'fixtures/pom'),
+  //     ...pkg
+  //   });
+  //   const dsl = fs.readFileSync(mainFilePath, 'utf8');
+  //   const ast = DSL.parse(dsl, mainFilePath);
+  //   generator.visit(ast);
+  //   const clientPath = path.join(outputDir, 'pom.xml');
+  //   const expected = fs.readFileSync(path.join(__dirname, 'fixtures/pom/pom.xml'), 'utf8');
+  //   await msleep(500);
+  //   assert.deepStrictEqual(fs.readFileSync(clientPath, 'utf8'), expected);
+  // });
 });

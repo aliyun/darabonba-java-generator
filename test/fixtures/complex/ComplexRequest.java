@@ -35,6 +35,9 @@ public class ComplexRequest extends TeaModel {
     /**
      * <p>Body</p>
      * <p>body</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Body</p>
      */
     @NameInMap("Body")
     @Validation(required = true)
@@ -44,6 +47,9 @@ public class ComplexRequest extends TeaModel {
     public java.util.Map<String, java.util.List<java.util.Map<String, String>>> userTest;
 
     /**
+     * <p>Strs</p>
+     * 
+     * <strong>example:</strong>
      * <p>Strs</p>
      */
     @NameInMap("Strs")
@@ -263,6 +269,9 @@ public class ComplexRequest extends TeaModel {
     public static class ComplexRequestHeader extends TeaModel {
         /**
          * <p>Body</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Content</p>
          */
         @NameInMap("Content")
         @Validation(required = true)
