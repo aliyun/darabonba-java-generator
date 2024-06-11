@@ -1,5 +1,11 @@
 # ChangeLog
 
+## 1.3.4 - 2024-06-11
+
+> Support pom package manager.
+> Add example, checkBlank, nullable and sensitive to description.
+> Drop support for node 10.
+
 ## 1.3.3 - 2023-01-06
 
 > Fix subModel in wrong class.
