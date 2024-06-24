@@ -33,6 +33,7 @@ public class Test4 extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    @Deprecated
     public Test4 setTest(String test) {
         this.test = test;
         return this;

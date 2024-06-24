@@ -55,6 +55,7 @@ public class Test1 extends TeaModel {
         return this.test;
     }
 
+    @Deprecated
     public Test1 setTest2(String test2) {
         this.test2 = test2;
         return this;
