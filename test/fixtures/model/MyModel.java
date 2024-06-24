@@ -114,6 +114,7 @@ public class MyModel extends TeaModel {
         return this.mapfield;
     }
 
+    @Deprecated
     public MyModel setName(String name) {
         this.name = name;
         return this;
