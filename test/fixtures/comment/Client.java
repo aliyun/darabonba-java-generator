@@ -204,4 +204,40 @@ public class Client {
         // empty comment1
         // empty comment2
     }
+
+    /**
+     * <b>summary</b> : 
+     * <p>annotation test summary
+     * summary description1
+     * summary description2</p>
+     * 
+     * @deprecated test is deprecated, use xxx instead.
+     * deprecated description1
+     * deprecated description2
+     * 
+     * @param test string param1
+     * @param _test string param2
+     * @return void
+     * 
+     * @throws InternalError Server error. 500 服务器端出现未知异常。
+     */
+    @Deprecated
+    public static void multiLineAnnotation(String test, String _test) throws Exception {
+    }
+
+    /**
+     * @deprecated deprecated test for line break.
+     * 
+     * @param test string param1
+     * param test for line break.
+     * @param _test string param2
+     * @return void
+     * return test for line break.
+     * 
+     * @throws InternalError Server error. 500 服务器端出现未知异常。
+     * throws test for line break.
+     */
+    @Deprecated
+    public static void lineBreakAnnotation(String test, String _test) throws Exception {
+    }
 }
