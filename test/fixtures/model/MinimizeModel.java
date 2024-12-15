@@ -61,6 +61,10 @@ public class MyModel extends TeaModel {
     @Validation(required = true)
     public TeaRequest request;
 
+    @NameInMap("config")
+    @Validation(required = true)
+    public Config config;
+
     public static MyModel build(java.util.Map<String, ?> map) throws Exception {
         MyModel self = new MyModel();
         return TeaModel.build(map, self);
@@ -177,6 +181,14 @@ public class MyModel extends TeaModel {
     }
     public TeaRequest getRequest() {
         return this.request;
+    }
+
+    public MyModel setConfig(Config config) {
+        this.config = config;
+        return this;
+    }
+    public Config getConfig() {
+        return this.config;
     }
 
     public static class Submodel extends TeaModel {
@@ -451,6 +463,38 @@ public class MyModel extends TeaModel {
         }
         public LongSubmodelTest1 getLongSubmodelTest1() {
             return this.longSubmodelTest1;
+        }
+
+    }
+
+    public static class Config extends TeaModel {
+        @NameInMap("Key")
+        @Validation(required = true)
+        public String key;
+
+        @NameInMap("Value")
+        @Validation(required = true)
+        public String value;
+
+        public static Config build(java.util.Map<String, ?> map) throws Exception {
+            Config self = new Config();
+            return TeaModel.build(map, self);
+        }
+
+        public Config setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public Config setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
         }
 
     }

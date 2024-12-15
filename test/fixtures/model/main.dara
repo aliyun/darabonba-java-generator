@@ -39,7 +39,11 @@ model MyModel = {
   numberfield: number(name='numberfield', minimum=50, maximum=9007199254740991),
   intfield: integer,
   readable: readable,
-  request: $Request
+  request: $Request,
+  config: {
+    key: string(name='Key'),
+    value: string(name='Value'),
+  }
 };
 
 model NewMyModel = {
@@ -47,4 +51,6 @@ model NewMyModel = {
     name: string(name='Name'),
     num?: integer(name='Num'),
   },
+  config: MyModel.config(name='Config'),
+  configArray: [ MyModel.config ](name='Configs'),
 }

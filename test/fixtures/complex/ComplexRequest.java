@@ -81,6 +81,17 @@ public class ComplexRequest extends TeaModel {
     @NameInMap("Part")
     public java.util.List<ComplexRequestPart> part;
 
+    @NameInMap("configCopy")
+    @Validation(required = true)
+    public com.import.models.Request.RequestConfigs configCopy;
+
+    /**
+     * <p>Configs</p>
+     */
+    @NameInMap("Configs")
+    @Validation(required = true)
+    public java.util.List<com.import.models.Request.RequestConfigs> configCopyArray;
+
     public static ComplexRequest build(java.util.Map<String, ?> map) {
         ComplexRequest self = new ComplexRequest();
         return TeaModel.build(map, self);
@@ -204,6 +215,22 @@ public class ComplexRequest extends TeaModel {
     }
     public java.util.List<ComplexRequestPart> getPart() {
         return this.part;
+    }
+
+    public ComplexRequest setConfigCopy(com.import.models.Request.RequestConfigs configCopy) {
+        this.configCopy = configCopy;
+        return this;
+    }
+    public com.import.models.Request.RequestConfigs getConfigCopy() {
+        return this.configCopy;
+    }
+
+    public ComplexRequest setConfigCopyArray(java.util.List<com.import.models.Request.RequestConfigs> configCopyArray) {
+        this.configCopyArray = configCopyArray;
+        return this;
+    }
+    public java.util.List<com.import.models.Request.RequestConfigs> getConfigCopyArray() {
+        return this.configCopyArray;
     }
 
     public static class ComplexRequestComplexList1 extends TeaModel {

@@ -7,7 +7,7 @@ static function helloMap(): map[string]string {
   m.test = "test";
   return {
     key = 'value',
-    key-1 = 'value-1',
+    'key-1' = 'value-1',
     ...m,
   };
 }

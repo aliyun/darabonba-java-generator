@@ -54,6 +54,8 @@ body'),
       partNumber?: string(description='PartNumber', name='PartNumber')
     }
   ](description='Part', name='Part'),
+  configCopy: Source.Request.configs,
+  configCopyArray: [ Source.Request.configs ](description='Configs', name='Configs')
 }
 
 model Response {

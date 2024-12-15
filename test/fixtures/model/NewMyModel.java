@@ -8,6 +8,14 @@ public class NewMyModel extends TeaModel {
     @Validation(required = true)
     public NewMyModelObject object;
 
+    @NameInMap("Config")
+    @Validation(required = true)
+    public MyModel.MyModelConfig config;
+
+    @NameInMap("Configs")
+    @Validation(required = true)
+    public java.util.List<MyModel.MyModelConfig> configArray;
+
     public static NewMyModel build(java.util.Map<String, ?> map) throws Exception {
         NewMyModel self = new NewMyModel();
         return TeaModel.build(map, self);
@@ -19,6 +27,22 @@ public class NewMyModel extends TeaModel {
     }
     public NewMyModelObject getObject() {
         return this.object;
+    }
+
+    public NewMyModel setConfig(MyModel.MyModelConfig config) {
+        this.config = config;
+        return this;
+    }
+    public MyModel.MyModelConfig getConfig() {
+        return this.config;
+    }
+
+    public NewMyModel setConfigArray(java.util.List<MyModel.MyModelConfig> configArray) {
+        this.configArray = configArray;
+        return this;
+    }
+    public java.util.List<MyModel.MyModelConfig> getConfigArray() {
+        return this.configArray;
     }
 
     public static class NewMyModelObject extends TeaModel {
