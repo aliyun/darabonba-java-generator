@@ -237,4 +237,10 @@ describe('new Generator', function () {
     await msleep(500);
     assert.deepStrictEqual(fs.readFileSync(clientPath, 'utf8'), expected);
   });
+
+  it('bultin should ok', function () {
+    const outputDir = path.join(__dirname, 'output/builtin');
+    const mainFilePath = path.join(__dirname, 'fixtures/builtin/main.dara');
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/builtin/Client.java'));
+  });
 });

@@ -1,0 +1,34 @@
+static async function jsonTest(args: [string]): void {
+    var m = {
+        key1 = 'test1',
+        key2 = 'test2',
+        key3 = 3,
+        key4 = {
+            key5 = 123,
+            key6 = '321'
+        }
+    };
+    var ms = $JSON.stringify(m);
+    var ma = $JSON.parseJSON(ms);
+    var arrStr = '[1,2,3,4]';
+    var arr = $JSON.parseJSON(arrStr);
+    var res = $JSON.readPath(m, '$.key1.key2');
+}
+
+static function main(args: [string]): void {
+    var a = 1;
+    var b: string = $string(a);
+    var f: int32 = $int32(b);
+    var g: int64 = $int64(b);
+    var h: long = $long(b);
+    var n: float = $float(b);
+    var o: double = $double(b);
+    if ($boolean(args[2])) {
+        var data: string = $string(args[2]);
+        var test: any = $any(data);
+        var maps: map[string]string = {
+            key = 'value',
+        };
+        var obj: object = $object(maps);
+    }
+}
