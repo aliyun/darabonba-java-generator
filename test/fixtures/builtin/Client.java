@@ -22,6 +22,10 @@ public class Client {
         Object res = JSONUitls.readPath(m, "$.key1.key2");
     }
 
+    public static void envTest(java.util.List<String> args) throws Exception {
+        String es = System.getenv("TEST");
+    }
+
     public static void main(String[] args_) throws Exception {
         java.util.List<String> args = java.util.Arrays.asList(args_);
         Integer a = 1;
@@ -38,6 +42,16 @@ public class Client {
                 new TeaPair("key", "value")
             );
             java.util.Map<String, Object> obj = (Map<String, Object>)(maps);
+        }
+
+        if (!(null == a)) {
+            return ;
+        }
+
+        Thread.Sleep(a);
+        String defaultVal = (String)(args.get(0) == null ? args.get(0) : args.get(1));
+        if (defaultVal == b) {
+            return ;
         }
 
     }

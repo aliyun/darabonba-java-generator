@@ -7,6 +7,8 @@ import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
 import com.aliyun.tea.interceptor.RequestInterceptor;
 import com.aliyun.tea.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
+import com.import.*;
+import com.import.models.*;
 
 public class NameTest implements ImplementsTest {
 
@@ -21,7 +23,7 @@ public class NameTest implements ImplementsTest {
         _configs.set(0, config);
     }
 
-    public com.import.models.RuntimeObject Complex1(ComplexRequest request, com.import.Client client) {
+    public RuntimeObject Complex1(ComplexRequest request, com.import.Client client) {
         TeaModel.validateParams(request, "request");
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
             new TeaPair("timeouted", "retry")
@@ -59,7 +61,7 @@ public class NameTest implements ImplementsTest {
                     throw new TeaRetryableException();
                     return null;
                 } else if (true || false) {
-                    return new com.import.models.RuntimeObject();
+                    return new RuntimeObject();
                 }
 
                 client.print(request, "1");
@@ -69,7 +71,7 @@ public class NameTest implements ImplementsTest {
                 ));
                 this.hello(null, null);
                 this.Complex3(null);
-                return TeaModel.toModel(new java.util.HashMap<>(), new com.import.models.RuntimeObject());
+                return TeaModel.toModel(new java.util.HashMap<>(), new RuntimeObject());
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     _lastException = e;
@@ -84,7 +86,7 @@ public class NameTest implements ImplementsTest {
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
-    public java.util.Map<String, ?> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) {
+    public java.util.Map<String, Object> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
@@ -116,7 +118,7 @@ public class NameTest implements ImplementsTest {
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
         TeaResponse resp = response_;
-        com.import.models.Request req = com.import.models.Request.build(TeaConverter.buildMap(
+        Request req = Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", request.accessKey),
             new TeaPair("region", resp.statusMessage)
         ));
@@ -151,7 +153,7 @@ public class NameTest implements ImplementsTest {
         return configInfo;
     }
 
-    public static String mapAccess2(com.import.models.Request.RequestConfigs configs) {
+    public static String mapAccess2(Request.RequestConfigs configs) {
         String configInfo = configs.extra.get("name");
         return configInfo;
     }
@@ -224,11 +226,11 @@ public class NameTest implements ImplementsTest {
     }
 
     @Override
-    public java.util.List<String> hello(java.util.Map<String, ?> request, java.util.List<String> strs) {
+    public java.util.List<String> hello(java.util.Map<String, Object> request, java.util.List<String> strs) {
         return NameTest.array1();
     }
 
-    public static com.import.models.Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
+    public static Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
         return null;
     }
 
@@ -240,7 +242,7 @@ public class NameTest implements ImplementsTest {
         sconf.protocol = conf.protocol;
     }
 
-    public static java.util.List<?> array0(java.util.Map<String, ?> req) {
+    public static java.util.List<Object> array0(java.util.Map<String, Object> req) {
         Long longTest = 1L;
         Double doubleTest = 1D;
         Float floatTest = 1F;

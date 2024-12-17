@@ -43,7 +43,7 @@ public class MyModel extends TeaModel {
 
     @NameInMap("object")
     @Validation(required = true)
-    public java.util.Map<String, ?> object;
+    public java.util.Map<String, Object> object;
 
     @NameInMap("numberfield")
     @Validation(required = true, maximum = 9007199254740991D, minimum = 50)
@@ -143,11 +143,11 @@ public class MyModel extends TeaModel {
         return this.longSubmodelTest;
     }
 
-    public MyModel setObject(java.util.Map<String, ?> object) {
+    public MyModel setObject(java.util.Map<String, Object> object) {
         this.object = object;
         return this;
     }
-    public java.util.Map<String, ?> getObject() {
+    public java.util.Map<String, Object> getObject() {
         return this.object;
     }
 

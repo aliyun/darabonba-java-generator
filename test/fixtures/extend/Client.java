@@ -6,16 +6,18 @@ import com.aliyun.tea.interceptor.InterceptorChain;
 import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
 import com.aliyun.tea.interceptor.RequestInterceptor;
 import com.aliyun.tea.interceptor.ResponseInterceptor;
+import com.import.*;
+import com.import.models.*;
 
 public class Client extends com.import.Client {
 
     private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
-    public Client(com.import.models.Config config, String a) throws Exception {
+    public Client(Config config, String a) throws Exception {
         super(config, a);
     }
 
-    public java.util.Map<String, ?> _request() throws Exception {
+    public java.util.Map<String, Object> _request() throws Exception {
         java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
 
         TeaRequest _lastRequest = null;

@@ -15,6 +15,10 @@ static async function jsonTest(args: [string]): void {
     var res = $JSON.readPath(m, '$.key1.key2');
 }
 
+static async function envTest(args: [string]): void {
+    var es = $Env.get('TEST');
+}
+
 static function main(args: [string]): void {
     var a = 1;
     var b: string = $string(a);
@@ -30,5 +34,13 @@ static function main(args: [string]): void {
             key = 'value',
         };
         var obj: object = $object(maps);
+    }
+    if (!$isNull(a)) {
+        return;
+    }
+    $sleep(a);
+    var defaultVal = $string($default(args[0], args[1]));
+    if ($equal(defaultVal, b)) {
+        return;
     }
 }

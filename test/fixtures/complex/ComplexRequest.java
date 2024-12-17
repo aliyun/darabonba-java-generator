@@ -2,6 +2,8 @@
 package com.aliyun.test.models;
 
 import com.aliyun.tea.*;
+import com.import.*;
+import com.import.models.*;
 
 public class ComplexRequest extends TeaModel {
     @NameInMap("accessKey")
@@ -10,7 +12,7 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("moduleModelMap")
     @Validation(required = true)
-    public java.util.Map<String, com.import.models.Request> moduleModelMap;
+    public java.util.Map<String, Request> moduleModelMap;
 
     @NameInMap("subModelMap")
     @Validation(required = true)
@@ -83,14 +85,18 @@ public class ComplexRequest extends TeaModel {
 
     @NameInMap("configCopy")
     @Validation(required = true)
-    public com.import.models.Request.RequestConfigs configCopy;
+    public Request.RequestConfigs configCopy;
 
     /**
      * <p>Configs</p>
      */
     @NameInMap("Configs")
     @Validation(required = true)
-    public java.util.List<com.import.models.Request.RequestConfigs> configCopyArray;
+    public java.util.List<Request.RequestConfigs> configCopyArray;
+
+    @NameInMap("subMArray")
+    @Validation(required = true)
+    public java.util.List<Config.ConfigSubM> subMArray;
 
     public static ComplexRequest build(java.util.Map<String, ?> map) {
         ComplexRequest self = new ComplexRequest();
@@ -105,11 +111,11 @@ public class ComplexRequest extends TeaModel {
         return this.accessKey;
     }
 
-    public ComplexRequest setModuleModelMap(java.util.Map<String, com.import.models.Request> moduleModelMap) {
+    public ComplexRequest setModuleModelMap(java.util.Map<String, Request> moduleModelMap) {
         this.moduleModelMap = moduleModelMap;
         return this;
     }
-    public java.util.Map<String, com.import.models.Request> getModuleModelMap() {
+    public java.util.Map<String, Request> getModuleModelMap() {
         return this.moduleModelMap;
     }
 
@@ -217,20 +223,28 @@ public class ComplexRequest extends TeaModel {
         return this.part;
     }
 
-    public ComplexRequest setConfigCopy(com.import.models.Request.RequestConfigs configCopy) {
+    public ComplexRequest setConfigCopy(Request.RequestConfigs configCopy) {
         this.configCopy = configCopy;
         return this;
     }
-    public com.import.models.Request.RequestConfigs getConfigCopy() {
+    public Request.RequestConfigs getConfigCopy() {
         return this.configCopy;
     }
 
-    public ComplexRequest setConfigCopyArray(java.util.List<com.import.models.Request.RequestConfigs> configCopyArray) {
+    public ComplexRequest setConfigCopyArray(java.util.List<Request.RequestConfigs> configCopyArray) {
         this.configCopyArray = configCopyArray;
         return this;
     }
-    public java.util.List<com.import.models.Request.RequestConfigs> getConfigCopyArray() {
+    public java.util.List<Request.RequestConfigs> getConfigCopyArray() {
         return this.configCopyArray;
+    }
+
+    public ComplexRequest setSubMArray(java.util.List<Config.ConfigSubM> subMArray) {
+        this.subMArray = subMArray;
+        return this;
+    }
+    public java.util.List<Config.ConfigSubM> getSubMArray() {
+        return this.subMArray;
     }
 
     public static class ComplexRequestComplexList1 extends TeaModel {
@@ -332,6 +346,10 @@ public class ComplexRequest extends TeaModel {
         @Validation(required = true)
         public java.util.Map<String, String> extra;
 
+        @NameInMap("object")
+        @Validation(required = true)
+        public Config.ConfigSubMSubObject object;
+
         public static ComplexRequestConfigs build(java.util.Map<String, ?> map) {
             ComplexRequestConfigs self = new ComplexRequestConfigs();
             return TeaModel.build(map, self);
@@ -359,6 +377,14 @@ public class ComplexRequest extends TeaModel {
         }
         public java.util.Map<String, String> getExtra() {
             return this.extra;
+        }
+
+        public ComplexRequestConfigs setObject(Config.ConfigSubMSubObject object) {
+            this.object = object;
+            return this;
+        }
+        public Config.ConfigSubMSubObject getObject() {
+            return this.object;
         }
 
     }
