@@ -1,7 +1,7 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
+import com.aliyun.tea.TeaException;
 
 public class Client {
 
@@ -9,9 +9,6 @@ public class Client {
         try {
             String str = "test";
         } catch (TeaException err) {
-            String test = err.message;
-        } catch (Exception _err) {
-            TeaException err = new TeaException(_err.getMessage(), _err);
             String test = err.message;
         } finally {
             String _final = "ok";

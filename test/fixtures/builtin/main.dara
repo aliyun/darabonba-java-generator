@@ -15,6 +15,14 @@ static async function jsonTest(args: [string]): void {
     var res = $JSON.readPath(m, '$.key1.key2');
 }
 
+static async function loggerTest(args: [string]): void {
+    $Logger.trace("test");
+    $Logger.info("test");
+    $Logger.warning("test");
+    $Logger.debug("test");
+    $Logger.error("test");
+}
+
 static async function envTest(args: [string]): void {
     var es = $Env.get('TEST');
 }

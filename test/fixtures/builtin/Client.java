@@ -22,6 +22,14 @@ public class Client {
         Object res = JSONUitls.readPath(m, "$.key1.key2");
     }
 
+    public static void loggerTest(java.util.List<String> args) throws Exception {
+        System.out.println("test");
+        System.out.println("test");
+        System.out.println("test");
+        System.out.println("test");
+        System.out.println("test");
+    }
+
     public static void envTest(java.util.List<String> args) throws Exception {
         String es = System.getenv("TEST");
     }

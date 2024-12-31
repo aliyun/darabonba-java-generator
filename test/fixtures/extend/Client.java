@@ -38,9 +38,6 @@ public class Client extends com.import.Client {
                     String in = "try";
                 } catch (TeaException e) {
                     String tmp = "catch";
-                } catch (Exception _e) {
-                    TeaException e = new TeaException(_e.getMessage(), _e);
-                    String tmp = "catch";
                 }                
                 _lastRequest = request_;
                 TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
