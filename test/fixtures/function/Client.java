@@ -15,7 +15,8 @@ public class Client {
         return TeaConverter.merge(String.class,
             TeaConverter.buildMap(
                 new TeaPair("key", "value"),
-                new TeaPair("key-1", "value-1")
+                new TeaPair("'key-1'", "value-1"),
+                new TeaPair("\"\"", "value-2")
             ),
             m
         );
