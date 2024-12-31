@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.3.5 - 2024-12-31
+
+> Adjust field name for object.
+
 ## 1.3.4 - 2024-06-11
 
 > Support pom package manager.
