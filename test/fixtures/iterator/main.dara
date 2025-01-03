@@ -1,0 +1,26 @@
+init(){}
+
+async function test1(): iterator[string];
+async function test2(): iterator[string]{
+    var it:iterator[string] = test1();
+    for(var test : it) {
+        yield test;
+    }
+}
+
+async function test3(iter: iterator[string]): string{
+    var it = iter;
+    var str : string = '';
+    for (var i : it) {
+        str = `${str}, ${i}`;
+    }
+    return str;
+}
+
+async function test4(test: any): void{
+}
+
+async function test5(iter: iterator[string]): void{
+    // test3(iter);
+    test4(iter);
+}
