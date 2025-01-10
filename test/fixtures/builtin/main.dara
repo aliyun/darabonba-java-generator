@@ -16,7 +16,7 @@ static async function jsonTest(args: [string]): void {
 }
 
 static async function loggerTest(args: [string]): void {
-    $Logger.trace("test");
+    // $Logger.trace("test");
     $Logger.info("test");
     $Logger.warning("test");
     $Logger.debug("test");
@@ -25,6 +25,38 @@ static async function loggerTest(args: [string]): void {
 
 static async function envTest(args: [string]): void {
     var es = $Env.get('TEST');
+}
+
+static async function stringTest(args: [string]): void {
+    var fullStr = 'cn-hangzhou, cn-shanghai';
+    if (fullStr.equals('cn-hangzhou')) {
+        args = fullStr.split(',');
+    }
+
+    if (fullStr.contains('hangzhou')) {
+        var length = fullStr.length();
+    }
+    
+    if (fullStr.hasPrefix('cn-')) {
+    }
+
+    if (fullStr.hasSuffix('cn-')) {
+        var start = fullStr.index('hangzhou');
+        var end = start + 7;
+        var region = fullStr.subString(start, end);
+        var lowerRegion = region.toLower();
+        var upperRegion = region.toUpper();
+    }
+
+    var em = 'xxx';
+    if (em.empty()) {
+        return;
+    }
+    var num = '32.01';
+    var inum = num.parseInt() + 3;
+    var lnum: long = num.parseLong();
+    var fnum: float = num.parseFloat() + 1.0;
+    var dnum: double = num.parseDouble() + 1.0d;
 }
 
 static function main(args: [string]): void {
