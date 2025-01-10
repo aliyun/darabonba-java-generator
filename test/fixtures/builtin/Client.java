@@ -36,7 +36,7 @@ public class Client {
 
     public static void stringTest(java.util.List<String> args) throws Exception {
         String fullStr = "cn-hangzhou, cn-shanghai";
-        if (.equals("cn-hangzhou")) {
+        if (fullStr.equals("cn-hangzhou")) {
             args = fullStr.split(",");
         }
 
