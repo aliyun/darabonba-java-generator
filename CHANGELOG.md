@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.3.6 - 2024-01-14
+
+> Fix field name for object.
+
 ## 1.3.5 - 2024-12-31
 
 > Adjust field name for object.
