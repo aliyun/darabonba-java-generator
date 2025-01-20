@@ -28,6 +28,8 @@ static async function envTest(args: [string]): void {
 }
 
 static async function stringTest(args: [string]): void {
+    var str = `${$Env.get('TEST')}`;
+    var site = str.parseLong();
     var fullStr = 'cn-hangzhou, cn-shanghai';
     if (fullStr.equals('cn-hangzhou')) {
         args = fullStr.split(',');
@@ -59,7 +61,7 @@ static async function stringTest(args: [string]): void {
     var dnum: double = num.parseDouble() + 1.0d;
 }
 
-static function main(args: [string]): void {
+static async function main(args: [string]): void {
     var a = 1;
     var b: string = $string(a);
     var f: int32 = $int32(b);

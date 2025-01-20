@@ -35,6 +35,8 @@ public class Client {
     }
 
     public static void stringTest(java.util.List<String> args) throws Exception {
+        String str = System.getenv("TEST").toString();
+        Long site = Long.parseLong(str);
         String fullStr = "cn-hangzhou, cn-shanghai";
         if (fullStr.equals("cn-hangzhou")) {
             args = fullStr.split(",");
