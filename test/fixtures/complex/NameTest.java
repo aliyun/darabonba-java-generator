@@ -243,9 +243,9 @@ public class NameTest implements ImplementsTest {
     }
 
     public static java.util.List<Object> array0(java.util.Map<String, Object> req) {
-        Long longTest = 1L;
-        Double doubleTest = 1D;
-        Float floatTest = 1F;
+        long longTest = 1L;
+        double doubleTest = 1D;
+        float floatTest = 1F;
         return new java.util.ArrayList<>();
     }
 

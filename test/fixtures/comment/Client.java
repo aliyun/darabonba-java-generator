@@ -65,7 +65,7 @@ public class Client {
                     new TeaPair("test2", "test2")
                 ));
                 // number declare comment
-                Integer num = 123;
+                int num = 123;
                 // static function call comment
                 Client.staticFunc();
                 _lastRequest = request_;
@@ -110,7 +110,7 @@ public class Client {
                 // new model instance comment
                 Test3 modelInstance = new Test3();
                 // boolean declare comment
-                Boolean bool = true;
+                boolean bool = true;
                 if (bool) {
                     //empty if
                 } else {

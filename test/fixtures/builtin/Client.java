@@ -36,22 +36,22 @@ public class Client {
 
     public static void stringTest(java.util.List<String> args) throws Exception {
         String str = System.getenv("TEST").toString();
-        Long site = Long.parseLong(str);
+        long site = Long.parseLong(str);
         String fullStr = "cn-hangzhou, cn-shanghai";
         if (fullStr.equals("cn-hangzhou")) {
             args = fullStr.split(",");
         }
 
         if (fullStr.contains("hangzhou")) {
-            Integer length = fullStr.length();
+            int length = fullStr.length();
         }
 
         if (fullStr.startsWith("cn-")) {
         }
 
         if (fullStr.endsWith("cn-")) {
-            Integer start = fullStr.indexOf("hangzhou");
-            Integer end = start + 7;
+            int start = fullStr.indexOf("hangzhou");
+            int end = start + 7;
             String region = fullStr.substring(start, end);
             String lowerRegion = region.toLowerCase();
             String upperRegion = region.toUpperCase();
@@ -63,21 +63,21 @@ public class Client {
         }
 
         String num = "32.01";
-        Integer inum = Integer.parseInt(num) + 3;
-        Long lnum = Long.parseLong(num);
-        Float fnum = Float.parseFloat(num) + 1F;
-        Double dnum = Double.parseDouble(num) + 1D;
+        int inum = Integer.parseInt(num) + 3;
+        long lnum = Long.parseLong(num);
+        float fnum = Float.parseFloat(num) + 1F;
+        double dnum = Double.parseDouble(num) + 1D;
     }
 
     public static void main(String[] args_) throws Exception {
         java.util.List<String> args = java.util.Arrays.asList(args_);
-        Integer a = 1;
+        int a = 1;
         String b = a.toString();
-        Integer f = ConverterUtils.parseInt(b);
-        Long g = ConverterUtils.parseInt(b);
-        Long h = ConverterUtils.parseLong(b);
-        Float n = ConverterUtils.parseFloat(b);
-        Double o = Double.parseDouble(b.toString());
+        int f = ConverterUtils.parseInt(b);
+        long g = ConverterUtils.parseInt(b);
+        long h = ConverterUtils.parseLong(b);
+        float n = ConverterUtils.parseFloat(b);
+        double o = Double.parseDouble(b.toString());
         if (ConverterUtils.parseBoolean(args.get(2))) {
             String data = args.get(2).toString();
             Object test = data;

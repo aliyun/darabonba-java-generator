@@ -23,8 +23,8 @@ public class Client {
             1,
             2
         );
-        Integer sum = 0;
-        for (Integer a : numberArray) {
+        int sum = 0;
+        for (int a : numberArray) {
             sum = a;
         }
     }
