@@ -69,8 +69,9 @@ public class Client {
         double dnum = Double.parseDouble(num) + 1D;
     }
 
-    public static void main(String[] args_) throws Exception {
-        java.util.List<String> args = java.util.Arrays.asList(args_);
+    public static void main(String[] args) throws Exception {
+        args[0];
+        args[1];
         int a = 1;
         String b = a.toString();
         int f = ConverterUtils.parseInt(b);
@@ -78,8 +79,8 @@ public class Client {
         long h = ConverterUtils.parseLong(b);
         float n = ConverterUtils.parseFloat(b);
         double o = Double.parseDouble(b.toString());
-        if (ConverterUtils.parseBoolean(args.get(2))) {
-            String data = args.get(2).toString();
+        if (ConverterUtils.parseBoolean(args[2])) {
+            String data = args[2].toString();
             Object test = data;
             java.util.Map<String, String> maps = TeaConverter.buildMap(
                 new TeaPair("key", "value")
@@ -92,7 +93,7 @@ public class Client {
         }
 
         Thread.sleep(a);
-        String defaultVal = args.get(0) == null ? args.get(0) : args.get(1).toString();
+        String defaultVal = args[0] == null ? args[0] : args[1].toString();
         if (defaultVal == b) {
             return ;
         }

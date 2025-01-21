@@ -11,10 +11,9 @@ public class Client {
         return client.describeResources(id);
     }
 
-    public static void main(String[] args_) throws Exception {
-        java.util.List<String> args = java.util.Arrays.asList(args_);
+    public static void main(String[] args) throws Exception {
         com.import.Client client = new com.import.Client();
-        Response response = Client.describeClusterResources(client, args.get(0));
+        Response response = Client.describeClusterResources(client, args[0]);
         java.util.List<Response.ResponseBody> resources = response.body;
         for (Response.ResponseBody resource : resources) {
             resource.resourceType;

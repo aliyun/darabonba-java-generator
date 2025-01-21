@@ -24,9 +24,8 @@ public class Client {
         return Client.arrayAccess();
     }
 
-    public static String main(String[] args_) throws Exception {
-        java.util.List<String> args = java.util.Arrays.asList(args_);
+    public static String main(String[] args) throws Exception {
         Client.hello();
-        return args.get(1);
+        return args[1];
     }
 }

@@ -62,6 +62,8 @@ static async function stringTest(args: [string]): void {
 }
 
 static async function main(args: [string]): void {
+    args[0];
+    args[1];
     var a = 1;
     var b: string = $string(a);
     var f: int32 = $int32(b);
