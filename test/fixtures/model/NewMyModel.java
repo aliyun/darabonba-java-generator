@@ -22,6 +22,10 @@ public class NewMyModel extends TeaModel {
     }
 
     public static class NewMyModelObject extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>example.com\\wuying\\users</p>
+         */
         @NameInMap("Name")
         @Validation(required = true)
         public String name;

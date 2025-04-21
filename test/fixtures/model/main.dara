@@ -44,7 +44,7 @@ model MyModel = {
 
 model NewMyModel = {
   object: {
-    name: string(name='Name'),
+    name: string(name='Name', example='example.com\\wuying\\users'),
     num?: integer(name='Num'),
   },
 }
