@@ -1,3 +1,18 @@
+import Util;
+
+type @httpProxy = string
+type @httpsProxy = string
+type @socks5Proxy = string
+type @socks5NetWork = string
+type @maxIdleConns = integer
+type @readTimeout = integer
+type @connectTimeout = integer
+type @noProxy = string
+type @key = string
+type @cert = string
+type @ca = string
+type @retryOptions = $RetryOptions
+
 model Config {
 }
 
@@ -13,16 +28,28 @@ api hello(): void {
   return;
 }
 
-api helloRuntime(): void {
+api helloRuntime(bodyType: string, runtime: Util.RuntimeOptions): string {
   __request.method = 'GET';
   __request.pathname = '/';
   __request.headers = {
     host = 'www.test.com',
   };
 } returns {
-  return;
+  return 'test';
 } runtime {
-
+  key = Util.defaultString(runtime.key, @key),
+  cert = Util.defaultString(runtime.cert, @cert),
+  ca = Util.defaultString(runtime.ca, @ca),
+  readTimeout = Util.defaultNumber(runtime.readTimeout, @readTimeout),
+  connectTimeout = Util.defaultNumber(runtime.connectTimeout, @connectTimeout),
+  httpProxy = Util.defaultString(runtime.httpProxy, @httpProxy),
+  httpsProxy = Util.defaultString(runtime.httpsProxy, @httpsProxy),
+  noProxy = Util.defaultString(runtime.noProxy, @noProxy),
+  socks5Proxy = Util.defaultString(runtime.socks5Proxy, @socks5Proxy),
+  socks5NetWork = Util.defaultString(runtime.socks5NetWork, @socks5NetWork),
+  maxIdleConns = Util.defaultNumber(runtime.maxIdleConns, @maxIdleConns),
+  retryOptions = @retryOptions,
+  ignoreSSL = runtime.ignoreSSL
 }
 
 model M = {};
@@ -34,4 +61,10 @@ api helloVirtualCall(m: M): void {
   };
 } returns {
   return;
+}
+
+model vno = {}
+
+async function vnoPayCallBackNotifyEx(): vno {
+  return null;
 }

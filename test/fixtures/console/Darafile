@@ -1,0 +1,17 @@
+{
+  "scope": "darabonba",
+  "name": "main",
+  "version": "0.0.1",
+  "main": "./main.dara",
+  "editable": true,
+  "csharp":{
+    "namespace":"Darabonba.Test",
+    "typedef": {
+      "HttpResponse": {
+        "import": "System.Net.Http",
+        "type": "HttpResponseMessage",
+        "package": "System.Net.Http:4.3.4"
+      }
+    }
+  }
+}

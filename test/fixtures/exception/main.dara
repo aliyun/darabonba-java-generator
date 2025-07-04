@@ -1,0 +1,77 @@
+import Source;
+
+exception File = {
+    code: string,
+    data: map[string]any,
+    key1: string
+}
+
+exception ExtendFile extends File {
+  key1: string,
+  key2: string
+}
+
+exception Err1 = {
+  data: map[string]string
+}
+
+exception Err2 = {
+  accessErrMessage: string
+}
+
+exception Test extends File {
+  retryAfter: long(description="Retry After(ms)"),
+}
+
+static async function exceptionTest(args: [string]): void {
+  if (args.length() < 0) {
+      throw new ExtendFile{
+          code = 'name',
+          key2 = 'value2',
+          data = {
+              name = 'name',
+              path = '100',
+          }
+      };
+  }
+}
+
+static async function multiTryCatch(a: number): void {
+  try {
+    if(a > 0) {
+      throw new Err1 {
+        name = "str",
+        code = "str",
+        data = {
+          key1 = "str",
+        }
+      };
+    } else if(a == 0) {
+      throw new Err2 {
+        name = "str",
+        code = "str",
+        accessErrMessage = "str2",
+      };
+    } else if(a == -10) {
+      throw new Source.Err3 {
+        name = "str",
+        code = "str",
+      };
+    } else {
+      throw new $Error{
+        name = "str",
+        code = "str",
+      }
+    }
+  } catch(err: Err1) {
+    $Logger.log(err.name);
+  } catch(err: Err2) {
+    $Logger.log(err.name);
+  } catch(err: Source.Err3) {
+    $Logger.log(err.name);
+  } catch(err) {
+    $Logger.log(err.name);
+  } finally {
+    var final = 'ok';
+  }
+}

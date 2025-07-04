@@ -1,0 +1,18 @@
+model MyModel = {
+  stringfield: string,
+  stringarrayfield: [ string ],
+  mapfield: map[string]string,
+  name: string(name='realName'),
+  submodel: {
+    stringfield: string,
+  },
+  object: object,
+  numberfield: integer,
+  readable: readable,
+  request: $Request
+};
+
+model lowerModel = {
+  stringfield: string
+};
+

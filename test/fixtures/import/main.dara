@@ -1,10 +1,13 @@
 import Source;
+import Source.ApiUtil;
+import LocalSource;
 
 static function Sample(client: Source): void {
     var runtime = new Source.RuntimeObject{};
-    var request = new Source.Request{
+    var request = new LocalSource.Request{
         accesskey = "accesskey",
         region = "region",
     };
+    var test = ApiUtil.getQuery();
     client.print(runtime);
 }

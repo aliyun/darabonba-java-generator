@@ -1,0 +1,80 @@
+import Source;
+
+model M = {
+  subM: {}
+};
+
+model Class = {};
+
+model model = {
+  str: string
+}
+
+exception MainFile extends $Error {
+  size: number,
+  data: map[string]model,
+  model: {
+    str: string,
+    model: {
+      str: string
+    },
+  },
+  model1: {
+    code: number
+  }
+}
+
+model MyModel = {
+  model: {
+    str: string,
+    model: {
+      str: string
+    },
+  },
+  stringfield: string,
+  bytesfield: bytes,
+  stringarrayfield: [ string ],
+  mapfield: map[string]string,
+  name: string(name='realName'),
+  submodel: {
+    stringfield: string,
+    model: {
+      str: string
+    },
+  },
+  submodelMap: map[string]MyModel.submodel,
+  mapModel: map[string]M,
+  subarraymodel: [ {} ],
+  subarray: [ M ],
+  ssubarray: [[[ M ]]],
+  ssubmarray: [[ Source ]],
+  ssubmmarray: [[ Source.Request ]],
+  maparray: [ map[string]any ],
+  mapsubmarray: [ map[string]Source ],
+  moduleModelMap: map[string]Source.Request,
+  subModelMap: map[string]M.subM,
+  modelMap: map[string]M,
+  moduleMap: map[string]Source,
+  object: object,
+  readable: readable,
+  writable: writable,
+  existModel: M,
+  request: $Request,
+  complexList: [ [ string ] ],
+  numberfield: number,
+  integerField: integer,
+  floatField: float,
+  doubleField: double,
+  longField: long,
+  ulongField: ulong,
+  int8Field: int8,
+  int16Field: int16,
+  int32Field: int32,
+  int64Field: int64,
+  uint8Field: uint8,
+  uint16Field: uint16,
+  uint32Field: uint32,
+  uint64Field: uint64,
+  link?: string(name='link', example='http://*/*.png'),
+};
+

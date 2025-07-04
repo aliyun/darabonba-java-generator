@@ -24,6 +24,14 @@ static function helloArrayMap(): [map[string]string] {
 }
 
 static async function helloParams(a: string, b: string): void {
-  return;
+  var x = false;
+  var y = true;
+  var z = false;
+  if (x && y || !z) {
+    
+  }
 }
+
+// interface mode
+static async function helloInterface(): void;
 

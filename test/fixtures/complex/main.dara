@@ -1,77 +1,90 @@
 import Source;
 
+extends Source;
+
 model Config {
-  subM: {
-    subObject: {
-      key: string,
-      value: string,
-    },
-  },
-  protocol: string,
+  protocol: string(maxLength= 50, pattern= 'pattern'),
+  importConfig: Source.Config,
+  query: string,
+  complexList: [[string]],
+  floatNum: float, 
+  longNum: long
 }
 type @protocol = string
 type @pathname = string
-type @compleList = [[string]]
-type @configs = [ Config ];
+type @endpointMap = map[string]string
+type @source = Source
+type @boolVirtual = boolean;
+type @configs = [ Source.Config ];
 
-init(config: Config){
+init(config: Source.Config, secondParam: string){
+  super(config, secondParam);
   @protocol = config.protocol;
+  @pathname = secondParam;
+  @boolVirtual = true;
   @configs[0] = config;
 }
 
 model ComplexRequest = {
-  accessKey: string,
-  moduleModelMap: map[string]Source.Request,
-  subModelMap: map[string]Config.subM,
-  complexList: [[map[string]string]],
-  complexList1: [ 
-    {
-      name?: string(name='Name'),
-      code?: int32(name='Code'),
-    }
-  ](name='complexList2'),
-  complexList2: [[[ 
-    {
-      name?: string(name='Name'),
-      code?: int32(name='Code'),
-    }
-  ]]](name='complexList2'),
-  complexList3: [[[ 
-    Config
-  ]]](name='complexList3'),
-  body: readable(name='Body', example='Body', description='Body
-
-body'),
-  userTest?: map[string][ map[string]string ](name='UserPsssrivileges'),
+  duplicatName: Source.ComplexRequest,
+  accessKey: string(name='accessKey'),
+  body: readable(name='Body', example='Body', description='Body'),
   strs: [ string ](name='Strs', example='Strs', description='Strs'),
   header: {
-    content: string(name='Content', example='Content', signed='true', description='Body')
+    content: string(name='Content', example='The name of the region.', signed='true', description='The ID of the security group to which you want to assign the instance. Instances in the same security group can communicate with each other. The maximum number of instances that a security group can contain depends on the type of the security group. For more information, see the "Security group limits" section in [Limits](https://help.aliyun.com/document_detail/25412.html#SecurityGroupQuota).
+
+>Notice:  The network type of the new instance must be the same as that of the security group specified by the `SecurityGroupId` parameter. For example, if the specified security group is of the VPC type, the new instance is also of the VPC type and you must specify `VSwitchId`.
+
+If you do not use `LaunchTemplateId` or `LaunchTemplateName` to specify a launch template, you must specify SecurityGroupId. Take note of the following items:
+
+*   You can set `SecurityGroupId` to specify a single security group or set `SecurityGroupIds.N` to specify one or more security groups. However, you cannot specify both `SecurityGroupId` and `SecurityGroupIds.N`.
+*   If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify `SecurityGroupId` or `SecurityGroupIds.N` but can specify `NetworkInterface.N.SecurityGroupId` or `NetworkInterface.N.SecurityGroupIds.N`.', nullable=true, checkBlank=true, sensitive=true),
+    listSub: [{
+      listSubItem: string(name='listSubItemName'),
+      listSubItemSub: Config(name='listSubItemSubName')
+    }],
+    listStr: [string](name='listStr'),
+    sourceClient: Source(name='sourceClient'),
+    sourceConfig: Source.Config(name='sourceConfig'),
+    subModel: {
+      subModelStr: string
+    }(name='subModel'),
+    subArray: [
+      Config
+    ](name='subArray'),
+    subMutiArray: [[
+      Config
+    ]](name='subMutiArray'),
   }(description='header', name='header'),
-  num: number,
-  client: Source,
-  configs: {
-    key: string,
-    value: [ string ],
-    extra: map[string] string,
-    object: Config.subM.subObject,
-  },
+  num: number(name='num'),
+  client: Source(name='client'),
   part?: [
     {
       partNumber?: string(description='PartNumber', name='PartNumber')
     }
-  ](description='Part', name='Part'),
-  configCopy: Source.Request.configs,
-  configCopyArray: [ Source.Request.configs ](description='Configs', name='Configs'),
-  subMArray: [ Config.subM ](name='subMArray'),
-}
-
-model Response {
-  part: ComplexRequest.part,
-  req: Source.Request,
+  ](description='Part', name='Part', deprecated=true),
+  configs: {
+    key: string(name='key'),
+    value: [ string ](name='value'),
+    extra: map[string] string(name='extra')
+  }(name='configs'),
+  dict: map[string]any(name='dict'),
+  submodelMap: map[string]Source.Config(name='submodelMap'),
+  array?: [[
+    {
+      type?: string(name='type'),
+      link?: string(name='link'),
+      text?: string(name='text'),
+    }
+  ]](name='array'),
+  array1?: [[string]](name='array1'),
+  array2?: [Config](name='array2'),
 }
 
 static function arrayAssign3(request: ComplexRequest, config: string): void {
   request.configs.value[0] = config;
+  var i : integer = 0;
+  request.configs.value[i] = config;
 }
 
 static function mapAccess(request: ComplexRequest): string {
@@ -79,22 +92,29 @@ static function mapAccess(request: ComplexRequest): string {
   return configInfo;
 }
 
-static function mapAccess2(configs: Source.Request.configs): string {
-   var configInfo = configs.extra['name'];
+static function mapAccess2(request: Source.Request): string {
+   var configInfo = request.configs.extra['name'];
   return configInfo;
 }
 
 static function mapAccess3(): string {
   var data = {
-    configs  = {
-      value = 'string'
+    mapAcc  = {
+      map2 = {
+        value = 'string'
+      }
     } 
   };
-  return data.configs['value'];
+  return data.mapAcc.map2['value'];
 }
 
 static function mapAssign(request: ComplexRequest, name: string): void {
   request.configs.extra['name'] = name;
+  var data = {};
+  data.header = null;
+  request.dict = {
+    test = "demo",
+  };
 }
 
 static function arrayAssign2(config: string): [ string ] {
@@ -102,17 +122,29 @@ static function arrayAssign2(config: string): [ string ] {
     configs = ['a', 'b', 'c']
   };
   data.configs[3] = config;
+  var i : integer = 3;
+  data.configs[i] = config;
   return data.configs;
 }
 
 static function arrayAssign(config: string): [ string ] {
   var configs = ['a', 'b', 'c'];
   configs[3] = config;
+  var i : integer = 3;
+  configs[i] = config;
+  var i32 : int32 = 3;
+  configs[i32] = config;
+  var i64 : int64 = 3;
+  configs[i64] = config;
+  var num : number = 3;
+  configs[num] = config;
   return configs;
 }
 
 static function arrayAccess3(request: ComplexRequest): string {
   var configVal = request.configs.value[0];
+  var i : integer = 0;
+  configVal = request.configs.value[i];
   return configVal;
 }
 
@@ -121,55 +153,79 @@ static function arrayAccess2(): string {
     configs = ['a', 'b', 'c']
   };
   var config = data.configs[0];
+  var i : integer = 0;
+  i++;
+  ++i;
+  i--;
+  --i;
+  config = data.configs[i];
   return config;
 }
 
 static function arrayAccess(): string {
   var configs = ['a', 'b', 'c'];
   var config = configs[0];
+  var i : integer = 0;
+  config = configs[i];
+  var i32 : int32 = 3;
+  config = configs[i32];
+  var i64 : int64 = 3;
+  config = configs[i64];
+  var num : number = 3;
+  config = configs[num];
   return config;
-}
-
-function testSubModel(part: ComplexRequest.part, complexList: [[string]]): void {
- return;
 }
 
 async function hello(request: object, strs: [ string ]): [ string ] {
   return array1();
 }
 
-static async function print(reqeust: $Request, reqs: [ ComplexRequest ], response: $Response, val: map[string]string): Source.Request {return null;}
+static async function print(reqeust: $Request, reqs: [ ComplexRequest ], response: $Response, val: map[string]string): Source.Request {
+  return new Source.Request{};
+}
 
 api Complex1(request: ComplexRequest, client: Source): Source.RuntimeObject {
   var name = 'complex';
-  var mapVal = {test="ok"};
-  __request.protocol = @protocol;
+  var conf = new Config{ floatNum = 0.1 };
+  conf.floatNum = 1.1;
+  var mapVal = {
+    test="ok"
+    };
+  __request.protocol = @endpointMap[@protocol];
   __request.port = request.num;
   __request.method = 'GET';
   __request.pathname = `/${@pathname}`;
   __request.query = {
     date = '2019',
   };
+  var reqInstance = __request;
+  var boolItem = !@boolVirtual;
 } returns {
   if (true && true){
-    retry;
     return null;
   } else if(true || false){
     return new Source.RuntimeObject{};
+  } else {
+    return null;
   }
   client.print(request, '1');
   hello(request, ["1","2"]);
   hello(null, null);
-	Complex3(null);
+  Complex3(null);
   return {};
 } runtime {
-  timeouted = 'retry'
+  timeouted = 'retry',
+  retry = {
+    retryable = 'xxx'
+  }
 } 
 
-api Complex2(request: ComplexRequest, str: [ string ], val: map[string]string): object {
+api Complex2(request: ComplexRequest, str: [ string ], val: map[string]string, complexList: [[[string]]]): object {
   var name = 'complex';
   var config = new Source.Config{};
-  var client = new Source(config);
+  var client = new Source(config, 'testSecond');
+  var subModel = new Source.Request.submodel{};
+  var nestingList = [[[['test']]]];
   __request.protocol = 'HTTP';
   __request.port = 80;
   __request.method = 'GET';
@@ -178,6 +234,7 @@ api Complex2(request: ComplexRequest, str: [ string ], val: map[string]string): 
     date = '2019',
     protocol = __request.protocol,
   };
+  return {};
 }
 
 api Complex3(request: ComplexRequest): ComplexRequest {
@@ -191,6 +248,9 @@ api Complex3(request: ComplexRequest): ComplexRequest {
     date = '2019',
   };
 } returns {
+  if(true){
+    retry;
+  }
   var resp = __response;
   var req = new Source.Request{
     accesskey = request.accessKey,
@@ -199,25 +259,32 @@ api Complex3(request: ComplexRequest): ComplexRequest {
   array0(request);
   req.accesskey = 'accesskey';
   req.accesskey = request.accessKey;
-  printNull();
+  printNull(Config);
   Source.array(request, '1');
   return {
     ...__request.query
   };
 }
 
-static async function printNull(): void {
-  var str = templateString();
-}
+static async function printNull(cls: class): void {
+  try {
+    var str = templateString();
+  } catch(e) {
+    var errStr = e.message;
+  } finally {
+    var final = 'ok';
+  }
 
-static async function conflict(sconf: Source.Config, conf:Config): void {
-  sconf.protocol = conf.protocol;
+  try {
+    var strNoCatch = templateString();
+  } finally {
+    var finalNoCatch = 'ok';
+  }
 }
 
 static function array0(req: object): [ any ] {
-  var longTest = 1L;
-  var doubleTest = 1d;
-  var floatTest = 1f;
+  var temp = new Source.Config{};
+  var anyArr : [Source.Config] = [temp];
   return [];
 }
 
@@ -226,5 +293,10 @@ static function array1(): [ string ] {
 }
 
 async function templateString(): string {
-  return `/${@protocol}`;
+  return `${@protocol}`;
+}
+
+static function returnObj(params: string): object {
+  params = "test";
+  return {};
 }

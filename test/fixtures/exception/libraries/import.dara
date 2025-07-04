@@ -1,0 +1,32 @@
+model RuntimeObject = {}
+init(config: Config, second: string);
+
+function print(runtime: object, str: string): void {
+  return;
+}
+model Config {
+ protocol: string
+}
+
+model Request = {
+  accesskey?: string(name='accesskey', description='accesskey'),
+  region?: string(name='region', description='region'),
+    submodel: {
+    stringfield: string,
+  },
+  configs: {
+    key: string,
+    value: [ string ],
+    extra: map[string] string
+  },
+}
+
+model ComplexRequest = {
+
+}
+
+exception Err3 = {
+  accessErrMessage: string
+}
+
+static function array(request: object, str: string): [ any ];
