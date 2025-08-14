@@ -21,5 +21,20 @@ public class Client {
         } finally {
             String _final = "ok";
         }        
+        try {
+            String str1 = "test";
+        } catch (TeaException err) {
+            // err.code
+        } finally {
+            // a
+        }        
+        try {
+            String str2 = "test";
+        } catch (TeaException err) {
+            // err.code
+        } finally {
+            // b
+            String final2 = "ok";
+        }        
     }
 }

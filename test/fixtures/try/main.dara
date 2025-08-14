@@ -14,4 +14,21 @@ static async function testTry(): void {
   } finally {
     var final = 'ok';
   }
+
+  try {
+    var str1 = 'test';
+  } catch (err) {
+    // err.code
+  } finally {
+    // a
+  }
+
+  try {
+    var str2 = 'test';
+  } catch (err) {
+    // err.code
+  } finally {
+    // b
+    var final2 = 'ok';
+  }
 }
