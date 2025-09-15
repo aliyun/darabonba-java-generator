@@ -72,7 +72,12 @@ describe('new Generator', function () {
   it('one api should ok', function () {
     const outputDir = path.join(__dirname, 'output/api');
     const mainFilePath = path.join(__dirname, 'fixtures/api/main.dara');
-    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/api/Client.java'));
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/api/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/api/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/api'),
+      ...pkg
+    });
   });
 
   it('one function should ok', function () {
@@ -238,9 +243,40 @@ describe('new Generator', function () {
     assert.deepStrictEqual(fs.readFileSync(clientPath, 'utf8'), expected);
   });
 
-  it('bultin should ok', function () {
+  it('builtin should ok', function () {
     const outputDir = path.join(__dirname, 'output/builtin');
     const mainFilePath = path.join(__dirname, 'fixtures/builtin/main.dara');
     check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/builtin/Client.java'));
+  });
+
+  it('exception should ok', function () {
+    const outputDir = path.join(__dirname, 'output/exception');
+    const mainFilePath = path.join(__dirname, 'fixtures/exception/main.dara');
+    const pkgContent = fs.readFileSync(path.join(__dirname, 'fixtures/exception/Darafile'), 'utf8');
+    const pkg = JSON.parse(pkgContent);
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/Client.java'), 'src/main/java/com/aliyun/test/Client.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/File.java'), 'src/main/java/com/aliyun/test/exceptions/File.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/ExtendFile.java'), 'src/main/java/com/aliyun/test/exceptions/ExtendFile.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/Err1.java'), 'src/main/java/com/aliyun/test/exceptions/Err1.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/Err2.java'), 'src/main/java/com/aliyun/test/exceptions/Err2.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
+    check(mainFilePath, outputDir, path.join(__dirname, 'fixtures/exception/Test.java'), 'src/main/java/com/aliyun/test/exceptions/Test.java', {
+      pkgDir: path.join(__dirname, 'fixtures/exception'),
+      ...pkg
+    });
   });
 });

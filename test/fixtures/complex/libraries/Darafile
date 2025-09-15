@@ -4,7 +4,10 @@
   "version": "0.0.1",
   "main": "./import.dara",
   "releases": {
-    "java": "com.import:0.0.2"
+    "csharp": "Darabonba.import:0.0.2"
+  },
+  "csharp": {
+    "namespace": "Darabonba.import"
   },
   "java": {
     "package": "com.import"

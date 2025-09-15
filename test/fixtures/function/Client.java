@@ -1,7 +1,7 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
+import com.aliyun.darabonba.*;
 
 public class Client {
 
@@ -34,6 +34,15 @@ public class Client {
     }
 
     public static void helloParams(String a, String b) throws Exception {
-        return ;
+        boolean x = false;
+        boolean y = true;
+        boolean z = false;
+        if (x && y || !z) {
+        }
+
+    }
+
+    // interface mode
+    public static void helloInterface() throws Exception {
     }
 }

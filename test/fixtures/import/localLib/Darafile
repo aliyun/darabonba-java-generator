@@ -1,5 +1,5 @@
 {
-  "scope": "alibabacloud",
+  "scope": "test",
   "name": "localImport",
   "version": "0.0.1",
   "main": "./import.dara",
@@ -8,7 +8,7 @@
     "baseClient": "com.import.baseclient.BaseClient"
   },
   "csharp": {
-    "namespace": "AlibabaCloud.import"
+    "namespace": "Test.import"
   },
   "go": {
     "baseClient": "gitlab.alibaba-inc.com/alicloud-sdk/import/baseclient"

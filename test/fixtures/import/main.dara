@@ -1,5 +1,5 @@
 import Source;
-import Source.ApiUtil;
+// import Source.ApiUtil; // ApiUtil not needed for this test
 import LocalSource;
 
 static function Sample(client: Source): void {
@@ -8,6 +8,6 @@ static function Sample(client: Source): void {
         accesskey = "accesskey",
         region = "region",
     };
-    var test = ApiUtil.getQuery();
+    // var test = ApiUtil.getQuery(); // ApiUtil not needed for this test
     client.print(runtime);
 }

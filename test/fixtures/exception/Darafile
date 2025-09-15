@@ -6,7 +6,7 @@
   "libraries": {
     "Source": "darabonba:Import:*"
   },
-  "csharp": {
-    "namespace": "Darabonba.Test"
+  "java": {
+    "package": "com.aliyun.test"
   }
 }

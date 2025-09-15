@@ -1,7 +1,7 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
+import com.aliyun.darabonba.*;
 import com.import.*;
 import com.import.models.*;
 import com.import2.*;

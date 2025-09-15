@@ -1,32 +1,40 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
-import com.aliyun.tea.interceptor.InterceptorChain;
-import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
-import com.aliyun.tea.interceptor.RequestInterceptor;
-import com.aliyun.tea.interceptor.ResponseInterceptor;
+import com.aliyun.darabonba.*;
+import com.aliyun.darabonba.interceptor.InterceptorChain;
+import com.aliyun.darabonba.interceptor.RuntimeOptionsInterceptor;
+import com.aliyun.darabonba.interceptor.RequestInterceptor;
+import com.aliyun.darabonba.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
 import com.import.*;
 import com.import.models.*;
 
-public class NameTest implements ImplementsTest {
+public class NameTest extends com.import.Client implements ImplementsTest {
 
     private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
     public String _protocol;
     public String _pathname;
-    public java.util.List<java.util.List<String>> _compleList;
-    public java.util.List<com.aliyun.test.models.Config> _configs;
-    public NameTest(com.aliyun.test.models.Config config) {
+    public java.util.Map<String, String> _endpointMap;
+    public com.import.Client _source;
+    public Boolean _boolVirtual;
+    public java.util.List<com.import.models.Config> _configs;
+    public NameTest(com.import.models.Config config, String secondParam) {
+        super(config, secondParam);
         this._protocol = config.protocol;
+        this._pathname = secondParam;
+        this._boolVirtual = true;
         _configs.set(0, config);
     }
 
-    public RuntimeObject Complex1(ComplexRequest request, com.import.Client client) {
+    public RuntimeObject Complex1(com.aliyun.test.models.ComplexRequest request, com.import.Client client) {
         TeaModel.validateParams(request, "request");
         java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
-            new TeaPair("timeouted", "retry")
+            new TeaPair("timeouted", "retry"),
+            new TeaPair("retry", TeaConverter.buildMap(
+                new TeaPair("retryable", "xxx")
+            ))
         );
 
         TeaRequest _lastRequest = null;
@@ -44,24 +52,31 @@ public class NameTest implements ImplementsTest {
             try {
                 TeaRequest request_ = new TeaRequest();
                 String name = "complex";
+                com.aliyun.test.models.Config conf = com.aliyun.test.models.Config.build(TeaConverter.buildMap(
+                    new TeaPair("floatNum", 0.1F)
+                ));
+                conf.floatNum = 1.1F;
                 java.util.Map<String, String> mapVal = TeaConverter.buildMap(
                     new TeaPair("test", "ok")
                 );
-                request_.protocol = _protocol;
+                request_.protocol = _endpointMap.get(_protocol);
                 request_.port = request.num;
                 request_.method = "GET";
                 request_.pathname = "/" + _pathname + "";
                 request_.query = TeaConverter.buildMap(
                     new TeaPair("date", "2019")
                 );
+                TeaRequest reqInstance = request_;
+                boolean boolItem = !_boolVirtual;
                 _lastRequest = request_;
                 TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
                 if (true && true) {
-                    throw new TeaRetryableException();
                     return null;
                 } else if (true || false) {
                     return new RuntimeObject();
+                } else {
+                    return null;
                 }
 
                 client.print(request, "1");
@@ -86,12 +101,22 @@ public class NameTest implements ImplementsTest {
         throw new TeaUnretryableException(_lastRequest, _lastException);
     }
 
-    public java.util.Map<String, Object> Complex2(ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val) {
+    public java.util.Map<String, Object> Complex2(com.aliyun.test.models.ComplexRequest request, java.util.List<String> str, java.util.Map<String, String> val, java.util.List<java.util.List<java.util.List<String>>> complexList) {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
         com.import.models.Config config = new com.import.models.Config();
-        com.import.Client client = new com.import.Client(config);
+        com.import.Client client = new com.import.Client(config, "testSecond");
+        Request.RequestSubmodel subModel = new Request.RequestSubmodel();
+        java.util.List<java.util.List<java.util.List<java.util.List<String>>>> nestingList = java.util.Arrays.asList(
+            java.util.Arrays.asList(
+                java.util.Arrays.asList(
+                    java.util.Arrays.asList(
+                        "test"
+                    )
+                )
+            )
+        );
         request_.protocol = "HTTP";
         request_.port = 80;
         request_.method = "GET";
@@ -100,10 +125,11 @@ public class NameTest implements ImplementsTest {
             new TeaPair("date", "2019"),
             new TeaPair("protocol", request_.protocol)
         );
+        return new java.util.HashMap<>();
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
     }
 
-    public ComplexRequest Complex3(ComplexRequest request) {
+    public com.aliyun.test.models.ComplexRequest Complex3(com.aliyun.test.models.ComplexRequest request) {
         TeaModel.validateParams(request, "request");
         TeaRequest request_ = new TeaRequest();
         String name = "complex";
@@ -117,6 +143,10 @@ public class NameTest implements ImplementsTest {
         );
         TeaResponse response_ = Tea.doAction(request_, new java.util.HashMap<String, Object>(), interceptorChain);
 
+        if (true) {
+            throw new TeaRetryableException();
+        }
+
         TeaResponse resp = response_;
         Request req = Request.build(TeaConverter.buildMap(
             new TeaPair("accesskey", request.accessKey),
@@ -125,11 +155,11 @@ public class NameTest implements ImplementsTest {
         NameTest.array0(TeaModel.buildMap(request));
         req.accesskey = "accesskey";
         req.accesskey = request.accessKey;
-        NameTest.printNull();
+        NameTest.printNull(Config.class);
         com.import.Client.array(TeaModel.buildMap(request), "1");
         return TeaModel.toModel(TeaConverter.merge(String.class,
             request_.query
-        ), new ComplexRequest());
+        ), new com.aliyun.test.models.ComplexRequest());
     }
 
     public void addRuntimeOptionsInterceptor(RuntimeOptionsInterceptor interceptor) {
@@ -144,31 +174,40 @@ public class NameTest implements ImplementsTest {
         interceptorChain.addResponseInterceptor(interceptor);
     }
 
-    public static void arrayAssign3(ComplexRequest request, String config) {
+    public static void arrayAssign3(com.aliyun.test.models.ComplexRequest request, String config) {
         request.configs.value.set(0, config);
+        int i = 0;
+        request.configs.value.set(i, config);
     }
 
-    public static String mapAccess(ComplexRequest request) {
+    public static String mapAccess(com.aliyun.test.models.ComplexRequest request) {
         String configInfo = request.configs.extra.get("name");
         return configInfo;
     }
 
-    public static String mapAccess2(Request.RequestConfigs configs) {
-        String configInfo = configs.extra.get("name");
+    public static String mapAccess2(Request request) {
+        String configInfo = request.configs.extra.get("name");
         return configInfo;
     }
 
     public static String mapAccess3() {
-        java.util.Map<String, java.util.Map<String, String>> data = TeaConverter.buildMap(
-            new TeaPair("configs", TeaConverter.buildMap(
-                new TeaPair("value", "string")
+        java.util.Map<String, java.util.Map<String, java.util.Map<String, String>>> data = TeaConverter.buildMap(
+            new TeaPair("mapAcc", TeaConverter.buildMap(
+                new TeaPair("map2", TeaConverter.buildMap(
+                    new TeaPair("value", "string")
+                ))
             ))
         );
-        return data.get("configs").get("value");
+        return data.get("mapAcc").get("map2").get("value");
     }
 
-    public static void mapAssign(ComplexRequest request, String name) {
+    public static void mapAssign(com.aliyun.test.models.ComplexRequest request, String name) {
         request.configs.extra.put("name", name);
+        java.util.Map<String, Object> data = new java.util.HashMap<>();
+        data.put("header", null);
+        request.dict = TeaConverter.buildMap(
+            new TeaPair("test", "demo")
+        );
     }
 
     public static java.util.List<String> arrayAssign2(String config) {
@@ -180,6 +219,8 @@ public class NameTest implements ImplementsTest {
             ))
         );
         data.get("configs").set(3, config);
+        int i = 3;
+        data.get("configs").set(i, config);
         return data.get("configs");
     }
 
@@ -190,11 +231,21 @@ public class NameTest implements ImplementsTest {
             "c"
         );
         configs.set(3, config);
+        int i = 3;
+        configs.set(i, config);
+        int i32 = 3;
+        configs.set(i32, config);
+        long i64 = 3;
+        configs.set(i64, config);
+        Number num = 3;
+        configs.set(num, config);
         return configs;
     }
 
-    public static String arrayAccess3(ComplexRequest request) {
+    public static String arrayAccess3(com.aliyun.test.models.ComplexRequest request) {
         String configVal = request.configs.value.get(0);
+        int i = 0;
+        configVal = request.configs.value.get(i);
         return configVal;
     }
 
@@ -207,6 +258,12 @@ public class NameTest implements ImplementsTest {
             ))
         );
         String config = data.get("configs").get(0);
+        int i = 0;
+        i++;
+        ++i;
+        i--;
+        --i;
+        config = data.get("configs").get(i);
         return config;
     }
 
@@ -217,12 +274,15 @@ public class NameTest implements ImplementsTest {
             "c"
         );
         String config = configs.get(0);
+        int i = 0;
+        config = configs.get(i);
+        int i32 = 3;
+        config = configs.get(i32);
+        long i64 = 3;
+        config = configs.get(i64);
+        Number num = 3;
+        config = configs.get(num);
         return config;
-    }
-
-    @Override
-    public void testSubModel(ComplexRequest.ComplexRequestPart part, java.util.List<java.util.List<String>> complexList) {
-        return ;
     }
 
     @Override
@@ -230,22 +290,30 @@ public class NameTest implements ImplementsTest {
         return NameTest.array1();
     }
 
-    public static Request print(TeaRequest reqeust, java.util.List<ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
-        return null;
+    public static Request print(TeaRequest reqeust, java.util.List<com.aliyun.test.models.ComplexRequest> reqs, TeaResponse response, java.util.Map<String, String> val) {
+        return new Request();
     }
 
-    public static void printNull() {
-        String str = this.templateString();
-    }
-
-    public static void conflict(com.import.models.Config sconf, com.aliyun.test.models.Config conf) {
-        sconf.protocol = conf.protocol;
+    public static void printNull(class cls) {
+        try {
+            String str = this.templateString();
+        } catch (TeaException e) {
+            String errStr = e.message;
+        } finally {
+            String _final = "ok";
+        }        
+        try {
+            String strNoCatch = this.templateString();
+        } finally {
+            String finalNoCatch = "ok";
+        }        
     }
 
     public static java.util.List<Object> array0(java.util.Map<String, Object> req) {
-        long longTest = 1L;
-        double doubleTest = 1D;
-        float floatTest = 1F;
+        com.import.models.Config temp = new com.import.models.Config();
+        java.util.List<com.import.models.Config> anyArr = java.util.Arrays.asList(
+            temp
+        );
         return new java.util.ArrayList<>();
     }
 
@@ -257,6 +325,11 @@ public class NameTest implements ImplementsTest {
 
     @Override
     public String templateString() {
-        return "/" + _protocol + "";
+        return "" + _protocol + "";
+    }
+
+    public static java.util.Map<String, Object> returnObj(String params) {
+        params = "test";
+        return new java.util.HashMap<>();
     }
 }
