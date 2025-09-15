@@ -1,0 +1,16 @@
+{
+  "scope": "darabonba",
+  "name": "import",
+  "version": "0.0.1",
+  "main": "./import.dara",
+  "exports": {
+    "ApiUtil": "./util/api.dara"
+  },
+  "csharp": {
+    "namespace": "Darabonba.import",
+    "className": "Client"
+  },
+  "java": {
+    "package": "com.import"
+  }
+}

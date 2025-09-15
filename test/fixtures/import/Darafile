@@ -19,7 +19,8 @@
         }
     },
     "libraries": {
-        "Source": "alibabacloud:Import:*"
+        "Source": "darabonba:Import:*",
+        "LocalSource": "./localLib"
     },
     "releases": {}
 }

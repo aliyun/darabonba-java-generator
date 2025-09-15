@@ -1,11 +1,11 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
-import com.aliyun.tea.interceptor.InterceptorChain;
-import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
-import com.aliyun.tea.interceptor.RequestInterceptor;
-import com.aliyun.tea.interceptor.ResponseInterceptor;
+import com.aliyun.darabonba.*;
+import com.aliyun.darabonba.interceptor.InterceptorChain;
+import com.aliyun.darabonba.interceptor.RuntimeOptionsInterceptor;
+import com.aliyun.darabonba.interceptor.RequestInterceptor;
+import com.aliyun.darabonba.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
 
 public class Client {

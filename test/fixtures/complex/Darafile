@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "main": "./main.dara",
     "libraries": {
-        "Source": "alibabacloud:Import:*"
+        "Source": "darabonba:Import:*"
     },
     "java": {
         "package": "com.aliyun",

@@ -1,6 +1,6 @@
 package com.aliyun.test.models;
 
-import com.aliyun.tea.*;
+import com.aliyun.darabonba.*;
 
 /**
  * @deprecated Test4 is deprecated, use Test3 instead.

@@ -1,6 +1,6 @@
 package com.aliyun.test.models;
 
-import com.aliyun.tea.*;
+import com.aliyun.darabonba.*;
 
 /**
  * <b>description</b> :

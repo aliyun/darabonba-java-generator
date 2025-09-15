@@ -1,7 +1,7 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test.models;
 
-import com.aliyun.tea.*;
+import com.aliyun.darabonba.*;
 
 public class NewMyModel extends TeaModel {
     @NameInMap("object")

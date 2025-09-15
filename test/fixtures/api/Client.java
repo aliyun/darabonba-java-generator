@@ -1,17 +1,31 @@
 // This file is auto-generated, don't edit it. Thanks.
 package com.aliyun.test;
 
-import com.aliyun.tea.*;
-import com.aliyun.tea.interceptor.InterceptorChain;
-import com.aliyun.tea.interceptor.RuntimeOptionsInterceptor;
-import com.aliyun.tea.interceptor.RequestInterceptor;
-import com.aliyun.tea.interceptor.ResponseInterceptor;
+import com.aliyun.darabonba.*;
+import com.aliyun.darabonba.interceptor.InterceptorChain;
+import com.aliyun.darabonba.interceptor.RuntimeOptionsInterceptor;
+import com.aliyun.darabonba.interceptor.RequestInterceptor;
+import com.aliyun.darabonba.interceptor.ResponseInterceptor;
 import com.aliyun.test.models.*;
+import com.aliyun.teautil.*;
+import com.aliyun.teautil.models.*;
 
 public class Client {
 
     private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
+    public String _httpProxy;
+    public String _httpsProxy;
+    public String _socks5Proxy;
+    public String _socks5NetWork;
+    public Integer _maxIdleConns;
+    public Integer _readTimeout;
+    public Integer _connectTimeout;
+    public String _noProxy;
+    public String _key;
+    public String _cert;
+    public String _ca;
+    public $RetryOptions _retryOptions;
     public Client(Config config) throws Exception {
     }
 
@@ -27,8 +41,22 @@ public class Client {
         return ;
     }
 
-    public void helloRuntime() throws Exception {
-        java.util.Map<String, Object> runtime_ = new java.util.HashMap<>();
+    public String helloRuntime(String bodyType, RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, Object> runtime_ = TeaConverter.buildMap(
+            new TeaPair("key", com.aliyun.teautil.Common.defaultString(runtime.key, _key)),
+            new TeaPair("cert", com.aliyun.teautil.Common.defaultString(runtime.cert, _cert)),
+            new TeaPair("ca", com.aliyun.teautil.Common.defaultString(runtime.ca, _ca)),
+            new TeaPair("readTimeout", com.aliyun.teautil.Common.defaultNumber(runtime.readTimeout, _readTimeout)),
+            new TeaPair("connectTimeout", com.aliyun.teautil.Common.defaultNumber(runtime.connectTimeout, _connectTimeout)),
+            new TeaPair("httpProxy", com.aliyun.teautil.Common.defaultString(runtime.httpProxy, _httpProxy)),
+            new TeaPair("httpsProxy", com.aliyun.teautil.Common.defaultString(runtime.httpsProxy, _httpsProxy)),
+            new TeaPair("noProxy", com.aliyun.teautil.Common.defaultString(runtime.noProxy, _noProxy)),
+            new TeaPair("socks5Proxy", com.aliyun.teautil.Common.defaultString(runtime.socks5Proxy, _socks5Proxy)),
+            new TeaPair("socks5NetWork", com.aliyun.teautil.Common.defaultString(runtime.socks5NetWork, _socks5NetWork)),
+            new TeaPair("maxIdleConns", com.aliyun.teautil.Common.defaultNumber(runtime.maxIdleConns, _maxIdleConns)),
+            new TeaPair("retryOptions", _retryOptions),
+            new TeaPair("ignoreSSL", runtime.ignoreSSL)
+        );
 
         TeaRequest _lastRequest = null;
         Exception _lastException = null;
@@ -52,7 +80,7 @@ public class Client {
                 _lastRequest = request_;
                 TeaResponse response_ = Tea.doAction(request_, runtime_, interceptorChain);
 
-                return ;
+                return "test";
             } catch (Exception e) {
                 if (Tea.isRetryable(e)) {
                     _lastException = e;
@@ -89,4 +117,7 @@ public class Client {
         interceptorChain.addResponseInterceptor(interceptor);
     }
 
+    public vno vnoPayCallBackNotifyEx() throws Exception {
+        return null;
+    }
 }
